@@ -36,7 +36,7 @@ ca-certificates usbutils` (Debian names), then clone the repo and follow
 Inside the private skill checkout:
 
 ```bash
-./skills/th-d75-tools/scripts/bootstrap.sh --check
+./scripts/bootstrap.sh --check
 ```
 
 `--check` never touches the radio, `sudo`, udev, or systemd. `--print-service`

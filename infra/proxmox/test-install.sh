@@ -27,7 +27,7 @@ Options:
   --help
 
 The runner copies a clean repo tar to the VM, runs
-`skills/th-d75-tools/scripts/bootstrap.sh --check`, and destroys the clone on
+`scripts/bootstrap.sh --check`, and destroys the clone on
 success/failure unless --keep. It does not test radio/MCP behavior.
 USAGE
 }
@@ -101,6 +101,6 @@ ssh -i "$SSH_KEY" -o BatchMode=yes -o StrictHostKeyChecking=accept-new \
     tar -xzf /tmp/d75-repo.tar.gz -C ~/TH-D75-MCP
     rm -f /tmp/d75-repo.tar.gz
     cd ~/TH-D75-MCP
-    ./skills/th-d75-tools/scripts/bootstrap.sh --check
+    ./scripts/bootstrap.sh --check
   '
 echo "VM install test passed: VMID $VMID (keep=$KEEP)"

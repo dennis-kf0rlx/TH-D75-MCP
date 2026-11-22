@@ -18,10 +18,13 @@ becomes public.
 5. Confirm `README`, `SECURITY.md`, `docs/SAFETY.md`, and
    `docs/PROVENANCE.md` are present and linked.
 6. Run `make check`.
-7. Run the docs warning audit: every `sudo`, systemd, udev, or radio-write block
+7. Run `docs/INSTALL.md`'s local `--check` install against a built tarball.
+8. Run the docs warning audit: every `sudo`, systemd, udev, or radio-write block
    has a warning immediately above it.
-8. Make the tools repo public; keep the skill repo private and grant access to
+9. Make the tools repo public; keep the skill repo private and grant access to
    the private repo on request only.
+10. Push a `v*` tag; the release workflow builds the tarball/checksum/installer
+    and refuses to publish if the skill is still in the tree.
 
 ## Skill access policy
 

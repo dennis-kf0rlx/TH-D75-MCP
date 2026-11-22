@@ -9,3 +9,4 @@ settings-ui/values.json
 settings-ui/backups/
 settings-ui/.tmp/
 .venv/
+dist/

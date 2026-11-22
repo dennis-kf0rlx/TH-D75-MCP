@@ -59,7 +59,7 @@ Then clean up with `qm destroy 201`.
 
 - Template `9000` (`d75-test-template`, Debian 13.7) created on `prox`.
 - A linked clone booted, installed `git make python3-venv`, copied a clean repo
-  tar, and ran `skills/th-d75-tools/scripts/bootstrap.sh --check`.
+  tar, and ran `scripts/bootstrap.sh --check`.
 - Result: Python 3.13.5, skill frontmatter/contract valid, 9 d75mon tests passed.
 - The clone was destroyed; the template remains for repeat tests.
 - No radio, USB passthrough, settings writes, or service exposure was involved.

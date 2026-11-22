@@ -36,12 +36,26 @@ The agent may ask you to approve:
 
 Those are the only privileged parts. Say yes if you want the lazy path.
 
-## Path B — do it yourself
+## Fast path — curl installer (once released)
+
+When the tools release is public:
+
+```bash
+curl -fsSL -o thd75-install.sh \
+  https://github.com/dennis-kf0rlx/TH-D75-MCP/releases/latest/download/install.sh
+less thd75-install.sh
+bash thd75-install.sh
+```
+
+It verifies the release checksum, extracts to `~/TH-D75-MCP`, and asks before
+udev/systemd setup. Do not pipe `curl` to Bash as the default.
+
+## Path B — do it yourself from a clone
 
 ```bash
 git clone git@github.com:dennis-kf0rlx/TH-D75-MCP.git
 cd TH-D75-MCP
-./skills/th-d75-tools/scripts/bootstrap.sh --setup
+./scripts/bootstrap.sh --setup
 ```
 
 It runs the build checks first, then asks before udev/services. Nothing is
@@ -71,7 +85,7 @@ press the button for you.
 ## If it fails
 
 ```bash
-./skills/th-d75-tools/scripts/bootstrap.sh --check
+./scripts/bootstrap.sh --check
 ```
 
 That path never uses sudo, udev, systemd, or the radio and should isolate build

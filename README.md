@@ -36,7 +36,7 @@ GPS-altitude method.
 ## The lazy path
 
 For the short version, see [LAZY.md](LAZY.md): let an agent install it, or run
-`./skills/th-d75-tools/scripts/bootstrap.sh --setup` yourself. It asks before
+`./scripts/bootstrap.sh --setup` yourself. It asks before
 every privileged action and never writes radio settings.
 
 ## Mission
@@ -87,6 +87,21 @@ Accessibility is part of the mission, not a separate mode.
 - systemd **user** units for service mode
 - TH-D75 connected over USB CDC (`/dev/ttyACM*`; `/dev/thd75` recommended)
 - No compiler, npm, or frontend build step is required
+
+## Fast path (public release only)
+
+Once the tools repo has a public release:
+
+```bash
+curl -fsSL -o thd75-install.sh \
+  https://github.com/dennis-kf0rlx/TH-D75-MCP/releases/latest/download/install.sh
+less thd75-install.sh
+bash thd75-install.sh
+```
+
+The installer verifies the tarball checksum, extracts to `~/TH-D75-MCP`, and runs
+the interactive setup. See `docs/INSTALL.md`. The request-only Agent Skill is
+not in the release.
 
 ## Build
 
@@ -340,6 +355,7 @@ docs/                 menu map, row map, MCP protocol, firmware findings, GPS
 skills/               request-gated Agent Skill + public request stub
 infra/proxmox/        disposable-VM test runway (maintainer use)
 screenshots/
+install.sh
 Makefile
 requirements.txt
 ```
@@ -388,6 +404,7 @@ session.
 - `docs/gps-altitude.md` — NMEA altitude capture
 - `docs/REFERENCES.md` — upstream projects consulted
 - `docs/PROVENANCE.md` — data sources and redistribution caveats
+- `docs/INSTALL.md` — curl installer and release-asset contract
 - `docs/RELEASE.md` — public-release and skill-split checklist
 - `LAZY.md` — shortest install path for humans
 - `docs/CLEANROOM.md` — fresh-agent install/build test record

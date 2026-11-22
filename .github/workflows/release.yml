@@ -1,0 +1,88 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to release (e.g. v0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Build checks
+        run: make check
+
+      - name: Refuse to publish the request-only skill
+        run: |
+          if [ -e skills/th-d75-tools/SKILL.md ]; then
+            echo "ERROR: request-only Agent Skill is still in the public tree."
+            echo "Move it to the private TH-D75-agent-skill repo first."
+            exit 1
+          fi
+
+      - name: Build release assets
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME:-${{ inputs.tag }}}"
+          VERSION="${TAG#v}"
+          mkdir -p dist
+          FILES=(
+            README.md LICENSE SECURITY.md LAZY.md Makefile requirements.txt
+            install.sh settings-ui d75mon docs screenshots scripts
+            skills/REQUEST-ACCESS.md
+          )
+          for f in "${FILES[@]}"; do
+            [ -e "$f" ] || { echo "missing release file: $f" >&2; exit 1; }
+          done
+
+          # Versioned + latest-compatible archives, with a top-level folder.
+          tar -czf "dist/thd75-tools-v${VERSION}.tar.gz" \
+            --transform 's,^,thd75-tools/,' "${FILES[@]}"
+          cp "dist/thd75-tools-v${VERSION}.tar.gz" dist/thd75-tools.tar.gz
+
+          ( cd dist && sha256sum thd75-tools-v"${VERSION}".tar.gz \
+              > thd75-tools-v"${VERSION}".tar.gz.sha256 )
+          ( cd dist && sha256sum thd75-tools.tar.gz \
+              > thd75-tools.tar.gz.sha256 )
+          cp install.sh dist/install.sh
+
+      - name: Inspect archive
+        run: |
+          set -euo pipefail
+          tar -tzf dist/thd75-tools.tar.gz > /tmp/files.txt
+          if grep -E '(^|/)(\.git|\.venv|values\.json|backups|.*\.img|.*\.iso)(/|$)' /tmp/files.txt; then
+            echo "ERROR: forbidden files in release archive" >&2
+            exit 1
+          fi
+          if grep -q 'skills/th-d75-tools' /tmp/files.txt; then
+            echo "ERROR: request-only skill in release archive" >&2
+            exit 1
+          fi
+          grep -q '^thd75-tools/scripts/bootstrap.sh$' /tmp/files.txt
+
+      - name: Publish GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          TAG="${GITHUB_REF_NAME:-${{ inputs.tag }}}"
+          gh release create "$TAG" dist/* \
+            --title "TH-D75 tools $TAG" \
+            --notes "Checksum-verified tools release. Install instructions: docs/INSTALL.md" \
+            --verify-tag
