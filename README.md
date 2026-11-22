@@ -33,6 +33,12 @@ GPS-altitude method.
 > The short version is here; details are in [SECURITY.md](SECURITY.md) and
 > [docs/SAFETY.md](docs/SAFETY.md).
 
+## The lazy path
+
+For the short version, see [LAZY.md](LAZY.md): let an agent install it, or run
+`./skills/th-d75-tools/scripts/bootstrap.sh --setup` yourself. It asks before
+every privileged action and never writes radio settings.
+
 ## Mission
 
 > **Make every TH-D75 menu setting discoverable, readable, and changeable on a
@@ -383,6 +389,7 @@ session.
 - `docs/REFERENCES.md` — upstream projects consulted
 - `docs/PROVENANCE.md` — data sources and redistribution caveats
 - `docs/RELEASE.md` — public-release and skill-split checklist
+- `LAZY.md` — shortest install path for humans
 - `docs/CLEANROOM.md` — fresh-agent install/build test record
 - `skills/REQUEST-ACCESS.md` — request-only skill access
 

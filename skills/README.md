@@ -13,6 +13,12 @@ tools repo public, move this directory to the private
 **`TH-D75-agent-skill`** repository and leave only `REQUEST-ACCESS.md` in the
 public repo. See `../docs/RELEASE.md`.
 
+## Human-facing lazy path
+
+See the repository root `LAZY.md` and `bootstrap.sh --setup`. The setup mode is
+interactive and asks before udev, systemd, or package installation. Agents should
+not run it unattended.
+
 ## Safety
 
 The skill is human-directed and read-only by default. It requires explicit user
