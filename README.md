@@ -164,6 +164,8 @@ adjust `D75_MONITOR_UNIT`; the service expects the same user as the monitor.
 
 ### Service mode
 
+**ASK FIRST:** this installs a systemd user unit that can change radio settings.
+
 ```bash
 mkdir -p ~/.config/systemd/user
 cp settings-ui/systemd/d75settings.service.example \
@@ -205,6 +207,8 @@ viewing, or set `host` to a LAN IP in `d75mon/config.json` deliberately.
 ```
 
 ### d75mon service
+
+**ASK FIRST:** this installs a persistent systemd user unit.
 
 ```bash
 mkdir -p ~/.config/systemd/user

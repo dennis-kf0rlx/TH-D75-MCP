@@ -40,7 +40,8 @@ Serve:
 # then open http://<host>:8099/
 ```
 
-Or install the user unit (adjust paths if you cloned outside `~/TH-D75-MCP`):
+**ASK FIRST:** service installation is a persistent system change. Adjust paths
+if you cloned outside `~/TH-D75-MCP`.
 
 ```bash
 mkdir -p ~/.config/systemd/user
