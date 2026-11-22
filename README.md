@@ -39,6 +39,7 @@ read-only apart from `AI 0` at connect.
 - `mcp-protocol.md` — MCP entry, page read/write, ACK, idle timeout and keepalive
 - `gps-altitude.md` — reading live GPS altitude through NMEA PC output
 - `PROVENANCE.md` — data sources and redistribution caveats
+- `REFERENCES.md` — upstream projects consulted and their licences
 
 ## Safety
 
@@ -51,10 +52,9 @@ read-only apart from `AI 0` at connect.
 
 ## License
 
-- Code: **GPL-2.0-or-later** (see `LICENSE`).
-- Documentation and menu data: **CC BY-SA 4.0** (see `docs/LICENSE`).
-- Upstream protocol/tooling credit: [swiftraccoon/kenwood](https://github.com/swiftraccoon/kenwood),
-  which is GPL-2.0.
+Original code and documentation in this repository are **MIT** licensed (see
+`LICENSE`).
 
-These are independent implementations; no upstream source code or firmware
-images are included.
+Third-party projects consulted for protocol/UX reference retain their own
+licences; see `docs/REFERENCES.md`. No upstream source code, firmware images,
+or installers are included.

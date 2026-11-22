@@ -15,4 +15,4 @@
 - If you redistribute the generated catalog, review the Kenwood/MCP-D75 terms
   first; the code and factual findings are independent work.
 
-Docs are CC BY-SA 4.0. Code is GPL-2.0-or-later.
+Original code and documentation in this repository are MIT licensed.
