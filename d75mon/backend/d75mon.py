@@ -34,7 +34,7 @@ ROOT = Path(__file__).resolve().parent.parent
 VERSION = "0.2.0"
 
 DEFAULT_CONFIG = {
-    "host": "0.0.0.0",
+    "host": "127.0.0.1",
     "port": 8099,
     "transport": "auto",                      # auto | usb | bluetooth
     "usb_candidates": ["/dev/thd75", "/dev/ttyACM0"],

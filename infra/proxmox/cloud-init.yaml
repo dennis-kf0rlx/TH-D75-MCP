@@ -1,0 +1,19 @@
+#cloud-config
+# Reference cloud-init for the disposable Debian test VM.
+# Replace the SSH key before use; never commit a private key.
+users:
+  - name: d75test
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 REPLACE_WITH_YOUR_PUBLIC_KEY d75-test
+package_update: true
+packages:
+  - git
+  - make
+  - python3-venv
+  - ca-certificates
+  - qemu-guest-agent
+runcmd:
+  - systemctl enable --now qemu-guest-agent
+  - echo "d75 test VM ready" > /var/log/d75-test-ready

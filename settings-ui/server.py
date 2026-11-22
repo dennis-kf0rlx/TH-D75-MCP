@@ -28,6 +28,7 @@ VALUES_PATH = os.path.join(BASE, "values.json")
 BACKUP_DIR = os.path.join(BASE, "backups")
 SERIAL = os.environ.get("D75_SERIAL", "/dev/thd75")
 MONITOR_UNIT = os.environ.get("D75_MONITOR_UNIT", "d75mon")
+HOST = os.environ.get("D75SETTINGS_HOST", "127.0.0.1")
 PORT = int(os.environ.get("D75SETTINGS_PORT", "8098"))
 IDLE_RELEASE_SEC = int(os.environ.get("D75SETTINGS_IDLE", "300"))
 KEEPALIVE_SEC = float(os.environ.get("D75SETTINGS_KEEPALIVE", "0.5"))
@@ -655,8 +656,10 @@ def main() -> int:
     atexit.register(cleanup)
     signal.signal(signal.SIGTERM, lambda *_: (cleanup(), os._exit(0)))
     signal.signal(signal.SIGINT, lambda *_: (cleanup(), os._exit(0)))
-    log(f"loaded {len(BY_ID)} settings; listening on 0.0.0.0:{PORT}")
-    httpd = ThreadingHTTPServer(("0.0.0.0", PORT), Handler)
+    log(f"loaded {len(BY_ID)} settings; listening on {HOST}:{PORT}")
+    if HOST not in ("127.0.0.1", "localhost", "::1"):
+        log("WARNING: no authentication; do not expose this port to the internet")
+    httpd = ThreadingHTTPServer((HOST, PORT), Handler)
     try:
         httpd.serve_forever()
     except KeyboardInterrupt:

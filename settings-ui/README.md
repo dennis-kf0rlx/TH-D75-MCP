@@ -58,6 +58,7 @@ Environment variables:
 
 | Variable | Default | Meaning |
 |---|---|---|
+| `D75SETTINGS_HOST` | `127.0.0.1` | bind address (loopback by default) |
 | `D75SETTINGS_PORT` | `8098` | HTTP port |
 | `D75_SERIAL` | `/dev/thd75` | radio serial device |
 | `D75_MONITOR_UNIT` | `d75mon` | systemd **user** monitor unit to pause/restart |
@@ -75,7 +76,9 @@ python3 -m venv .venv
 D75_SERIAL=/dev/thd75 .venv/bin/python settings-ui/server.py
 ```
 
-Then open `http://<host>:8098/`. A systemd user unit is included as
+Then open `http://127.0.0.1:8098/`. The service is unauthenticated and
+loopback-only by default; use an SSH tunnel for remote access. See the top-level
+`SECURITY.md` and `docs/SAFETY.md`. A systemd user unit is included as
 `systemd/d75settings.service.example`; the README at the repository root has the
 full service setup.
 

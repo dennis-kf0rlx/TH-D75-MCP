@@ -52,12 +52,13 @@ journalctl --user -u d75mon.service -f
 
 ## USB transport
 
-Requires the udev rule from the TH-D75 setup note:
+Requires the udev rule from the top-level README. It uses `MODE="0660"`
+and a serial group (`dialout`, or `uucp` on Arch); never `0666`.
 
 ```
 /etc/udev/rules.d/99-kenwood-thd75.rules
 SUBSYSTEM=="tty", ATTRS{idVendor}=="2166", ATTRS{idProduct}=="9023",
-  MODE="0666", SYMLINK+="thd75"
+  MODE="0660", GROUP="dialout", SYMLINK+="thd75"
 ```
 
 ## Bluetooth transport (TH-D75 SPP, RFCOMM channel 2)
@@ -91,7 +92,8 @@ v1 reads exclusive state through `GM` (base `0xC2000000`):
 - `GET /events` — Server-Sent Events stream (one `state` event per change)
 - `GET /screen.png` — live 240x180 LCD screenshot (DDR capture, ~0.6 s)
 
-The widget's **SHOW SCREEN** button renders `/screen.png` and refreshes it while
+The widget is **unauthenticated** and defaults to `127.0.0.1`; use an SSH
+tunnel or firewall a deliberate LAN binding. The widget's **SHOW SCREEN** button renders `/screen.png` and refreshes it while
 open. See `docs/cat-map.md` for the CAT table and parameter-address map.
 
 ## Safety / limits

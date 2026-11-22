@@ -13,6 +13,26 @@ GPS-altitude method.
 
 ![Settings UI](screenshots/settings-ui.png)
 
+> ## READ THIS FIRST
+>
+> **HARD STOP — never do these**
+> - Flash firmware, bootloader, or factory-calibration regions.
+> - Write to a serial/device target you have not positively identified.
+> - Expose the web UI to the internet. It has **no authentication**.
+>
+> **ASK THE USER FIRST**
+> - `sudo`, udev rules, or systemd service installation.
+> - Entering settings mode or applying any radio setting.
+> - Power-cycling the radio.
+> - Binding the web UI to a LAN-facing address.
+>
+> **PRIVATE DATA**
+> `values.json`, backups, clone images, and API responses can contain callsigns,
+> coordinates, APRS messages, and Bluetooth names. Keep them local.
+>
+> The short version is here; details are in [SECURITY.md](SECURITY.md) and
+> [docs/SAFETY.md](docs/SAFETY.md).
+
 ## Mission
 
 > **Make every TH-D75 menu setting discoverable, readable, and changeable on a
@@ -52,10 +72,6 @@ Not yet independently audited: full screen-reader walkthrough and a light
 high-contrast theme. Those are explicit hardening items, not afterthoughts.
 Accessibility is part of the mission, not a separate mode.
 
-> **Safety:** nothing here redistributes firmware or clone images. Settings
-> writes are limited to the published catalog; the bootloader and factory
-> calibration are never touched. MCP failures can require a radio power cycle.
-
 ## Requirements
 
 - Linux with Python **3.10+**
@@ -63,22 +79,6 @@ Accessibility is part of the mission, not a separate mode.
 - systemd **user** units for service mode
 - TH-D75 connected over USB CDC (`/dev/ttyACM*`; `/dev/thd75` recommended)
 - No compiler, npm, or frontend build step is required
-
-The radio exposes CAT/MCP over USB. A udev rule gives it a stable name:
-
-```bash
-sudo tee /etc/udev/rules.d/99-kenwood-thd75.rules >/dev/null <<'UDEV'
-SUBSYSTEM=="tty", ATTRS{idVendor}=="2166", ATTRS{idProduct}=="9023", MODE="0666", SYMLINK+="thd75"
-UDEV
-sudo udevadm control --reload-rules
-sudo udevadm trigger
-```
-
-Reconnect the radio, then verify:
-
-```bash
-ls -l /dev/thd75
-```
 
 ## Build
 
@@ -99,19 +99,65 @@ make venv       # create .venv and install pyserial
 make check      # py_compile + d75mon unit tests
 ```
 
+## Serial-device setup
+
+**ASK FIRST:** this needs `sudo` and changes system device permissions. The
+example uses `dialout`; Arch/CachyOS typically uses `uucp` instead.
+
+```bash
+# Debian/Ubuntu example — use your distro's serial group on Arch.
+sudo tee /etc/udev/rules.d/99-kenwood-thd75.rules >/dev/null <<'UDEV'
+SUBSYSTEM=="tty", ATTRS{idVendor}=="2166", ATTRS{idProduct}=="9023", MODE="0660", GROUP="dialout", SYMLINK+="thd75"
+UDEV
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+sudo usermod -aG dialout "$USER"
+```
+
+Log out/in after changing groups, then verify:
+
+```bash
+ls -l /dev/thd75
+```
+
+`MODE="0666"` is deliberately not used: the serial port controls a
+transmitter-capable radio and should not be world-writable.
+
 ## Run: settings UI
+
+**The UI is unauthenticated.** It binds to **127.0.0.1** by default. Keep it
+local, or access it over an SSH tunnel. Only set a LAN-facing host when you
+intend to expose it on a trusted, firewall-restricted network.
 
 ```bash
 .venv/bin/python settings-ui/server.py
+# http://127.0.0.1:8098/
 ```
 
-Open **http://<host>:8098/**. The UI:
+SSH tunnel from another machine:
+
+```bash
+ssh -L 8098:127.0.0.1:8098 user@radio-host
+# then open http://127.0.0.1:8098/ on the client
+```
+
+Explicit LAN opt-in (warned in the log):
+
+```bash
+D75SETTINGS_HOST=0.0.0.0 .venv/bin/python settings-ui/server.py
+```
+
+The UI:
 
 1. loads the catalog and cached values (no radio I/O on page load);
 2. **Read from radio** pauses `d75mon`, enters MCP once, and reads all fields;
 3. edits/Apply use the same persistent MCP session;
 4. **Exit settings** leaves MCP (one USB reset), waits for re-enumeration, and
    restarts `d75mon`.
+
+**ASK FIRST before applying settings or entering settings mode** on someone
+else's radio. Settings mode holds the radio and can require a power cycle if
+something goes wrong.
 
 If you do not run `d75mon`, start settings-ui with a monitor unit that exists or
 adjust `D75_MONITOR_UNIT`; the service expects the same user as the monitor.
@@ -127,12 +173,13 @@ systemctl --user daemon-reload
 systemctl --user enable --now d75settings.service
 ```
 
-The example unit uses `%h/TH-D75-MCP` and `.venv`.
+The example unit uses loopback and `%h/TH-D75-MCP` + `.venv`.
 
 ### Settings environment
 
 | Variable | Default | Meaning |
 |---|---|---|
+| `D75SETTINGS_HOST` | `127.0.0.1` | bind address; loopback only by default |
 | `D75SETTINGS_PORT` | `8098` | HTTP port |
 | `D75_SERIAL` | `/dev/thd75` | radio serial device |
 | `D75_MONITOR_UNIT` | `d75mon` | systemd user monitor unit |
@@ -143,12 +190,13 @@ Run from any directory; the server locates its own static files.
 
 ## Run: d75mon monitor
 
+The monitor defaults to **127.0.0.1** as well. Use an SSH tunnel for remote
+viewing, or set `host` to a LAN IP in `d75mon/config.json` deliberately.
+
 ```bash
 .venv/bin/python d75mon/backend/d75mon.py --config d75mon/config.json
+# http://127.0.0.1:8099/
 ```
-
-Open **http://<host>:8099/**. The backend resolves `web_dir` relative to the
-`d75mon/` directory, so no working-directory setup is needed.
 
 ### d75mon tests
 
@@ -172,7 +220,7 @@ Edit `d75mon/config.json`:
 
 ```json
 {
-  "host": "0.0.0.0",
+  "host": "127.0.0.1",
   "port": 8099,
   "transport": "auto",
   "usb_candidates": ["/dev/thd75", "/dev/ttyACM0"],
@@ -188,6 +236,48 @@ Edit `d75mon/config.json`:
 - Live VFO/screen fields require the documented firmware-assisted `GM` reader;
   stock V1.03 exposes only the text-CAT status fields. The unpatched monitor
   labels missing fields honestly.
+
+Existing LAN installs must explicitly set `D75SETTINGS_HOST=0.0.0.0` (or change
+`d75mon/config.json`) and firewall the ports; the new defaults are intentionally
+local-only.
+
+## Network security
+
+Neither service has authentication. Treat both as **local administrative
+interfaces**:
+
+- default bind: loopback
+- remote access: SSH tunnel, not port-forwarding
+- no internet exposure, no public reverse proxy
+- if LAN access is unavoidable, firewall to trusted source addresses
+
+See [SECURITY.md](SECURITY.md) for the threat model and private-data notes.
+
+## GPS altitude
+
+Only when the user asks. Read-only sequence after stopping the monitor:
+
+1. Send `GP 1,1\r` at 9600 baud to enable GPS PC output.
+2. Stop sending CAT; listen for NMEA `$GPGGA` / `$GPRMC`.
+3. Parse GGA altitude and geoid separation.
+4. Restore with `GP 1,0\r`; restart `d75mon`.
+
+NMEA and CAT share the stream. No USB reset is needed, but a weak fix can have
+large vertical error. Full procedure: `docs/gps-altitude.md`.
+
+**ASK FIRST:** the `GP 1,1` step changes a radio setting.
+
+## Agent skill (request-only)
+
+The install/operate Agent Skill is intentionally **not part of the public tools
+release**. It lives in this private repo today; before the tools repo is made
+public, move `skills/th-d75-tools/` to the private `TH-D75-agent-skill` repo
+(see `docs/RELEASE.md`). Access is granted by request; do not redistribute it.
+
+The public repo keeps a request stub at `skills/REQUEST-ACCESS.md`. The skill
+covers install-only, monitor-only, and explicitly confirmed settings-operation
+modes, with read-only defaults and consent gates for `sudo`, systemd, udev,
+radio writes, and power-cycling.
 
 ## Verify the build
 
@@ -235,30 +325,19 @@ d75mon/               read-only monitor widget
   systemd/d75mon.service.example
   tests/
 docs/                 menu map, row map, MCP protocol, firmware findings, GPS
+skills/               request-gated Agent Skill + public request stub
+infra/proxmox/        disposable-VM test runway (maintainer use)
 screenshots/
-skills/th-d75-tools/  Agent Skill: clone/build/run/verify workflow
 Makefile
 requirements.txt
 ```
 
-## Agent skill
+## Maintainer VM runway
 
-Agents can clone and implement the build from a single portable skill:
-
-```text
-skills/th-d75-tools/SKILL.md
-```
-
-It covers host/radio discovery, venv + udev setup, running both services,
-persistent-MCP safety, GPS-altitude capture, acceptance checks, and failure
-recovery. Install it into a DSH-style skills directory with:
-
-```bash
-mkdir -p ~/.dsh/skills
-ln -sfn "$PWD/skills/th-d75-tools" ~/.dsh/skills/th-d75-tools
-```
-
-See `skills/README.md` for other agent frameworks.
+`infra/proxmox/` documents a disposable Debian VM template and helper flow for
+install/systemd testing. Snapshots reset the VM, not the radio. Radio acceptance
+stays on a physical host; do not trust a VM snapshot to recover a wedged MCP
+session.
 
 ## MCP notes
 
@@ -274,10 +353,11 @@ See `skills/README.md` for other agent frameworks.
 
 ## Troubleshooting
 
-- **`/dev/thd75` missing** — check `lsusb | grep 2166`, the udev rule, cable, and
-  radio power. A failed MCP session may require a physical power cycle.
-- **`Permission denied` on serial** — add the user to the serial group or use
-  the udev rule; confirm `ls -l /dev/thd75`.
+- **`/dev/thd75` missing** — check `lsusb | grep 2166`, the udev rule/group,
+  cable, and radio power. A failed MCP session may require a physical power
+  cycle.
+- **`Permission denied` on serial** — join the correct serial group (`dialout`
+  / `uucp`), re-login, and confirm `ls -l /dev/thd75`.
 - **MCP short read / CAT unresponsive** — power-cycle the radio. Do not loop
   MCP entries on a wedged session.
 - **`d75mon` stopped in settings mode** — intentional; Exit settings restarts it.
@@ -287,6 +367,8 @@ See `skills/README.md` for other agent frameworks.
 
 ## Documentation
 
+- `SECURITY.md` — no-auth threat model, LAN rules, private data
+- `docs/SAFETY.md` — radio/firmware/MCP hard stops and recovery
 - `docs/menu-map.md` / `docs/menu-map.tsv` — 400 settings
 - `docs/menu-rows.tsv` — 217 firmware menu rows
 - `docs/firmware-findings.md` — menu/string/CAT findings
@@ -294,6 +376,8 @@ See `skills/README.md` for other agent frameworks.
 - `docs/gps-altitude.md` — NMEA altitude capture
 - `docs/REFERENCES.md` — upstream projects consulted
 - `docs/PROVENANCE.md` — data sources and redistribution caveats
+- `docs/RELEASE.md` — public-release and skill-split checklist
+- `skills/REQUEST-ACCESS.md` — request-only skill access
 
 ## License
 
