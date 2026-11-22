@@ -98,7 +98,7 @@ h1 em { color: var(--muted); font-weight: 450; font-style: normal; }
 
 .layout {
   flex: 1;
-  width: min(1500px, 100%);
+  width: min(1640px, 100%);
   margin: 0 auto;
   padding: 18px 24px 96px;
   display: grid;
@@ -147,6 +147,15 @@ h1 em { color: var(--muted); font-weight: 450; font-style: normal; }
   display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
   margin-bottom: 14px;
 }
+@media (min-width: 1200px) {
+  .toolbar {
+    position: sticky; top: 86px; z-index: 8;
+    padding: 10px 0 9px;
+    margin: -6px 0 12px;
+    background: rgba(11, 14, 19, .88);
+    backdrop-filter: blur(12px);
+  }
+}
 .search {
   flex: 1; min-width: 260px;
   display: flex; align-items: center; gap: 9px;
@@ -179,7 +188,8 @@ kbd {
 .group-head .group-count { color: var(--faint); font-size: 11px; }
 .rows {
   border: 1px solid var(--line-soft); border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(18,24,33,.75), rgba(13,18,26,.65));
+  background: linear-gradient(180deg, rgba(18,24,33,.88), rgba(13,18,26,.72));
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
   overflow: hidden;
 }
 .row {
@@ -276,6 +286,20 @@ input[type="number"] { text-align: right; padding-right: 38px; }
   animation: toast-in .18s ease-out;
 }
 @keyframes toast-in { from { opacity: 0; transform: translate(-50%, 6px); } to { opacity: 1; transform: translate(-50%, 0); } }
+
+@media (min-width: 1450px) {
+  .rows {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .row {
+    grid-template-columns: minmax(0, 1fr) 220px auto;
+    gap: 14px;
+    border-left: 1px solid var(--line-soft);
+  }
+  .row:nth-child(odd) { border-left: 0; }
+  .row:nth-child(-n+2) { border-top: 0; }
+}
 
 @media (max-width: 1040px) {
   .topbar { flex-wrap: wrap; }
