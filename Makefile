@@ -1,7 +1,7 @@
 PYTHON ?= python3
 VENV ?= .venv
 
-.PHONY: venv check run-settings run-monitor clean
+.PHONY: venv check run-settings run-monitor dist test-installer clean
 
 venv: $(VENV)/bin/python
 
@@ -20,6 +20,12 @@ run-settings: venv
 
 run-monitor: venv
 	$(VENV)/bin/python d75mon/backend/d75mon.py --config d75mon/config.json
+
+dist:
+	./scripts/build-release.sh dist
+
+test-installer:
+	./scripts/test-installer.sh
 
 clean:
 	rm -rf $(VENV) settings-ui/__pycache__ d75mon/__pycache__

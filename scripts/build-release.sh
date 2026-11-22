@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+# Build a local public-style release fixture for installer testing.
+set -euo pipefail
+
+REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
+OUT="${1:-$REPO_ROOT/dist}"
+VERSION="${D75_TEST_VERSION:-0.0.0-local}"
+
+rm -rf "$OUT"
+mkdir -p "$OUT/latest/download"
+
+FILES=(
+  README.md LICENSE SECURITY.md LAZY.md Makefile requirements.txt
+  install.sh settings-ui d75mon docs screenshots scripts
+  skills/REQUEST-ACCESS.md
+)
+for f in "${FILES[@]}"; do
+  [ -e "$REPO_ROOT/$f" ] || { echo "missing release file: $f" >&2; exit 1; }
+done
+
+TARBALL="$OUT/latest/download/thd75-tools.tar.gz"
+tar -czf "$TARBALL" \
+  --transform 's,^,thd75-tools/,' \
+  -C "$REPO_ROOT" "${FILES[@]}"
+( cd "$OUT/latest/download" && sha256sum thd75-tools.tar.gz > thd75-tools.tar.gz.sha256 )
+cp "$REPO_ROOT/install.sh" "$OUT/install.sh"
+
+# Reject the request-only skill or private artifacts in the public fixture.
+LIST="$(tar -tzf "$TARBALL")"
+if grep -q 'skills/th-d75-tools' <<<"$LIST"; then
+  echo "ERROR: request-only skill leaked into release fixture" >&2
+  exit 1
+fi
+if grep -Eq '(^|/)(\.git|\.venv|values\.json|backups)(/|$)' <<<"$LIST"; then
+  echo "ERROR: private/raw artifacts leaked into release fixture" >&2
+  exit 1
+fi
+
+echo "release fixture: $OUT"
+echo "version: $VERSION"
+echo "installer: $OUT/install.sh"
+echo "tarball:   $TARBALL"

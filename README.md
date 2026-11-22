@@ -310,6 +310,14 @@ radio writes, and power-cycling.
 ## Verify the build
 
 ```bash
+make check             # 9 tests
+make test-installer    # build local release fixture + test installer end-to-end
+```
+
+`make test-installer` needs no GitHub release, sudo, services, or radio. See
+`docs/TESTING.md`.
+
+```bash
 make check
 ```
 
@@ -406,6 +414,7 @@ session.
 - `docs/REFERENCES.md` — upstream projects consulted
 - `docs/PROVENANCE.md` — data sources and redistribution caveats
 - `docs/INSTALL.md` — curl installer and release-asset contract
+- `docs/TESTING.md` — local installer/server/browser-preview test loop
 - `docs/RELEASE.md` — public-release and skill-split checklist
 - `LAZY.md` — shortest install path for humans
 - `docs/CLEANROOM.md` — fresh-agent install/build test record
