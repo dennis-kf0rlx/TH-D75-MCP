@@ -8,7 +8,7 @@ becomes public.
 
 1. Move `skills/th-d75-tools/` to a **private** `TH-D75-agent-skill` repository.
 2. Replace it in the public repo with `skills/REQUEST-ACCESS.md` (already
-   present).
+   present). **Done.**
 3. Remove `skills/README.md` instructions that imply the skill is bundled.
 4. Search the public tree for:
    - `values.json`, `backups/`, clone images
