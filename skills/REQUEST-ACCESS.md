@@ -24,8 +24,9 @@ repo or use the maintainer contact on the profile) and include:
 - what you want to do (install only / monitor only / settings operation);
 - the Linux distribution and radio connection type (USB or Bluetooth).
 
-The maintainer grants read access to the private `TH-D75-agent-skill` repo on a
-case-by-case basis.
+Until the split, request read access to this private tools repository on a
+case-by-case basis. After the public release, access is granted through the
+private `TH-D75-agent-skill` repository.
 
 ## What you get
 

@@ -8,9 +8,10 @@ troubleshooting the TH-D75 tools.
 The skill is not part of the public tools release and must not be redistributed.
 See [REQUEST-ACCESS.md](REQUEST-ACCESS.md) for the request process.
 
-The canonical copy lives in the private **`TH-D75-agent-skill`** repository.
-Before making the tools repo public, move this directory there and leave only
-`REQUEST-ACCESS.md` in the public repo. See `../docs/RELEASE.md`.
+The skill currently lives in this private tools repository. Before making the
+tools repo public, move this directory to the private
+**`TH-D75-agent-skill`** repository and leave only `REQUEST-ACCESS.md` in the
+public repo. See `../docs/RELEASE.md`.
 
 ## Safety
 
