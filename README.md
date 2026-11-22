@@ -85,7 +85,7 @@ ls -l /dev/thd75
 There is nothing to compile; “build” is the Python environment:
 
 ```bash
-git clone git@github.com:dennisflb/TH-D75-MCP.git
+git clone git@github.com:dennis-kf0rlx/TH-D75-MCP.git
 cd TH-D75-MCP
 
 python3 -m venv .venv
