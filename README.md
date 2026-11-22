@@ -236,9 +236,29 @@ d75mon/               read-only monitor widget
   tests/
 docs/                 menu map, row map, MCP protocol, firmware findings, GPS
 screenshots/
+skills/th-d75-tools/  Agent Skill: clone/build/run/verify workflow
 Makefile
 requirements.txt
 ```
+
+## Agent skill
+
+Agents can clone and implement the build from a single portable skill:
+
+```text
+skills/th-d75-tools/SKILL.md
+```
+
+It covers host/radio discovery, venv + udev setup, running both services,
+persistent-MCP safety, GPS-altitude capture, acceptance checks, and failure
+recovery. Install it into a DSH-style skills directory with:
+
+```bash
+mkdir -p ~/.dsh/skills
+ln -sfn "$PWD/skills/th-d75-tools" ~/.dsh/skills/th-d75-tools
+```
+
+See `skills/README.md` for other agent frameworks.
 
 ## MCP notes
 
