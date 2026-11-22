@@ -8,13 +8,16 @@ make test-installer
 
 This:
 
-1. builds `dist/` with the public-style release layout
+1. builds a **temporary** public-style release fixture
 2. serves it on a free loopback port
 3. runs `install.sh --check` against that local mirror
 4. verifies checksum, extraction, install report, and the 9 build tests
-5. cleans up
+5. cleans up, including the fixture and temporary install
 
-No GitHub release, sudo, services, or radio are involved.
+No GitHub release, sudo, services, radio, or leftover `dist/` are involved.
+
+`make dist` is the explicit command when you want a persistent local release
+artifact; `make dist-clean` removes it.
 
 ## Exact curl-style test
 

@@ -5,7 +5,6 @@
 set -euo pipefail
 
 REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
-DIST="$REPO_ROOT/dist"
 PREFIX=""
 KEEP=0
 
@@ -13,7 +12,7 @@ usage() {
   cat <<'USAGE'
 Usage: scripts/test-installer.sh [--keep]
 
-Builds dist/, serves it on a free loopback port, then runs:
+Builds a temporary release fixture, serves it on a free loopback port, then runs:
 
   install.sh --check --no-browser --prefix <temp>
 
@@ -33,6 +32,8 @@ done
 command -v python3 >/dev/null 2>&1 || { echo "python3 required" >&2; exit 1; }
 command -v curl >/dev/null 2>&1 || { echo "curl required" >&2; exit 1; }
 
+TMP_ROOT="$(mktemp -d)"
+DIST="$TMP_ROOT/dist"
 "$REPO_ROOT/scripts/build-release.sh" "$DIST"
 
 PORT="$(python3 - <<'PY'
@@ -49,7 +50,6 @@ python3 -m http.server "$PORT" --bind 127.0.0.1 --directory "$DIST" \
   >"$SERVER_LOG" 2>&1 &
 SERVER_PID=$!
 
-TMP_ROOT="$(mktemp -d)"
 if [ "$KEEP" -eq 0 ]; then
   PREFIX="$TMP_ROOT/TH-D75-MCP"
 else
@@ -61,9 +61,7 @@ cleanup() {
   kill "$SERVER_PID" 2>/dev/null || true
   wait "$SERVER_PID" 2>/dev/null || true
   rm -f "$SERVER_LOG"
-  if [ "$KEEP" -eq 0 ]; then
-    rm -rf "$TMP_ROOT"
-  fi
+  rm -rf "$TMP_ROOT"
 }
 trap cleanup EXIT
 
