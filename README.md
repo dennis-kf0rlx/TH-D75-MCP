@@ -383,6 +383,7 @@ session.
 - `docs/REFERENCES.md` — upstream projects consulted
 - `docs/PROVENANCE.md` — data sources and redistribution caveats
 - `docs/RELEASE.md` — public-release and skill-split checklist
+- `docs/CLEANROOM.md` — fresh-agent install/build test record
 - `skills/REQUEST-ACCESS.md` — request-only skill access
 
 ## License

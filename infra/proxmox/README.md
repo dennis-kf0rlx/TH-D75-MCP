@@ -63,6 +63,7 @@ Then clean up with `qm destroy 201`.
 - Result: Python 3.13.5, skill frontmatter/contract valid, 9 d75mon tests passed.
 - The clone was destroyed; the template remains for repeat tests.
 - No radio, USB passthrough, settings writes, or service exposure was involved.
+- The full clean-room result is in [`docs/CLEANROOM.md`](../../docs/CLEANROOM.md).
 
 ## Why not test the radio here?
 
