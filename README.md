@@ -20,9 +20,13 @@ GPS-altitude method.
 
 The D75 hides hundreds of settings behind nested menus, a small display, and a
 small keypad. This project replaces menu-number hunting with search,
-plain-language labels, large controls, and verified writes. It is designed for
-people with low vision or other accessibility needs, and for anyone who wants a
-lower-effort path to the setting they need.
+plain-language labels, large controls, and verified writes. It is accessibility
+engineering for people with low vision or other needs — and, yes, laziness
+engineering for people like me who would rather operate the radio than memorize
+its menu tree.
+
+Accessibility and laziness are the same problem here: remove the tiny-screen
+tax. Fewer taps, fewer nested menus, fewer numbers to remember.
 
 ### Design principles
 
@@ -30,9 +34,9 @@ lower-effort path to the setting they need.
   category, and keep menu numbers as optional advanced metadata.
 - **Readability at any scale.** The interface is responsive, works with browser
   zoom, uses a high-contrast theme, and keeps controls comfortably sized.
-- **Minimum friction.** One **Read from radio**, edit, **Apply**. Values are
-  cached; settings mode avoids a USB reset per save; the workflow is a few
-  clicks, not a menu-tree expedition.
+- **Minimum friction.** Laziness is a feature. One **Read from radio**, edit,
+  **Apply**; cached values; no USB reset per save; a few clicks instead of a
+  menu-tree expedition.
 - **Keyboard and assistive-tech friendly.** Native form controls, labels and
   ARIA state, `/` to focus search, `Esc` to clear.
 - **Safe by default.** Only changed fields are written and read back; high-risk
