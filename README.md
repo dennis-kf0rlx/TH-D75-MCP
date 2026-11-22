@@ -75,6 +75,8 @@ Accessibility is part of the mission, not a separate mode.
 ## Requirements
 
 - Linux with Python **3.10+**
+- Minimal build tools: `git`, `make`, `python3-venv`/`python3-pip`
+  (Debian/Ubuntu: `sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils`)
 - `pyserial` (installed into a venv below)
 - systemd **user** units for service mode
 - TH-D75 connected over USB CDC (`/dev/ttyACM*`; `/dev/thd75` recommended)

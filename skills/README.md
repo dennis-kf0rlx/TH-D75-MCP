@@ -19,6 +19,12 @@ The skill is human-directed and read-only by default. It requires explicit user
 confirmation for `sudo`, udev, systemd, radio writes, LAN binding, and
 power-cycling.
 
+## Before cloning
+
+The skill file is delivered first. Install `git make python3-venv python3-pip
+ca-certificates usbutils` (Debian names), then clone the repo and follow
+`SKILL.md` §0.
+
 ## Bootstrap helper
 
 Inside the private skill checkout:

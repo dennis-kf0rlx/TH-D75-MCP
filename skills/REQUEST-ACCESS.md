@@ -15,6 +15,21 @@ operations. Keeping it behind repository access:
 This is access control, not DRM. Do not paste the skill into public issues,
 gists, or unlisted links.
 
+## Before you begin (skill delivered first)
+
+The requester receives `SKILL.md` before the repo. Install the minimum tools
+first, then clone; a minimal Debian image lacks Git/Make/venv:
+
+```bash
+sudo apt-get update
+sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils
+git clone git@github.com:dennis-kf0rlx/TH-D75-MCP.git
+cd TH-D75-MCP
+```
+
+Then continue with `SKILL.md` §0/§1. Installation/build is valid with no radio
+attached.
+
 ## Request
 
 Contact the repository maintainer through GitHub (open an issue in the tools
