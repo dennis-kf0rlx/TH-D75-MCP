@@ -13,6 +13,41 @@ GPS-altitude method.
 
 ![Settings UI](screenshots/settings-ui.png)
 
+## Mission
+
+> **Make every TH-D75 menu setting discoverable, readable, and changeable on a
+> scalable web interface — without the radio's tiny screen or keypad.**
+
+The D75 hides hundreds of settings behind nested menus, a small display, and a
+small keypad. This project replaces menu-number hunting with search,
+plain-language labels, large controls, and verified writes. It is designed for
+people with low vision or other accessibility needs, and for anyone who wants a
+lower-effort path to the setting they need.
+
+### Design principles
+
+- **Findability over memorization.** Search by name or keyword, browse by
+  category, and keep menu numbers as optional advanced metadata.
+- **Readability at any scale.** The interface is responsive, works with browser
+  zoom, uses a high-contrast theme, and keeps controls comfortably sized.
+- **Minimum friction.** One **Read from radio**, edit, **Apply**. Values are
+  cached; settings mode avoids a USB reset per save; the workflow is a few
+  clicks, not a menu-tree expedition.
+- **Keyboard and assistive-tech friendly.** Native form controls, labels and
+  ARIA state, `/` to focus search, `Esc` to clear.
+- **Safe by default.** Only changed fields are written and read back; high-risk
+  settings require confirmation; the bootloader and calibration stay untouched.
+
+### Accessibility status
+
+Current: scalable responsive layout, browser zoom support, high-contrast dark
+theme, keyboard search shortcut, native labelled controls, and no requirement
+to read or remember menu numbers.
+
+Not yet independently audited: full screen-reader walkthrough and a light
+high-contrast theme. Those are explicit hardening items, not afterthoughts.
+Accessibility is part of the mission, not a separate mode.
+
 > **Safety:** nothing here redistributes firmware or clone images. Settings
 > writes are limited to the published catalog; the bootloader and factory
 > calibration are never touched. MCP failures can require a radio power cycle.

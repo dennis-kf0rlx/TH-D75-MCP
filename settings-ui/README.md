@@ -1,6 +1,9 @@
 # TH-D75 Settings UI
 
-Web settings editor for the TH-D75, with a persistent MCP session.
+A searchable, scalable web settings editor for the TH-D75 — built to replace
+the radio's tiny screen and keypad for menu work, and to make obscure settings
+findable without memorizing menu numbers. Accessibility and low-friction
+workflows are design goals, not add-ons.
 
 - **Backend:** Python 3 + `pyserial`; no npm or other runtime dependencies.
 - **Frontend:** plain HTML/CSS/JS served by the backend.
