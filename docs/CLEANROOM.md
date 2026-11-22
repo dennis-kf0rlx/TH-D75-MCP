@@ -33,9 +33,23 @@ Run 3 details:
 - `make check` passed again; `git status` clean; no push
 - No radio or service action was performed
 
+## Lazy setup path
+
+The interactive `bootstrap.sh --setup` path was exercised separately on a fresh
+Debian 13 VM with no git/make:
+
+- prompt-driven package install
+- udev rule creation
+- user serial group check
+- both systemd user services enabled and started
+- `d75mon` and `d75settings` bound **127.0.0.1:8099/8098**
+- no radio, settings writes, or LAN exposure
+
+This was a human-interactive flow driven through a pty, not a fresh agent.
+
 ## Limitations
 
-This validates **install/build/check** only. It does not validate udev, monitor
+This validates **install/build/check** and the interactive install path only. It does not validate udev, monitor
 operation, settings mode, MCP write behavior, GPS capture, or real-radio
 recovery. Those require a physical host and explicit user confirmation.
 
