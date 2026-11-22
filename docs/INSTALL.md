@@ -68,6 +68,17 @@ The tarball has a single top-level `thd75-tools/` directory and includes
 `scripts/bootstrap.sh`, the apps, docs, and the request stub. It does not include
 the request-only skill, firmware, clone images, values, or backups.
 
+## Validation
+
+End-to-end tested on a fresh Debian 13 VM with no git/make:
+
+- `install.sh --local-tarball ... --sha256 ... --setup --prefix ~/TH-D75-MCP`
+- checksum verified before extraction
+- interactive setup installed packages, udev rule, and both user services
+- `d75mon` and `d75settings` active and bound only to
+  **127.0.0.1:8099/8098**
+- no radio or settings writes; VM destroyed afterward
+
 ## Failure behavior
 
 - checksum mismatch → abort before extraction

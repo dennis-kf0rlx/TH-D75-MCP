@@ -46,6 +46,8 @@ Debian 13 VM with no git/make:
 - no radio, settings writes, or LAN exposure
 
 This was a human-interactive flow driven through a pty, not a fresh agent.
+The release `install.sh` path was also exercised end-to-end from a local
+checksum-verified tarball on a fresh VM; see `docs/INSTALL.md`.
 
 ## Limitations
 
