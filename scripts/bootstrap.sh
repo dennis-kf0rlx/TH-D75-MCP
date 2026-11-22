@@ -70,7 +70,18 @@ need() {
 
 check_venv() {
   python3 -m venv --help >/dev/null 2>&1 || \
-    die "python3 venv unavailable (Debian: sudo apt-get install -y python3-venv python3-pip)"
+    die "python3 venv unavailable (Debian: sudo apt-get install -y python3-venv python3-pip; Arch: sudo pacman -S python)"
+}
+
+check_pip() {
+  if python3 -m pip --version >/dev/null 2>&1; then
+    return 0
+  fi
+  # venv can bootstrap pip from ensurepip even when system pip is absent.
+  if python3 -c 'import ensurepip' >/dev/null 2>&1; then
+    return 0
+  fi
+  die "python3 pip unavailable (Debian: sudo apt-get install -y python3-pip; Arch: sudo pacman -S python-pip)"
 }
 
 check_python() {
@@ -109,6 +120,9 @@ install_deps_if_needed() {
     command -v "$cmd" >/dev/null 2>&1 || missing=1
   done
   python3 -m venv --help >/dev/null 2>&1 || missing=1
+  if ! python3 -m pip --version >/dev/null 2>&1 && ! python3 -c 'import ensurepip' >/dev/null 2>&1; then
+    missing=1
+  fi
 
   if [ "$missing" -eq 0 ]; then
     return 0
@@ -116,7 +130,7 @@ install_deps_if_needed() {
 
   note "Missing build prerequisites detected."
   confirm "Install them with sudo now?" || \
-    die "install git, make, python3-venv, python3-pip, ca-certificates, usbutils first"
+    die "install git, make, Python 3 with venv/pip, ca-certificates, usbutils first"
   command -v sudo >/dev/null 2>&1 || die "sudo not found; install prerequisites manually"
 
   if command -v cloud-init >/dev/null 2>&1; then
@@ -131,14 +145,14 @@ install_deps_if_needed() {
       sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils
       ;;
     *arch*)
-      sudo pacman -S --needed --noconfirm git make python usbutils
+      sudo pacman -S --needed --noconfirm git make python python-pip ca-certificates usbutils
       ;;
     *)
       die "unsupported distro '$ID'; install git, make, Python 3.10+, venv, usbutils"
       ;;
   esac
 
-  need python3; need git; need make; check_python; check_venv
+  need python3; need git; need make; check_python; check_venv; check_pip
 }
 
 setup_udev() {
@@ -228,6 +242,7 @@ if [ "$MODE" != "setup" ]; then
   need make
   check_python
   check_venv
+  check_pip
   validate_skill
 fi
 

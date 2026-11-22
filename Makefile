@@ -1,7 +1,7 @@
 PYTHON ?= python3
 VENV ?= .venv
 
-.PHONY: venv check run-settings run-monitor dist dist-clean test-installer uninstall clean
+.PHONY: venv check run-settings run-monitor dist dist-clean usb-kit test-installer uninstall clean
 
 venv: $(VENV)/bin/python
 
@@ -23,6 +23,9 @@ run-monitor: venv
 
 dist:
 	./scripts/build-release.sh dist
+
+usb-kit:
+	./scripts/build-usb-kit.sh
 
 test-installer:
 	./scripts/test-installer.sh

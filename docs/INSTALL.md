@@ -72,6 +72,18 @@ bash install.sh --no-setup
 `python3-venv`/`python3-pip`) and PyPI access for pyserial. `--setup` installs
 them after asking.
 
+Arch/CachyOS:
+
+```bash
+sudo pacman -S --needed git make python python-pip ca-certificates usbutils
+```
+
+Debian/Ubuntu:
+
+```bash
+sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils
+```
+
 ## Release assets
 
 A release contains:

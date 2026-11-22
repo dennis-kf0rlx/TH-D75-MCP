@@ -10,3 +10,5 @@ settings-ui/backups/
 settings-ui/.tmp/
 .venv/
 dist/
+dist-usb-kit/
+thd75-usb-kit.tar.gz
