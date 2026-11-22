@@ -100,8 +100,9 @@ bash thd75-install.sh
 ```
 
 The installer verifies the tarball checksum, extracts to `~/TH-D75-MCP`, and runs
-the interactive setup. See `docs/INSTALL.md`. The request-only Agent Skill is
-not in the release.
+the interactive setup. On a desktop it opens an install-notes page in the browser
+and then redirects to the settings UI. See `docs/INSTALL.md`. The request-only
+Agent Skill is not in the release.
 
 ## Build
 

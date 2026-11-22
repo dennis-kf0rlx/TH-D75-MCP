@@ -11,6 +11,7 @@ VERSION="latest"
 LOCAL_TARBALL=""
 SHA_FILE=""
 RUN_MODE="setup"       # setup | check | none
+NO_BROWSER="${D75_NO_BROWSER:-0}"
 TMPDIR_PATH=""
 
 usage() {
@@ -27,6 +28,7 @@ Options:
   --check                 Fetch/extract; run non-privileged checks only
   --setup                 Run interactive setup (default if no --check/--no-setup)
   --no-setup              Do not run the interactive udev/systemd setup
+  --no-browser            Do not open the install report
   --help                  This message
 
 Environment:
@@ -40,6 +42,100 @@ USAGE
 
 die() { printf 'ERROR: %s\n' "$*" >&2; exit 1; }
 note() { printf '==> %s\n' "$*"; }
+
+html_escape() {
+  printf '%s' "$1" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g'
+}
+
+open_report() {
+  local report="$1"
+  if [ "$NO_BROWSER" = "1" ]; then
+    note "browser launch disabled (--no-browser)"
+    return 0
+  fi
+  if [ -z "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ]; then
+    note "no desktop session detected; open this file manually: $report"
+    return 0
+  fi
+  if command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "file://$report" >/dev/null 2>&1 &
+  elif command -v gio >/dev/null 2>&1; then
+    gio open "file://$report" >/dev/null 2>&1 &
+  elif command -v sensible-browser >/dev/null 2>&1; then
+    sensible-browser "file://$report" >/dev/null 2>&1 &
+  else
+    note "no browser opener found; open this file manually: $report"
+  fi
+}
+
+write_report() {
+  local prefix="$1" mode="$2"
+  local report="$prefix/install-report.html"
+  local escaped_prefix
+  escaped_prefix="$(html_escape "$prefix")"
+  mkdir -p "$(dirname "$report")"
+
+  local title="TH-D75 tools installed"
+  local redirect=""
+  local status="Installed and checked."
+  local next_steps=""
+  case "$mode" in
+    setup)
+      title="TH-D75 tools installed — opening settings"
+      redirect='<meta http-equiv="refresh" content="5;url=http://127.0.0.1:8098/">'
+      status="Installed, checked, and the optional setup completed."
+      next_steps='<p><a href="http://127.0.0.1:8098/">Open the settings UI</a> &middot; <a href="http://127.0.0.1:8099/">Open the monitor</a></p><p class="big">Redirecting to the settings UI in 5 seconds…</p>'
+      ;;
+    check)
+      title="TH-D75 tools installed — checks complete"
+      status="Installed and non-privileged checks passed. Services were not started."
+      next_steps='<p>Start later with:</p><pre>cd '"$escaped_prefix"'
+./scripts/bootstrap.sh --setup</pre>'
+      ;;
+    none)
+      title="TH-D75 tools installed — setup skipped"
+      status="Installed; setup was skipped."
+      next_steps='<p>Run setup later:</p><pre>cd '"$escaped_prefix"'
+./scripts/bootstrap.sh --setup</pre>'
+      ;;
+  esac
+
+  cat >"$report" <<EOF
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+$redirect
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TH-D75 tools</title>
+<style>
+ body{font-family:system-ui,sans-serif;background:#0b0e13;color:#e8eef7;margin:0;padding:2rem;line-height:1.5}
+ main{max-width:760px;margin:auto}
+ h1{font-size:1.6rem} h2{font-size:1.1rem;margin-top:1.6rem;color:#63e0b2}
+ a{color:#7db5ff} code,pre{background:#121821;border:1px solid #263140;border-radius:6px;padding:.15rem .35rem}
+ pre{padding:.8rem;overflow:auto} .warn{border-left:3px solid #f3bd64;padding:.6rem 1rem;background:#201a10}
+ .big{font-size:1.1rem;color:#63e0b2} .muted{color:#93a2b7}
+</style></head><body><main>
+<h1>TH-D75 tools</h1>
+<p class="big">$status</p>
+<p class="muted">Installed to: <code>$escaped_prefix</code></p>
+$next_steps
+<h2>Safety</h2>
+<div class="warn">No authentication. Keep the UI on localhost or use an SSH tunnel. Do not expose it to the internet. The installer never wrote radio settings.</div>
+<h2>Before using</h2>
+<ul>
+<li>Connect the TH-D75 over USB and verify <code>/dev/thd75</code>.</li>
+<li>Settings mode pauses the monitor and can require one USB reset on exit.</li>
+<li>If MCP wedges the radio, power-cycle it physically.</li>
+<li>Read <code>SECURITY.md</code> and <code>docs/SAFETY.md</code> in the install directory.</li>
+</ul>
+<h2>Docs</h2>
+<p><a href="file://$escaped_prefix/README.md">README</a> &middot;
+<a href="file://$escaped_prefix/docs/INSTALL.md">Install notes</a> &middot;
+<a href="file://$escaped_prefix/docs/SAFETY.md">Safety</a></p>
+</main></body></html>
+EOF
+  note "install report: $report"
+  open_report "$report"
+}
 
 cleanup() {
   [ -n "$TMPDIR_PATH" ] && rm -rf "$TMPDIR_PATH"
@@ -55,6 +151,7 @@ while [ "$#" -gt 0 ]; do
     --check) RUN_MODE="check"; shift ;;
     --setup) RUN_MODE="setup"; shift ;;
     --no-setup) RUN_MODE="none"; shift ;;
+    --no-browser) NO_BROWSER=1; shift ;;
     --help|-h) usage; exit 0 ;;
     *) usage >&2; die "unknown option: $1" ;;
   esac
@@ -146,6 +243,8 @@ else
   note "starting interactive setup"
   ( cd "$PREFIX" && ./scripts/bootstrap.sh --setup )
 fi
+
+write_report "$PREFIX" "$RUN_MODE"
 
 cat <<EOF
 

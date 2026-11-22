@@ -48,7 +48,9 @@ bash thd75-install.sh
 ```
 
 It verifies the release checksum, extracts to `~/TH-D75-MCP`, and asks before
-udev/systemd setup. Do not pipe `curl` to Bash as the default.
+udev/systemd setup. In a graphical terminal it opens an install-report page in
+your browser, then redirects to the settings UI. Do not pipe `curl` to Bash as
+the default.
 
 ## Path B — do it yourself from a clone
 

@@ -20,6 +20,22 @@ bash thd75-install.sh
 Do **not** pipe `curl` directly to Bash as the default instruction. Download,
 review, then run.
 
+## Desktop experience
+
+Run the installer from a terminal in a graphical desktop session. After the
+checks/setup it writes:
+
+```text
+~/TH-D75-MCP/install-report.html
+```
+
+and opens it in the default browser. The report contains installation notes,
+the safety warning, links to the docs, and — after interactive setup — redirects
+to the settings UI at `http://127.0.0.1:8098/` after five seconds.
+
+Headless/SSH users get the file path printed instead. Use `--no-browser` to
+suppress the launch. No VM desktop is needed.
+
 ## What it does
 
 1. downloads the versioned tools tarball and its checksum
