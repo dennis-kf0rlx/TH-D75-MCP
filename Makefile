@@ -1,7 +1,7 @@
 PYTHON ?= python3
 VENV ?= .venv
 
-.PHONY: venv check run-settings run-monitor dist dist-clean test-installer clean
+.PHONY: venv check run-settings run-monitor dist dist-clean test-installer uninstall clean
 
 venv: $(VENV)/bin/python
 
@@ -26,6 +26,9 @@ dist:
 
 test-installer:
 	./scripts/test-installer.sh
+
+uninstall:
+	./scripts/uninstall.sh
 
 dist-clean:
 	rm -rf dist

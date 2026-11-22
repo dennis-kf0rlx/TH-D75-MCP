@@ -117,6 +117,7 @@ $redirect
 <h1>TH-D75 tools</h1>
 <p class="big">$status</p>
 <p class="muted">Installed to: <code>$escaped_prefix</code></p>
+<p>Uninstall later: <code>cd $escaped_prefix &amp;&amp; ./scripts/uninstall.sh</code></p>
 $next_steps
 <h2>Safety</h2>
 <div class="warn">No authentication. Keep the UI on localhost or use an SSH tunnel. Do not expose it to the internet. The installer never wrote radio settings.</div>
@@ -232,6 +233,11 @@ fi
 
 mkdir -p "$(dirname "$PREFIX")"
 mv -- "$SRC" "$PREFIX"
+cat > "$PREFIX/.thd75-install" <<MARKER
+version=$VERSION
+installed_at=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+source=$RELEASE_BASE
+MARKER
 note "installed to $PREFIX"
 
 if [ "$RUN_MODE" = "check" ]; then

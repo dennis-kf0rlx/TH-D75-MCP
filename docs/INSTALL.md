@@ -95,6 +95,32 @@ End-to-end tested on a fresh Debian 13 VM with no git/make:
   **127.0.0.1:8099/8098**
 - no radio or settings writes; VM destroyed afterward
 
+## Uninstall
+
+From the install directory:
+
+```bash
+cd ~/TH-D75-MCP
+./scripts/uninstall.sh --dry-run     # preview
+./scripts/uninstall.sh               # prompts
+```
+
+It stops/removes only user services whose unit files point at that install.
+It does **not** remove system packages or your serial-group membership.
+
+Useful flags:
+
+```text
+--remove-udev   also remove the TH-D75 udev rule (sudo)
+--keep-data     archive values/backups under ~ before removal
+--purge         do not archive values/backups
+--yes           non-interactive; does not remove udev unless asked
+--force         allow a tree without the install marker
+```
+
+Data is archived to `~/thd75-data-<timestamp>.tar.gz` by default when present.
+The script refuses `/`, `$HOME`, and non-TH-D75 directories unless forced.
+
 ## Failure behavior
 
 - checksum mismatch → abort before extraction
