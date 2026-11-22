@@ -62,16 +62,17 @@ Environment variables:
 The service must run as the same user as the monitor unit and needs permission to
 open the radio's serial device.
 
-## Install
+## Install (from the repo root)
 
 ```bash
-python3 -m venv ~/venv-d75settings
-~/venv-d75settings/bin/pip install pyserial
-D75_SERIAL=/dev/thd75 ~/venv-d75settings/bin/python server.py
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+D75_SERIAL=/dev/thd75 .venv/bin/python settings-ui/server.py
 ```
 
 Then open `http://<host>:8098/`. A systemd user unit is included as
-`systemd/d75settings.service.example`.
+`systemd/d75settings.service.example`; the README at the repository root has the
+full service setup.
 
 ## Catalog generation
 

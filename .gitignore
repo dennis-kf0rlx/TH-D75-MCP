@@ -8,3 +8,4 @@ __pycache__/
 settings-ui/values.json
 settings-ui/backups/
 settings-ui/.tmp/
+.venv/

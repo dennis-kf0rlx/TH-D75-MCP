@@ -24,27 +24,27 @@ d75mon/
 └── tests/test_cat.py      # parser / state tests
 ```
 
-## Install (on the host attached to the radio)
+## Install (from the repo root)
 
 ```bash
-python3 -m venv ~/venv-d75mon
-~/venv-d75mon/bin/pip install pyserial
-~/venv-d75mon/bin/python ~/d75mon/backend/d75mon.py --once      # smoke test
-~/venv-d75mon/bin/python -m unittest discover -s ~/d75mon/tests  # tests
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+.venv/bin/python d75mon/backend/d75mon.py --config d75mon/config.json --once
+.venv/bin/python -m unittest discover -s d75mon/tests
 ```
 
 Serve:
 
 ```bash
-~/venv-d75mon/bin/python ~/d75mon/backend/d75mon.py --config ~/d75mon/config.json
+.venv/bin/python d75mon/backend/d75mon.py --config d75mon/config.json
 # then open http://<host>:8099/
 ```
 
-Or install the user unit:
+Or install the user unit (adjust paths if you cloned outside `~/TH-D75-MCP`):
 
 ```bash
 mkdir -p ~/.config/systemd/user
-cp ~/d75mon/systemd/d75mon.service ~/.config/systemd/user/
+cp d75mon/systemd/d75mon.service.example ~/.config/systemd/user/d75mon.service
 systemctl --user daemon-reload
 systemctl --user enable --now d75mon.service
 journalctl --user -u d75mon.service -f
