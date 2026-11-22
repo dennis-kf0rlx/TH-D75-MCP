@@ -1,0 +1,15 @@
+{
+  "host": "0.0.0.0",
+  "port": 8099,
+  "transport": "auto",
+  "usb_candidates": ["/dev/thd75", "/dev/ttyACM0"],
+  "bluetooth": "/dev/rfcomm0",
+  "baudrate": 9600,
+  "fast_interval": 0.25,
+  "slow_interval": 5.0,
+  "poll_interval": 2.0,
+  "reconnect_interval": 3.0,
+  "command_timeout": 0.6,
+  "web_dir": "web",
+  "asset_dir": ""
+}

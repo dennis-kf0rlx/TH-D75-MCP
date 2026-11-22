@@ -1,0 +1,218 @@
+row	label	menu	setting_id	offset	score	status	category
+0	Encode Speed	160	radio.DtmfSpeed	0x101F	100	mapped	setting
+1	Pause Time	161	radio.DtmfPauseTime	0x1020	85.0	mapped	setting
+2	TX Hold	162	radio.DtmfTxHold	0x1021	85.0	mapped	setting
+3	DTMF Memory				37.5	unmapped	list
+4	EchoLink Memory				0	unmapped	list
+5	Break-In				0	non-mcp	non-mcp
+6	Delay Time				0	non-mcp	non-mcp
+7	Pitch Frequency	170	radio.CwPitchFreq	0x1024	100	mapped	setting
+8	CW on FM				20.9	non-mcp	non-mcp
+9	Reverse	171	radio.CwReverse	0x1026	85.0	mapped	setting
+10	QSO Log	180	radio.QsoLog	0x1027	85.0	mapped	setting
+11	LED Control	181	radio.LedControl_Receive	0x1028	85.0	mapped	setting
+12	View List				12.8	unmapped	action
+13	Group Name				15.4	unmapped	list
+14	Recall Method	202	radio.RecallMethod	0x1030	85.0	mapped	setting
+15	Group Link	203	radio.GroupLink0	0x10A0	85.0	mapped	setting
+16	CALL Ch List				9.6	unmapped	list
+17	Lockout				10.9	unmapped	list
+18	Recording	302	radio.RecordingBand	0x1031	85.0	mapped	setting
+19	Recording Band	302	radio.RecordingBand	0x1031	85.0	mapped	setting
+20	TX Monitor	311	radio.TxMonitor	0x1032	85.0	mapped	setting
+21	Digital Auto Reply	312	dv.AutoReply	0x1A20	63.0	mapped	setting
+22	Built-in GPS	400	gps.BuiltInGps	0x1100	85.0	mapped	setting
+23	My Position	401	gps.MyPositionList[0].Altitude	0x1120	85.0	mapped	setting
+24	Position Ambiguity	402	gps.PositionAmbiguity	0x1101	85.0	mapped	setting
+25	Operating Mode	403	gps.OperatingMode	0x1102	85.0	mapped	setting
+26	Battery Saver	404	gps.BatterySaver	0x1103	85.0	mapped	setting
+27	PC Output	405	gps.PcOutput	0x1104	85.0	mapped	setting
+28	Sentence	406	gps.Sentence_Gpgga	0x1105	85.0	mapped	setting
+29	Clear Track Log				60.0	review	action
+30	Record Method	412	gps.RecodeMethod	0x1108	100	mapped	setting
+31	Interval	413	gps.Interval	0x1110	85.0	mapped	setting
+32	Distance	414	gps.Distance	0x1112	85.0	mapped	setting
+33	My Callsign	500	aprs.MyCallsign	0x1200	85.0	mapped	setting
+34	Icon	501	aprs.IconTableOverlay	0x1367	85.0	mapped	setting
+35	Position Comment	502	aprs.PositionComment	0x1222	85.0	mapped	setting
+36	Status Text	503	aprs.StatusTextSelect	0x122F	85.0	mapped	setting
+37	Packet Path	504	aprs.PacketPathType	0x1375	85.0	mapped	setting
+38	Data Speed	505	aprs.TncDataSpeed	0x120C	85.0	mapped	setting
+39	Data Band	506	aprs.TncDataBand	0x120B	85.0	mapped	setting
+40	DCD Sense	507	aprs.TncDcdSense	0x120D	85.0	mapped	setting
+41	TX Delay	508	aprs.TncTxDelay	0x120F	85.0	mapped	setting
+42	APRS Lock	509	aprs.AprsKey	0x120A	100	mapped	setting
+43	Method	510	aprs.BeaconTxMethod	0x136A	85.0	mapped	setting
+44	Initial Interval	511	aprs.BeaconTxInterval	0x136B	100	mapped	setting
+45	Decay Algorithm	512	aprs.BeaconTxDecay	0x136C	100	mapped	setting
+46	Prop. Pathing	513	aprs.BeaconTxProportion	0x136D	100	mapped	setting
+47	Speed	514	aprs.BeaconSpeedOff	0x1220	85.0	mapped	setting
+48	Altitude	515	aprs.BeaconAltitudeOff	0x1221	85.0	mapped	setting
+49	Object	516	aprs.ObjectList[0].LatitudeDegree	0x1900	85.0	mapped	setting
+50	QSY Info. in Status	520	aprs.QsyInStatus	0x1361	62.7	mapped	setting
+51	Tone/Narrow	521	aprs.QsyToneNarrow	0x1362	85.0	mapped	setting
+52	Shift/Offset	522	aprs.QsyShiftOffset	0x1363	85.0	mapped	setting
+53	QSY Limit Distance	523	aprs.QsyLimit	0x1364	100	mapped	setting
+54	Low/High Speed	530	aprs.LowSpeedSpeed	0x136E	100	mapped	setting
+55	Slow Rate	531	aprs.SlowRateTime	0x1370	85.0	mapped	setting
+56	Fast Rate	532	aprs.FastRateTime	0x1371	85.0	mapped	setting
+57	Turn Angle	533	aprs.TurnAngleDeg	0x1372	85.0	mapped	setting
+58	Turn Slope	534	aprs.TurnSlopeDegSpeed	0x1373	85.0	mapped	setting
+59	Turn Time	535	aprs.TurnTimeTime	0x1374	85.0	mapped	setting
+60	Format	540	aprs.WaypointFormat	0x1213	85.0	mapped	setting
+61	Length	541	aprs.WaypointLength	0x1214	85.0	mapped	setting
+62	Output	542	aprs.WaypointOutput	0x1215	85.0	mapped	setting
+63	Position Limit	550	aprs.FilterPositionLimit	0x1365	85.0	mapped	setting
+64	Filter Type	551	aprs.FilterType_Weather	0x1366	85.0	mapped	setting
+65	User Phrases				38.7	unmapped	list
+66	Auto Reply	561	aprs.AutoReplyOnOff	0x14B0	85.0	mapped	setting
+67	Reply To	562	aprs.AutoReplyTargetCall	0x14F5	100	mapped	setting
+68	Reply Delay Time	563	aprs.AutoReplyDelayTime	0x14B1	85.0	mapped	setting
+69	Reply Message Text	564	aprs.AutoReplyMessage	0x14B2	100	mapped	setting
+70	RX Beep	570	aprs.RxBeepType	0x185E	85.0	mapped	setting
+71	TX Beep	571	aprs.TxBeepOnOff	0x185F	85.0	mapped	setting
+72	Special Call	572	aprs.SpecialCall	0x1860	85.0	mapped	setting
+73	Display Area	573	aprs.InterruptDisplayArea	0x1869	85.0	mapped	setting
+74	Interrupt Time	574	aprs.InterruptDisplayTime	0x186A	61.4	mapped	setting
+75	APRS Voice	575	aprs.AprsVoice	0x1219	85.0	mapped	setting
+76	Network	591	aprs.NetworkType	0x1460	85.0	mapped	setting
+77	Voice Alert		aprs.VoiceAlertOnOff	0x121A	100	mapped	setting
+78	VA Frequency	592	aprs.VoiceAlertToneNo	0x121B	100	mapped	setting
+79	Message Group Code	594	aprs.MessageGroup	0x1800	63.3	mapped	setting
+80	Bulletin Group Code	595	aprs.BulletinGroup	0x183B	63.9	mapped	setting
+81	Beacon Type		aprs.BeaconType	0x1209	100	mapped	setting
+82	NAVITRA Group Mode		aprs.NavitraGroupModeOnOff	0x1871	100	mapped	setting
+83	NAVITRA Group Code		aprs.NavitraGroupCode	0x1872	100	mapped	setting
+84	NAVITRA Message		aprs.NavitraMessageSelect	0x18D9	100	mapped	setting
+85	Digipeat(MyCall)	580	aprs.DigipeatMyCallsign	0x146C	85.0	mapped	setting
+86	UIcheck	581	aprs.UIcheck	0x146D	85.0	mapped	setting
+87	UIdigipeat	582	aprs.UIdigipeat	0x146E	85.0	mapped	setting
+88	UIdigi Aliases	583	aprs.UIdigiAliases	0x146F	85.0	mapped	setting
+89	UIflood	584	aprs.UIflood	0x14A6	85.0	mapped	setting
+90	UIflood Alias	585	aprs.UIfloodAliases	0x14A7	85.0	mapped	setting
+91	UIfloodSubstitution	586	aprs.UIfloodSubstitution	0x14AC	85.0	mapped	setting
+92	UItrace	587	aprs.UItrace	0x14A0	85.0	mapped	setting
+93	UItrace Alias	588	aprs.UItraceAliases	0x14A1	85.0	mapped	setting
+94	View History				15.4	unmapped	action
+95	TX Message				39.1	unmapped	list
+96	Direct Reply	612	dv.DirectReplyTxRx	0x1A00	85.0	mapped	setting
+97	Auto Reply Timing	613	dv.AutoReplyTimingTxRx	0x1A01	85.0	mapped	setting
+98	Data TX End Timing	614	dv.DataTxEndTimingTxRx	0x1A02	85.0	mapped	setting
+99	EMR Volume Level	615	dv.EmrVolumeLevelTxRx	0x1A03	85.0	mapped	setting
+100	RX AFC	616	dv.RxAfcTxRx	0x1A04	85.0	mapped	setting
+101	FM Auto Det. on DV	617	dv.FmAutoDetOnDvTxRx	0x1A05	85.0	mapped	setting
+102	Data Frame Output	618	dv.DataFrameOutputTxRx	0x1A06	100	mapped	setting
+103	Break Call	619	dv.BreakCall	0x1A07	100	mapped	setting
+104	Select Type	620	dv.DigitalSquelchType	0x1A08	100	mapped	setting
+105	Digital Code	621	dv.DigitalCode	0x1A09	100	mapped	setting
+106	GPS Info. in Frame	630	dv.GpsInfoInFrameGpsDataTx	0x1A0A	85.0	mapped	setting
+107	Auto TX	632	dv.AutoTxGpsDataTx	0x1A0C	85.0	mapped	setting
+108	Display Method	640	dv.DisplayMethodRxNotification	0x1A0D	85.0	mapped	setting
+109	Single Display Size	641	dv.SingleDisplaySizeRxNotification	0x1A0E	85.0	mapped	setting
+110	Dual Display Size	642	dv.DualDisplaySizeRxNotification	0x1A0F	85.0	mapped	setting
+111	Display Hold Time	643	dv.DisplayHoldTimeRxNotification	0x1A10	85.0	mapped	setting
+112	Callsign Announce	644	dv.CallsignAnnounceRxNotification	0x1A11	85.0	mapped	setting
+113	Standby Beep	645	dv.StandbyBeepRxNotification	0x1A12	85.0	mapped	setting
+114	DV Gateway Mode	650	dv.DvGatewayModeDvGateway	0x1CA0	85.0	mapped	setting
+115	My Callsign	651	dv.MyCallsignSelectDvGateway	0x1CA1	85.0	mapped	setting
+116	RPT1	652	dv.RPT1DvGateway	0x1CF0	85.0	mapped	setting
+117	RPT2	653	dv.RPT2DvGateway	0x1CF8	85.0	mapped	setting
+118	FM Radio Mode	700	radio.FmRadioMode	0x1040	85.0	mapped	setting
+119	Auto Mute RET. Time	701	radio.AutoMuteRetTime	0x1041	85.0	mapped	setting
+120	FM Radio List				25.8	unmapped	action
+121	Config Data				0	unmapped	action
+122	Config Data + V.Msg				0	unmapped	action
+123	Repeater List Only				0	unmapped	action
+124	Callsign List Only				0	unmapped	action
+125	Execute				0	unmapped	action
+126	View				0	unmapped	action
+127	microSD Card				0	unmapped	action
+128	Backlight Control	900	radio.BacklightControl	0x1060	85.0	mapped	setting
+129	Backlight Timer	901	radio.BacklightTimer	0x1061	85.0	mapped	setting
+130	LCD Brightness	902	radio.LcdBrightness	0x1062	85.0	mapped	setting
+131	Power-on Message	903	radio.PowerOnMessage	0x10C0	85.0	mapped	setting
+132	Single Band Display	904	radio.SingleBandDisplay	0x1063	85.0	mapped	setting
+133	Meter Type	905	radio.MeterType	0x1064	85.0	mapped	setting
+134	Background Color	906	radio.BackgroundColor	0x1065	85.0	mapped	setting
+135	Info. Backlight	907	radio.InfoBacklight	0x1096	85.0	mapped	setting
+136	Balance	910	radio.Balance	0x1066	85.0	mapped	setting
+137	TX/RX EQ	911	radio.TxEqualizerFmNfm	0x1067	100	mapped	setting
+138	TX EQ Level	912	radio.TxEqLevel04	0x1068	85.0	mapped	setting
+139	RX EQ Level	913	radio.RxEqLevel04	0x106C	85.0	mapped	setting
+140	Beep	914	radio.Beep	0x1071	85.0	mapped	setting
+141	Beep Volume	915	radio.BeepVolume	0x1072	85.0	mapped	setting
+142	Voice Guidance	916	radio.VoiceAnnounce	0x1073	100	mapped	setting
+143	Voice Guidance Vol.	917	radio.VoiceAnnounceVolume	0x1074	100	mapped	setting
+144	VoiceGuidanceSpeed	918	radio.VoiceGuidanceSpeed	0x1097	85.0	mapped	setting
+145	USB Audio Out. Lvl.	91A	radio.UsbAudioOutLevel	0x1075	100	mapped	setting
+146	Callsign Readout	919	radio.CallsignReadout	0x1095	100	mapped	setting
+147	Battery Saver	920	radio.BatterySaver	0x1076	100	mapped	setting
+148	APO: Auto Power Off	921	radio.AutoPowerOff	0x1077	100	mapped	setting
+149	Battery Level	922			43.3	unmapped	status
+150	Charging	923	radio.Charging	0x1094	100	mapped	setting
+151	Bluetooth	930	radio.BluetoothOnOff	0x1078	100	mapped	setting
+152	Connect	936	radio.BluetoothAutoConnect	0x1079	85.0	mapped	setting
+153	Device Search				0	unmapped	action
+154	Disconnect				0	unmapped	action
+155	Pairing Mode				43.3	unmapped	action
+156	Device Information	935			31.1	unmapped	status
+157	Auto Connect	936	radio.BluetoothAutoConnect	0x1079	100	mapped	setting
+158	PF1 Key	940	radio.Pf1PfKey	0x107A	100	mapped	setting
+159	PF2 Key	941	radio.Pf2PfKey	0x107B	100	mapped	setting
+160	PF1 (Mic)	942	radio.Pf1Mic	0x107C	85.0	mapped	setting
+161	PF2 (Mic)	943	radio.Pf2Mic	0x107D	85.0	mapped	setting
+162	PF3 (Mic)	944	radio.Pf3Mic	0x107E	85.0	mapped	setting
+163	Cursor Shift	945	radio.CursorShift	0x107F	85.0	mapped	setting
+164	Secret Access Code	946	radio.RemoteContorolCode	0x1080	100	mapped	setting
+165	Power-on Password				46.2	non-mcp	non-mcp
+166	Setting	950			12.9	unmapped	action
+167	Keys Lock Type	960	radio.KeyLockTypeKeyLock	0x1084	100	mapped	setting
+168	DTMF Keys Lock	961	radio.DtmfKeys	0x1085	100	mapped	setting
+169	Mic Keys Lock	962	radio.MicKeys	0x1086	100	mapped	setting
+170	Volume Lock	963	radio.VolumeLockOnOff	0x1087	85.0	mapped	setting
+171	Speed, Distance	970	radio.SpeedDistance	0x1088	85.0	mapped	setting
+172	Altitude, Rain	971	radio.AltitudeRain	0x1089	85.0	mapped	setting
+173	Temperature	972	radio.Temperature	0x108A	85.0	mapped	setting
+174	Latitude, Longitude	973	radio.LatitudeLongitude	0x108B	85.0	mapped	setting
+175	Grid Square Format	974	radio.GridSquareFormat	0x108C	85.0	mapped	setting
+176	USB Function	980	radio.UsbFunction	0x108D	85.0	mapped	setting
+177	PC Output(GPS)	981	radio.PcOutputInterfaceGps	0x108E	61.9	mapped	setting
+178	PC Output(APRS)	982	radio.PcOutputInterfaceAprs	0x108F	62.8	mapped	setting
+179	KISS	983	radio.KissModeInterface	0x1090	85.0	mapped	setting
+180	DV/DR	984	radio.DigitalModeInterface	0x1091	100	mapped	setting
+181	DV Gateway	985	radio.DvGatewayInterface	0x1093	85.0	mapped	setting
+182	Language	990	radio.Language	0x1092	85.0	mapped	setting
+183	Version	991			0	unmapped	action
+184	Reset	999			0	unmapped	action
+185	Date(Y/M/D)	950			22.2	unmapped	action
+186	Date(M/D/Y)	950			22.2	unmapped	action
+187	Date(D/M/Y)	950			22.2	unmapped	action
+188	Time	950	aprs.SlowRateTime	0x1370	85.0	mapped	setting
+189	Time Zone	950	radio.TimeZone	0x1083	85.0	mapped	setting
+190	0.4 kHz				0	unmapped	action
+191	0.8 kHz				0	unmapped	action
+192	1.6 kHz				0	unmapped	action
+193	3.2 kHz				0	unmapped	action
+194	6.4 kHz				0	unmapped	action
+195	Group	203	radio.GroupLink0	0x10A0	85.0	mapped	setting
+196	Memory Group				35.1	unmapped	list
+197	Name	401	gps.MyPositionList[0].Name	0x112E	85.0	mapped	setting
+198	Repeat				15.2	unmapped	list
+199	Repeat Interval				53.8	review	list
+200	Callsign	500	aprs.MyCallsign	0x1200	85.0	mapped	setting
+201	Memo				0	unmapped	list
+202	Sub Name				38.8	unmapped	list
+203	Callsign (RPT1)				41.3	unmapped	list
+204	Gateway (RPT2)				54.9	review	list
+205	Frequency				0	unmapped	list
+206	Shift	101	radio.BeatShift	0x1000	85.0	mapped	setting
+207	Offset	141	radio.AutoOffset	0x1018	85.0	mapped	setting
+208	Pos. Accuracy				20.0	unmapped	list
+209	Latitude	516	aprs.ObjectList[0].LatitudeDegree	0x1900	85.0	mapped	setting
+210	Longitude	516	aprs.ObjectList[0].LongitudeDegree	0x1904	85.0	mapped	setting
+211	Time Zone	950	radio.TimeZone	0x1083	85.0	mapped	setting
+212	Set Property				0	unmapped	action
+213	Memory Shift(M>V)				0	unmapped	action
+214	Clear Memory				0	unmapped	action
+215	Clear Group				0	unmapped	action
+216	Send				0	unmapped	action

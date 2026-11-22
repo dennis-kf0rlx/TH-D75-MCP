@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TH-D75 Monitor</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="radio">
+    <header class="topbar">
+      <div class="brand">
+        <span class="model">TH-D75</span>
+        <span class="sub">MONITOR</span>
+      </div>
+      <div class="badges">
+        <span id="link-badge" class="badge bad">OFFLINE</span>
+        <span id="transport" class="badge dim">--</span>
+        <span id="fw" class="badge dim">FW --</span>
+      </div>
+    </header>
+
+    <section class="bands" aria-label="bands">
+      <div class="band a">
+        <div class="band-head"><span>BAND A</span><span class="tag">LIVE · DDR</span></div>
+        <div class="freq" id="freq-a">---.----</div>
+        <div class="band-sub" id="chan-a">live VFO read via firmware DDR patch</div>
+      </div>
+      <div class="band b">
+        <div class="band-head"><span>BAND B</span><span class="tag">LIVE · DDR</span></div>
+        <div class="freq" id="freq-b">---.----</div>
+        <div class="band-sub" id="chan-b">live VFO B read via firmware DDR patch</div>
+      </div>
+    </section>
+
+    <section class="statusbar">
+      <div class="cell"><label>CALLSIGN</label><b id="callsign">--</b></div>
+      <div class="cell"><label>RADIO CLOCK</label><b id="clock">--</b></div>
+      <div class="cell"><label>TRANSPORT</label><b id="last-update">--</b></div>
+    </section>
+
+    <section id="error" class="error hidden"></section>
+
+    <section class="screenpanel">
+      <div class="screen-head">
+        <span>RADIO LCD</span>
+        <span id="screen-status" class="dim">off</span>
+        <button id="screen-toggle" class="btn">SHOW SCREEN</button>
+      </div>
+      <div id="screen-wrap" class="screen-wrap hidden">
+        <img id="screen-img" alt="TH-D75 LCD screen">
+      </div>
+    </section>
+
+    <section class="grid" id="fields"></section>
+
+    <details class="raw">
+      <summary>RAW CAT RESPONSES</summary>
+      <table>
+        <thead><tr><th>field</th><th>cmd</th><th>response</th></tr></thead>
+        <tbody id="raw-body"></tbody>
+      </table>
+    </details>
+
+    <footer>
+      <span id="status-line">starting…</span>
+      <span class="dim">d75mon v0 · stock CAT telemetry</span>
+    </footer>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>

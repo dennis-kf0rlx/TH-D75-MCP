@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TH-D75 Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="radio-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
+      <div>
+        <h1>TH-D75 <em>Settings</em></h1>
+        <p class="subtitle">Menu configuration · pick by name, no menu numbers</p>
+      </div>
+    </div>
+
+    <div class="top-meta">
+      <span class="chip chip-live" id="connection-chip"><span class="dot"></span><span id="connection-text">Preview data</span></span>
+      <span class="chip" id="radio-meta">TH-D75 · V1.03</span>
+    </div>
+
+    <div class="top-actions">
+      <button class="btn btn-ghost" id="exit-settings" type="button" hidden>Exit settings</button>
+      <button class="btn btn-ghost" id="read-radio" type="button">Read from radio</button>
+      <button class="btn btn-ghost" id="advanced-toggle" type="button" aria-pressed="false">Advanced</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Categories">
+      <div class="sidebar-head">Categories</div>
+      <nav id="category-nav" class="category-nav"></nav>
+      <div class="sidebar-note">
+        <strong>Live catalogue.</strong> Values are read from the radio's clone
+        image; Apply writes only the changed bytes and verifies them by read-back.
+      </div>
+    </aside>
+
+    <main class="content">
+      <div class="toolbar">
+        <label class="search">
+          <span class="search-icon" aria-hidden="true">⌕</span>
+          <input id="search" type="search" placeholder="Search settings — try backlight, VOX, APO…" autocomplete="off" spellcheck="false">
+          <kbd>/</kbd>
+        </label>
+        <label class="changed-filter">
+          <input type="checkbox" id="changed-only">
+          <span>Changed only</span>
+        </label>
+        <div class="result-count" id="result-count" aria-live="polite"></div>
+      </div>
+
+      <div class="list-wrap">
+        <div id="settings-list" class="settings-list" role="list"></div>
+        <div id="empty" class="empty" hidden>
+          <div class="empty-mark" aria-hidden="true">⌕</div>
+          <h2>No settings found</h2>
+          <p>Try a different term, or clear the search and category filter.</p>
+          <button class="btn btn-ghost" type="button" id="clear-filters">Clear filters</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <footer class="actionbar" id="actionbar">
+    <div class="change-summary" id="change-summary">No unsaved changes</div>
+    <div class="action-buttons">
+      <button class="btn btn-ghost" id="revert" type="button" disabled>Revert</button>
+      <button class="btn btn-primary" id="apply" type="button" disabled>Apply changes</button>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="catalog.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,401 @@
+setting_id	offset_hex	menu_numbers	firmware_rows	firmware_labels
+radio.PoweronBitmap	0x50000			
+radio.InfoBacklight	0x1096	907	135	Info. Backlight
+radio.Balance	0x1066	910	136	Balance
+radio.TxEqualizerFmNfm	0x1067	911		
+radio.TxEqualizerDv	0x1067	911		
+radio.RxEqualizer	0x1067	911		
+radio.TxEqLevel04	0x1068	912		
+radio.TxEqLevel08	0x1069	912		
+radio.TxEqLevel16	0x106A	912		
+radio.TxEqLevel32	0x106B	912		
+radio.RxEqLevel04	0x106C	913		
+radio.RxEqLevel08	0x106D	913		
+radio.RxEqLevel16	0x106E	913		
+radio.RxEqLevel32	0x106F	913		
+radio.RxEqLevel64	0x1070	913		
+radio.Beep	0x1071	914	140	Beep
+radio.BeepVolume	0x1072	915	141	Beep Volume
+radio.VoiceAnnounce	0x1073	916		
+radio.VoiceAnnounceVolume	0x1074	917		
+radio.UsbAudioOutLevel	0x1075	91A		
+radio.VoiceGuidanceSpeed	0x1097	918	144	VoiceGuidanceSpeed
+radio.CallsignReadout	0x1095	919	146	Callsign Readout
+radio.BatterySaver	0x1076	920	26 147	Battery Saver | Battery Saver
+radio.AutoPowerOff	0x1077	921		
+radio.Charging	0x1094	923	150	Charging
+radio.BluetoothOnOff	0x1078	930		
+radio.BluetoothAutoConnect	0x1079	936		
+radio.Pf1PfKey	0x107A	940		
+radio.Pf2PfKey	0x107B	941		
+radio.Pf1Mic	0x107C	942	160	PF1 (Mic)
+radio.Pf2Mic	0x107D	943	161	PF2 (Mic)
+radio.Pf3Mic	0x107E	944	162	PF3 (Mic)
+radio.CursorShift	0x107F	945	163	Cursor Shift
+radio.RemoteContorolCode	0x1080	946		
+radio.TimeZone	0x1083	950	189 211	Time Zone | Time Zone
+radio.KeyLockTypeKeyLock	0x1084	960		
+radio.KeyLockTypeFrequencyLock	0x1084	960		
+radio.DtmfKeys	0x1085	961		
+radio.MicKeys	0x1086	962		
+radio.VolumeLockOnOff	0x1087	963		
+radio.SpeedDistance	0x1088	970	171	Speed, Distance
+radio.AltitudeRain	0x1089	971	172	Altitude, Rain
+radio.Temperature	0x108A	972	173	Temperature
+radio.LatitudeLongitude	0x108B	973	174	Latitude, Longitude
+radio.GridSquareFormat	0x108C	974	175	Grid Square Format
+radio.UsbFunction	0x108D	980	176	USB Function
+radio.PcOutputInterfaceGps	0x108E	981		
+radio.PcOutputInterfaceAprs	0x108F	982		
+radio.KissModeInterface	0x1090	983		
+radio.DigitalModeInterface	0x1091	984		
+radio.DvGatewayInterface	0x1093	985		
+radio.Language	0x1092	990	182	Language
+radio.GroupLink0	0x10A0	203		
+radio.GroupLink1	0x10A1	203		
+radio.GroupLink2	0x10A2	203		
+radio.GroupLink3	0x10A3	203		
+radio.GroupLink4	0x10A4	203		
+radio.GroupLink5	0x10A5	203		
+radio.GroupLink6	0x10A6	203		
+radio.GroupLink7	0x10A7	203		
+radio.GroupLink8	0x10A8	203		
+radio.GroupLink9	0x10A9	203		
+radio.GroupLink10	0x10AA	203		
+radio.GroupLink11	0x10AB	203		
+radio.GroupLink12	0x10AC	203		
+radio.GroupLink13	0x10AD	203		
+radio.GroupLink14	0x10AE	203		
+radio.GroupLink15	0x10AF	203		
+radio.GroupLink16	0x10B0	203		
+radio.GroupLink17	0x10B1	203		
+radio.GroupLink18	0x10B2	203		
+radio.GroupLink19	0x10B3	203		
+radio.GroupLink20	0x10B4	203		
+radio.GroupLink21	0x10B5	203		
+radio.GroupLink22	0x10B6	203		
+radio.GroupLink23	0x10B7	203		
+radio.GroupLink24	0x10B8	203		
+radio.GroupLink25	0x10B9	203		
+radio.GroupLink26	0x10BA	203		
+radio.GroupLink27	0x10BB	203		
+radio.GroupLink28	0x10BC	203		
+radio.GroupLink29	0x10BD	203		
+radio.PowerOnMessage	0x10C0	903	131	Power-on Message
+radio.BluetoothDeviceName	0x10D0	935		
+radio.BeatShift	0x1000	101		
+radio.TxInhibit	0x1001	110		
+radio.DetectOutput	0x1002	102		
+radio.TimeOutTimer	0x1003	111		
+radio.BarAntenna	0x1005	104		
+radio.MicSensitivity	0x1006	112		
+radio.WxAlert	0x1007	105		
+radio.SsbHighCut	0x1008	120		
+radio.CwWidth	0x1009	121		
+radio.AmHighCut	0x100A	122		
+radio.ScanResumeAnalog	0x100C	130		
+radio.ScanResumeDigital	0x100D	131		
+radio.TimeRestart	0x100E	132		
+radio.CarrierRestart	0x100F	133		
+radio.PriorityScan	0x1011	134		
+radio.ScanAutoBacklight	0x1012	135		
+radio.AutoWeatherScan	0x1013	136		
+radio.AutoOffset	0x1018	141		
+radio.CallKey	0x1019	142		
+radio.TxHold1750Hz	0x101A	143		
+radio.Vox	0x101B	150		
+radio.VoxGain	0x101C	151		
+radio.VoxDelay	0x101D	152		
+radio.VoxTxOnBusy	0x101E	153		
+radio.DtmfSpeed	0x101F	160		
+radio.DtmfPauseTime	0x1020	161		
+radio.DtmfTxHold	0x1021	162		
+radio.CwPitchFreq	0x1024	170		
+radio.CwReverse	0x1026	171		
+radio.QsoLog	0x1027	180	10	QSO Log
+radio.LedControl_Receive	0x1028	181		
+radio.LedControl_FmRadio	0x1028	181		
+radio.RecallMethod	0x1030	202	14	Recall Method
+radio.RecordingBand	0x1031	302	19	Recording Band
+radio.TxMonitor	0x1032	311	20	TX Monitor
+radio.FmRadioMode	0x1040	700	118	FM Radio Mode
+radio.AutoMuteRetTime	0x1041	701	119	Auto Mute RET. Time
+radio.EarphoneAntenna	0x1042			
+radio.BacklightControl	0x1060	900	128	Backlight Control
+radio.BacklightTimer	0x1061	901	129	Backlight Timer
+radio.LcdBrightness	0x1062	902	130	LCD Brightness
+radio.SingleBandDisplay	0x1063	904	132	Single Band Display
+radio.MeterType	0x1064	905	133	Meter Type
+radio.BackgroundColor	0x1065	906	134	Background Color
+gps.BuiltInGps	0x1100	400	22	Built-in GPS
+gps.PositionAmbiguity	0x1101	402	24	Position Ambiguity
+gps.OperatingMode	0x1102	403	25	Operating Mode
+gps.BatterySaver	0x1103	404	26 147	Battery Saver | Battery Saver
+gps.PcOutput	0x1104	405	27	PC Output
+gps.Sentence_Gpgga	0x1105	406		
+gps.Sentence_Gpgll	0x1105	406		
+gps.Sentence_Gprmc	0x1105	406		
+gps.Sentence_Gpvtg	0x1105	406		
+gps.Sentence_Gpgsa	0x1105	406		
+gps.Sentence_Gpgsv	0x1105	406		
+gps.TrackLog	0x1106	410		
+gps.RecodeMethod	0x1108	412		
+gps.Interval	0x1110	413	31	Interval
+gps.Distance	0x1112	414	32	Distance
+gps.MyPositionSelect	0x11C0	401		
+gps.MyPositionList[0].Altitude	0x1120	401	48	Altitude
+gps.MyPositionList[0].NorthSouth	0x112C	401		
+gps.MyPositionList[0].LatitudeDegree	0x1124	401		
+gps.MyPositionList[0].LatitudeMinute	0x1125	401		
+gps.MyPositionList[0].LatitudeSecondEncoded	0x1126	401		
+gps.MyPositionList[0].EastWest	0x112C	401		
+gps.MyPositionList[0].LongitudeDegree	0x1128	401		
+gps.MyPositionList[0].LongitudeMinute	0x1129	401		
+gps.MyPositionList[0].LongitudeSecondEncoded	0x112A	401		
+gps.MyPositionList[0].Name	0x112E	401	197	Name
+gps.MyPositionList[1].Altitude	0x1140	401	48	Altitude
+gps.MyPositionList[1].NorthSouth	0x114C	401		
+gps.MyPositionList[1].LatitudeDegree	0x1144	401		
+gps.MyPositionList[1].LatitudeMinute	0x1145	401		
+gps.MyPositionList[1].LatitudeSecondEncoded	0x1146	401		
+gps.MyPositionList[1].EastWest	0x114C	401		
+gps.MyPositionList[1].LongitudeDegree	0x1148	401		
+gps.MyPositionList[1].LongitudeMinute	0x1149	401		
+gps.MyPositionList[1].LongitudeSecondEncoded	0x114A	401		
+gps.MyPositionList[1].Name	0x114E	401	197	Name
+gps.MyPositionList[2].Altitude	0x1160	401	48	Altitude
+gps.MyPositionList[2].NorthSouth	0x116C	401		
+gps.MyPositionList[2].LatitudeDegree	0x1164	401		
+gps.MyPositionList[2].LatitudeMinute	0x1165	401		
+gps.MyPositionList[2].LatitudeSecondEncoded	0x1166	401		
+gps.MyPositionList[2].EastWest	0x116C	401		
+gps.MyPositionList[2].LongitudeDegree	0x1168	401		
+gps.MyPositionList[2].LongitudeMinute	0x1169	401		
+gps.MyPositionList[2].LongitudeSecondEncoded	0x116A	401		
+gps.MyPositionList[2].Name	0x116E	401	197	Name
+gps.MyPositionList[3].Altitude	0x1180	401	48	Altitude
+gps.MyPositionList[3].NorthSouth	0x118C	401		
+gps.MyPositionList[3].LatitudeDegree	0x1184	401		
+gps.MyPositionList[3].LatitudeMinute	0x1185	401		
+gps.MyPositionList[3].LatitudeSecondEncoded	0x1186	401		
+gps.MyPositionList[3].EastWest	0x118C	401		
+gps.MyPositionList[3].LongitudeDegree	0x1188	401		
+gps.MyPositionList[3].LongitudeMinute	0x1189	401		
+gps.MyPositionList[3].LongitudeSecondEncoded	0x118A	401		
+gps.MyPositionList[3].Name	0x118E	401	197	Name
+gps.MyPositionList[4].Altitude	0x11A0	401	48	Altitude
+gps.MyPositionList[4].NorthSouth	0x11AC	401		
+gps.MyPositionList[4].LatitudeDegree	0x11A4	401		
+gps.MyPositionList[4].LatitudeMinute	0x11A5	401		
+gps.MyPositionList[4].LatitudeSecondEncoded	0x11A6	401		
+gps.MyPositionList[4].EastWest	0x11AC	401		
+gps.MyPositionList[4].LongitudeDegree	0x11A8	401		
+gps.MyPositionList[4].LongitudeMinute	0x11A9	401		
+gps.MyPositionList[4].LongitudeSecondEncoded	0x11AA	401		
+gps.MyPositionList[4].Name	0x11AE	401	197	Name
+aprs.MessageGroup	0x1800	594		
+aprs.BulletinGroup	0x183B	595		
+aprs.RxBeepType	0x185E	570		
+aprs.TxBeepOnOff	0x185F	571		
+aprs.SpecialCall	0x1860	572	72	Special Call
+aprs.InterruptDisplayArea	0x1869	573		
+aprs.InterruptDisplayTime	0x186A	574		
+aprs.CursorControl	0x186B			
+aprs.AprsVoice	0x1219	575	75	APRS Voice
+aprs.NavitraGroupModeOnOff	0x1871			
+aprs.NavitraGroupCode	0x1872		83	NAVITRA Group Code
+aprs.QsyInStatus	0x1361	520		
+aprs.QsyToneNarrow	0x1362	521		
+aprs.QsyShiftOffset	0x1363	522		
+aprs.QsyLimit	0x1364	523		
+aprs.FilterPositionLimit	0x1365	550		
+aprs.FilterType_Weather	0x1366	551		
+aprs.FilterType_Digipeater	0x1366	551		
+aprs.FilterType_Mobile	0x1366	551		
+aprs.FilterType_Object	0x1366	551		
+aprs.FilterType_Navitra	0x1366	551		
+aprs.FilterType_1Way	0x1366	551		
+aprs.FilterType_Others	0x1366	551		
+aprs.IconTableOverlay	0x1367	501		
+aprs.IconSymbol	0x1368	501		
+aprs.IconNavitra	0x1369	501		
+aprs.BeaconTxMethod	0x136A	510		
+aprs.BeaconTxInterval	0x136B	511		
+aprs.BeaconTxDecay	0x136C	512		
+aprs.BeaconTxProportion	0x136D	513		
+aprs.LowSpeedSpeed	0x136E	530		
+aprs.HiSpeedSpeed	0x136F	530		
+aprs.SlowRateTime	0x1370	531		
+aprs.FastRateTime	0x1371	532		
+aprs.TurnAngleDeg	0x1372	533		
+aprs.TurnSlopeDegSpeed	0x1373	534		
+aprs.TurnTimeTime	0x1374	535		
+aprs.PacketPathType	0x1375	504		
+aprs.PacketPathNewNWide11	0x1376	504		
+aprs.PacketPathNewNHops	0x1377	504		
+aprs.PacketPathRelayRelay	0x1378	504		
+aprs.PacketPathRelayHops	0x1379	504		
+aprs.PacketPathAbbr	0x137A	504		
+aprs.PacketPathRegionHops	0x137F	504		
+aprs.PacketPathOthers	0x1380	504		
+aprs.PacketPathOthers2	0x13CF	504		
+aprs.PacketPathOthers3	0x1400	504		
+aprs.NetworkType	0x1460	591		
+aprs.AltnetAddress	0x1461	591		
+aprs.AutoReplyOnOff	0x14B0	561		
+aprs.AutoReplyDelayTime	0x14B1	563		
+aprs.AutoReplyMessage	0x14B2	564		
+aprs.AutoReplyTargetCall	0x14F5	562		
+aprs.DigipeatMyCallsign	0x146C	580		
+aprs.UIcheck	0x146D	581	86	UIcheck
+aprs.UIdigipeat	0x146E	582	87	UIdigipeat
+aprs.UIdigiAliases	0x146F	583	88	UIdigi Aliases
+aprs.UItrace	0x14A0	587	92	UItrace
+aprs.UItraceAliases	0x14A1	588		
+aprs.UIflood	0x14A6	584	89	UIflood
+aprs.UIfloodAliases	0x14A7	585		
+aprs.UIfloodSubstitution	0x14AC	586	91	UIfloodSubstitution
+aprs.NavitraMessageSelect	0x18D9			
+aprs.ObjectUsedNo	0x19C0	516		
+aprs.MyCallsign	0x1200	500	33 115	My Callsign | My Callsign
+aprs.BeaconType	0x1209		81	Beacon Type
+aprs.Frequency	0x120A	509	205	Frequency
+aprs.Ptt	0x120A	509		
+aprs.AprsKey	0x120A	509		
+aprs.TncDataBand	0x120B	506		
+aprs.TncDataSpeed	0x120C	505		
+aprs.TncDcdSense	0x120D	507		
+aprs.TncTxDelay	0x120F	508		
+aprs.PcOutput	0x1216	590	27	PC Output
+aprs.VoiceAlertOnOff	0x121A	592		
+aprs.VoiceAlertToneNo	0x121B	593		
+aprs.WaypointFormat	0x1213	540		
+aprs.WaypointLength	0x1214	541		
+aprs.WaypointOutput	0x1215	542		
+aprs.BeaconSpeedOff	0x1220	514		
+aprs.BeaconAltitudeOff	0x1221	515		
+aprs.PositionComment	0x1222	502	35	Position Comment
+aprs.StatusTextSelect	0x122F	503		
+aprs.NavitraMessageList[0].NavitraMessage	0x1875		84	NAVITRA Message
+aprs.NavitraMessageList[1].NavitraMessage	0x1889		84	NAVITRA Message
+aprs.NavitraMessageList[2].NavitraMessage	0x189D		84	NAVITRA Message
+aprs.NavitraMessageList[3].NavitraMessage	0x18B1		84	NAVITRA Message
+aprs.NavitraMessageList[4].NavitraMessage	0x18C5		84	NAVITRA Message
+aprs.StatusTextList[0].StatusText	0x1230	503	36	Status Text
+aprs.StatusTextList[0].TxRate	0x125A	503		
+aprs.StatusTextList[1].StatusText	0x1260	503	36	Status Text
+aprs.StatusTextList[1].TxRate	0x128A	503		
+aprs.StatusTextList[2].StatusText	0x1290	503	36	Status Text
+aprs.StatusTextList[2].TxRate	0x12BA	503		
+aprs.StatusTextList[3].StatusText	0x12C0	503	36	Status Text
+aprs.StatusTextList[3].TxRate	0x12EA	503		
+aprs.StatusTextList[4].StatusText	0x1300	503	36	Status Text
+aprs.StatusTextList[4].TxRate	0x132A	503		
+aprs.ObjectList[0].NorthSouth	0x1908	516		
+aprs.ObjectList[0].LatitudeDegree	0x1900	516		
+aprs.ObjectList[0].LatitudeMinute	0x1901	516		
+aprs.ObjectList[0].LatitudeSecondEncoded	0x1902	516		
+aprs.ObjectList[0].EastWest	0x1908	516		
+aprs.ObjectList[0].LongitudeDegree	0x1904	516		
+aprs.ObjectList[0].LongitudeMinute	0x1905	516		
+aprs.ObjectList[0].LongitudeSecondEncoded	0x1906	516		
+aprs.ObjectList[0].Name	0x1909	516	197	Name
+aprs.ObjectList[0].ObjectTxFormat	0x1912	516		
+aprs.ObjectList[0].ObjectTxInterval	0x1913	516		
+aprs.ObjectList[0].ObjectTable	0x1914	516		
+aprs.ObjectList[0].ObjectSymbol	0x1915	516		
+aprs.ObjectList[0].ObjectComment	0x1916	516		
+aprs.ObjectList[1].NorthSouth	0x1948	516		
+aprs.ObjectList[1].LatitudeDegree	0x1940	516		
+aprs.ObjectList[1].LatitudeMinute	0x1941	516		
+aprs.ObjectList[1].LatitudeSecondEncoded	0x1942	516		
+aprs.ObjectList[1].EastWest	0x1948	516		
+aprs.ObjectList[1].LongitudeDegree	0x1944	516		
+aprs.ObjectList[1].LongitudeMinute	0x1945	516		
+aprs.ObjectList[1].LongitudeSecondEncoded	0x1946	516		
+aprs.ObjectList[1].Name	0x1949	516	197	Name
+aprs.ObjectList[1].ObjectTxFormat	0x1952	516		
+aprs.ObjectList[1].ObjectTxInterval	0x1953	516		
+aprs.ObjectList[1].ObjectTable	0x1954	516		
+aprs.ObjectList[1].ObjectSymbol	0x1955	516		
+aprs.ObjectList[1].ObjectComment	0x1956	516		
+aprs.ObjectList[2].NorthSouth	0x1988	516		
+aprs.ObjectList[2].LatitudeDegree	0x1980	516		
+aprs.ObjectList[2].LatitudeMinute	0x1981	516		
+aprs.ObjectList[2].LatitudeSecondEncoded	0x1982	516		
+aprs.ObjectList[2].EastWest	0x1988	516		
+aprs.ObjectList[2].LongitudeDegree	0x1984	516		
+aprs.ObjectList[2].LongitudeMinute	0x1985	516		
+aprs.ObjectList[2].LongitudeSecondEncoded	0x1986	516		
+aprs.ObjectList[2].Name	0x1989	516	197	Name
+aprs.ObjectList[2].ObjectTxFormat	0x1992	516		
+aprs.ObjectList[2].ObjectTxInterval	0x1993	516		
+aprs.ObjectList[2].ObjectTable	0x1994	516		
+aprs.ObjectList[2].ObjectSymbol	0x1995	516		
+aprs.ObjectList[2].ObjectComment	0x1996	516		
+aprs.UserPhraseList[0].UserPhrase	0x1500	560		
+aprs.UserPhraseList[1].UserPhrase	0x1520	560		
+aprs.UserPhraseList[2].UserPhrase	0x1540	560		
+aprs.UserPhraseList[3].UserPhrase	0x1560	560		
+aprs.UserPhraseList[4].UserPhrase	0x1580	560		
+aprs.UserPhraseList[5].UserPhrase	0x15A0	560		
+aprs.UserPhraseList[6].UserPhrase	0x15C0	560		
+aprs.UserPhraseList[7].UserPhrase	0x15E0	560		
+aprs.UserPhraseList[8].UserPhrase	0x1600	560		
+aprs.UserPhraseList[9].UserPhrase	0x1620	560		
+aprs.UserPhraseList[10].UserPhrase	0x1640	560		
+aprs.UserPhraseList[11].UserPhrase	0x1660	560		
+aprs.UserPhraseList[12].UserPhrase	0x1680	560		
+aprs.UserPhraseList[13].UserPhrase	0x16A0	560		
+aprs.UserPhraseList[14].UserPhrase	0x16C0	560		
+aprs.UserPhraseList[15].UserPhrase	0x16E0	560		
+aprs.UserPhraseList[16].UserPhrase	0x1700	560		
+aprs.UserPhraseList[17].UserPhrase	0x1720	560		
+aprs.UserPhraseList[18].UserPhrase	0x1740	560		
+aprs.UserPhraseList[19].UserPhrase	0x1760	560		
+dv.DvGatewayModeDvGateway	0x1CA0	650		
+dv.MyCallsignSelectDvGateway	0x1CA1	651		
+dv.RPT1DvGateway	0x1CF0	652		
+dv.RPT2DvGateway	0x1CF8	653		
+dv.DeviceNameDvGateway	0x1AD0	654		
+dv.DirectReplyTxRx	0x1A00	612		
+dv.AutoReplyTimingTxRx	0x1A01	613		
+dv.DataTxEndTimingTxRx	0x1A02	614		
+dv.EmrVolumeLevelTxRx	0x1A03	615		
+dv.RxAfcTxRx	0x1A04	616		
+dv.FmAutoDetOnDvTxRx	0x1A05	617		
+dv.DataFrameOutputTxRx	0x1A06	618		
+dv.GpsInfoInFrameGpsDataTx	0x1A0A	630		
+dv.SentenceGpsDataTx_Gpgga	0x1A0B	631		
+dv.SentenceGpsDataTx_Gpgll	0x1A0B	631		
+dv.SentenceGpsDataTx_Gprmc	0x1A0B	631		
+dv.SentenceGpsDataTx_Gpvtg	0x1A0B	631		
+dv.SentenceGpsDataTx_Gpgsa	0x1A0B	631		
+dv.SentenceGpsDataTx_Gpgsv	0x1A0B	631		
+dv.SentenceGpsDataTx_Aprs	0x1A0B	631		
+dv.AutoTxGpsDataTx	0x1A0C	632		
+dv.DisplayMethodRxNotification	0x1A0D	640		
+dv.SingleDisplaySizeRxNotification	0x1A0E	641		
+dv.DualDisplaySizeRxNotification	0x1A0F	642		
+dv.DisplayHoldTimeRxNotification	0x1A10	643		
+dv.CallsignAnnounceRxNotification	0x1A11	644		
+dv.StandbyBeepRxNotification	0x1A12	645		
+dv.AutoReply	0x1A20	312	66	Auto Reply
+dv.MyDvMessageSelect	0x1A60	611		
+dv.MyDvMessageList[0].MyDvMessage	0x1A61	611		
+dv.MyDvMessageList[1].MyDvMessage	0x1A75	611		
+dv.MyDvMessageList[2].MyDvMessage	0x1A89	611		
+dv.MyDvMessageList[3].MyDvMessage	0x1A9D	611		
+dv.MyDvMessageList[4].MyDvMessage	0x1AB1	611		
+dv.MyCallsignDvGatewayList[0].MyCallsignDvGateway	0x1CA8	651		
+dv.MyCallsignDvGatewayList[0].MemoDvGateway	0x1CB0	651		
+dv.MyCallsignDvGatewayList[1].MyCallsignDvGateway	0x1CB4	651		
+dv.MyCallsignDvGatewayList[1].MemoDvGateway	0x1CBC	651		
+dv.MyCallsignDvGatewayList[2].MyCallsignDvGateway	0x1CC0	651		
+dv.MyCallsignDvGatewayList[2].MemoDvGateway	0x1CC8	651		
+dv.MyCallsignDvGatewayList[3].MyCallsignDvGateway	0x1CCC	651		
+dv.MyCallsignDvGatewayList[3].MemoDvGateway	0x1CD4	651		
+dv.MyCallsignDvGatewayList[4].MyCallsignDvGateway	0x1CD8	651		
+dv.MyCallsignDvGatewayList[4].MemoDvGateway	0x1CE0	651		
+dv.MyCallsignDvGatewayList[5].MyCallsignDvGateway	0x1CE4	651		
+dv.MyCallsignDvGatewayList[5].MemoDvGateway	0x1CEC	651		

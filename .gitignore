@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.iso
+*.img
+*.dmg
+*.raw
+*.log
+settings-ui/values.json
+settings-ui/backups/
+settings-ui/.tmp/

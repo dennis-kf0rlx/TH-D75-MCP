@@ -1,0 +1,10243 @@
+{
+ "generated": "2026-11-22",
+ "schema_version": 4,
+ "settings": [
+  {
+   "id": "radio.BackgroundColor",
+   "label": "Background Color",
+   "category": "display",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "906",
+   "offset": "0x01065",
+   "keywords": "BackgroundColor radio.BackgroundColor 906 Background Color",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ac"
+   },
+   "options": [
+    [
+     0,
+     "Black"
+    ],
+    [
+     1,
+     "White"
+    ]
+   ]
+  },
+  {
+   "id": "radio.BacklightControl",
+   "label": "Backlight Control",
+   "category": "display",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "900",
+   "offset": "0x01060",
+   "keywords": "BacklightControl radio.BacklightControl 900 Backlight Control",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.x"
+   },
+   "options": [
+    [
+     0,
+     "Manual"
+    ],
+    [
+     1,
+     "On"
+    ],
+    [
+     2,
+     "Auto"
+    ],
+    [
+     3,
+     "Auto (DC-IN)"
+    ]
+   ]
+  },
+  {
+   "id": "radio.BacklightTimer",
+   "label": "Backlight Timer",
+   "category": "display",
+   "description": "",
+   "type": "select",
+   "value": 3,
+   "menu": "901",
+   "offset": "0x01061",
+   "keywords": "BacklightTimer radio.BacklightTimer 901 Backlight Timer",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.y"
+   },
+   "options": [
+    [
+     3,
+     "3"
+    ],
+    [
+     4,
+     "4"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "6"
+    ],
+    [
+     7,
+     "7"
+    ],
+    [
+     8,
+     "8"
+    ],
+    [
+     9,
+     "9"
+    ],
+    [
+     10,
+     "10"
+    ],
+    [
+     11,
+     "11"
+    ],
+    [
+     12,
+     "12"
+    ],
+    [
+     13,
+     "13"
+    ],
+    [
+     14,
+     "14"
+    ],
+    [
+     15,
+     "15"
+    ],
+    [
+     16,
+     "16"
+    ],
+    [
+     17,
+     "17"
+    ],
+    [
+     18,
+     "18"
+    ],
+    [
+     19,
+     "19"
+    ],
+    [
+     20,
+     "20"
+    ],
+    [
+     21,
+     "21"
+    ],
+    [
+     22,
+     "22"
+    ],
+    [
+     23,
+     "23"
+    ],
+    [
+     24,
+     "24"
+    ],
+    [
+     25,
+     "25"
+    ],
+    [
+     26,
+     "26"
+    ],
+    [
+     27,
+     "27"
+    ],
+    [
+     28,
+     "28"
+    ],
+    [
+     29,
+     "29"
+    ],
+    [
+     30,
+     "30"
+    ],
+    [
+     31,
+     "31"
+    ],
+    [
+     32,
+     "32"
+    ],
+    [
+     33,
+     "33"
+    ],
+    [
+     34,
+     "34"
+    ],
+    [
+     35,
+     "35"
+    ],
+    [
+     36,
+     "36"
+    ],
+    [
+     37,
+     "37"
+    ],
+    [
+     38,
+     "38"
+    ],
+    [
+     39,
+     "39"
+    ],
+    [
+     40,
+     "40"
+    ],
+    [
+     41,
+     "41"
+    ],
+    [
+     42,
+     "42"
+    ],
+    [
+     43,
+     "43"
+    ],
+    [
+     44,
+     "44"
+    ],
+    [
+     45,
+     "45"
+    ],
+    [
+     46,
+     "46"
+    ],
+    [
+     47,
+     "47"
+    ],
+    [
+     48,
+     "48"
+    ],
+    [
+     49,
+     "49"
+    ],
+    [
+     50,
+     "50"
+    ],
+    [
+     51,
+     "51"
+    ],
+    [
+     52,
+     "52"
+    ],
+    [
+     53,
+     "53"
+    ],
+    [
+     54,
+     "54"
+    ],
+    [
+     55,
+     "55"
+    ],
+    [
+     56,
+     "56"
+    ],
+    [
+     57,
+     "57"
+    ],
+    [
+     58,
+     "58"
+    ],
+    [
+     59,
+     "59"
+    ],
+    [
+     60,
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "radio.InfoBacklight",
+   "label": "Info Backlight",
+   "category": "display",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "907",
+   "offset": "0x01096",
+   "keywords": "InfoBacklight radio.InfoBacklight 907 Info Backlight",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ad"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "LCD"
+    ],
+    [
+     2,
+     "LCD + Key"
+    ]
+   ]
+  },
+  {
+   "id": "radio.LcdBrightness",
+   "label": "LCD Brightness",
+   "category": "display",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "902",
+   "offset": "0x01062",
+   "keywords": "LcdBrightness radio.LcdBrightness 902 LCD Brightness",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.z"
+   },
+   "options": [
+    [
+     0,
+     "Low"
+    ],
+    [
+     1,
+     "Medium"
+    ],
+    [
+     2,
+     "High"
+    ]
+   ]
+  },
+  {
+   "id": "radio.MeterType",
+   "label": "Meter Type",
+   "category": "display",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "905",
+   "offset": "0x01064",
+   "keywords": "MeterType radio.MeterType 905 Meter Type",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ab"
+   },
+   "options": [
+    [
+     0,
+     "Type1"
+    ],
+    [
+     1,
+     "Type2"
+    ],
+    [
+     2,
+     "Type3"
+    ]
+   ]
+  },
+  {
+   "id": "radio.PowerOnMessage",
+   "label": "Power On Message",
+   "category": "display",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "903",
+   "offset": "0x010C0",
+   "keywords": "PowerOnMessage radio.PowerOnMessage 903 Power On Message",
+   "risk": "high",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 16,
+    "encoding": "memory_map"
+   },
+   "maxlength": 16
+  },
+  {
+   "id": "radio.SingleBandDisplay",
+   "label": "Single Band Display",
+   "category": "display",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "904",
+   "offset": "0x01063",
+   "keywords": "SingleBandDisplay radio.SingleBandDisplay 904 Single Band Display",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.aa"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "GPS (Altitude)"
+    ],
+    [
+     2,
+     "GPS (GS)"
+    ],
+    [
+     3,
+     "Date"
+    ],
+    [
+     4,
+     "Demodulation Mode"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Balance",
+   "label": "Balance",
+   "category": "audio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "910",
+   "offset": "0x01066",
+   "keywords": "Balance radio.Balance 910 Balance",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ae"
+   },
+   "options": [
+    [
+     0,
+     "A:100/B:0"
+    ],
+    [
+     1,
+     "A:100/B:25"
+    ],
+    [
+     2,
+     "A:100/B:50"
+    ],
+    [
+     3,
+     "A:100/B:75"
+    ],
+    [
+     4,
+     "A:100/B:100"
+    ],
+    [
+     5,
+     "A:75/B:100"
+    ],
+    [
+     6,
+     "A:50/B:100"
+    ],
+    [
+     7,
+     "A:25/B:100"
+    ],
+    [
+     8,
+     "A:0/B:100"
+    ],
+    [
+     9,
+     "Operation Band Only"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Beep",
+   "label": "Beep",
+   "category": "audio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "914",
+   "offset": "0x01071",
+   "keywords": "Beep radio.Beep 914 Beep",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.BeepVolume",
+   "label": "Beep Volume",
+   "category": "audio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "915",
+   "offset": "0x01072",
+   "keywords": "BeepVolume radio.BeepVolume 915 Beep Volume",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.af"
+   },
+   "options": [
+    [
+     0,
+     "VOL Link"
+    ],
+    [
+     1,
+     "Level 1"
+    ],
+    [
+     2,
+     "Level 2"
+    ],
+    [
+     3,
+     "Level 3"
+    ],
+    [
+     4,
+     "Level 4"
+    ],
+    [
+     5,
+     "Level 5"
+    ],
+    [
+     6,
+     "Level 6"
+    ],
+    [
+     7,
+     "Level 7"
+    ]
+   ]
+  },
+  {
+   "id": "radio.CallsignReadout",
+   "label": "Callsign Readout",
+   "category": "audio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "919",
+   "offset": "0x01095",
+   "keywords": "CallsignReadout radio.CallsignReadout 919 Callsign Readout",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ak"
+   },
+   "options": [
+    [
+     0,
+     "Standard"
+    ],
+    [
+     1,
+     "Phonetics (Full)"
+    ],
+    [
+     2,
+     "Phonetics (Suffix)"
+    ]
+   ]
+  },
+  {
+   "id": "radio.RxEqLevel04",
+   "label": "RX EQ Level 04",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "913",
+   "offset": "0x0106C",
+   "keywords": "RxEqLevel04 radio.RxEqLevel04 913 RX EQ Level 04",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 18,
+    "step": 1
+   },
+   "min": 0,
+   "max": 18,
+   "step": 1
+  },
+  {
+   "id": "radio.RxEqLevel08",
+   "label": "RX EQ Level 08",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "913",
+   "offset": "0x0106D",
+   "keywords": "RxEqLevel08 radio.RxEqLevel08 913 RX EQ Level 08",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 18,
+    "step": 1
+   },
+   "min": 0,
+   "max": 18,
+   "step": 1
+  },
+  {
+   "id": "radio.RxEqLevel16",
+   "label": "RX EQ Level 16",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "913",
+   "offset": "0x0106E",
+   "keywords": "RxEqLevel16 radio.RxEqLevel16 913 RX EQ Level 16",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 18,
+    "step": 1
+   },
+   "min": 0,
+   "max": 18,
+   "step": 1
+  },
+  {
+   "id": "radio.RxEqLevel32",
+   "label": "RX EQ Level 32",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "913",
+   "offset": "0x0106F",
+   "keywords": "RxEqLevel32 radio.RxEqLevel32 913 RX EQ Level 32",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 18,
+    "step": 1
+   },
+   "min": 0,
+   "max": 18,
+   "step": 1
+  },
+  {
+   "id": "radio.RxEqLevel64",
+   "label": "RX EQ Level 64",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "913",
+   "offset": "0x01070",
+   "keywords": "RxEqLevel64 radio.RxEqLevel64 913 RX EQ Level 64",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 18,
+    "step": 1
+   },
+   "min": 0,
+   "max": 18,
+   "step": 1
+  },
+  {
+   "id": "radio.RxEqualizer",
+   "label": "RX Equalizer",
+   "category": "audio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "911",
+   "offset": "0x01067",
+   "keywords": "RxEqualizer radio.RxEqualizer 911 RX Equalizer",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 0,
+    "width": 1
+   }
+  },
+  {
+   "id": "radio.TxEqLevel04",
+   "label": "TX EQ Level 04",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "912",
+   "offset": "0x01068",
+   "keywords": "TxEqLevel04 radio.TxEqLevel04 912 TX EQ Level 04",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 12,
+    "step": 1
+   },
+   "min": 0,
+   "max": 12,
+   "step": 1
+  },
+  {
+   "id": "radio.TxEqLevel08",
+   "label": "TX EQ Level 08",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "912",
+   "offset": "0x01069",
+   "keywords": "TxEqLevel08 radio.TxEqLevel08 912 TX EQ Level 08",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 12,
+    "step": 1
+   },
+   "min": 0,
+   "max": 12,
+   "step": 1
+  },
+  {
+   "id": "radio.TxEqLevel16",
+   "label": "TX EQ Level 16",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "912",
+   "offset": "0x0106A",
+   "keywords": "TxEqLevel16 radio.TxEqLevel16 912 TX EQ Level 16",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 12,
+    "step": 1
+   },
+   "min": 0,
+   "max": 12,
+   "step": 1
+  },
+  {
+   "id": "radio.TxEqLevel32",
+   "label": "TX EQ Level 32",
+   "category": "audio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "912",
+   "offset": "0x0106B",
+   "keywords": "TxEqLevel32 radio.TxEqLevel32 912 TX EQ Level 32",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 12,
+    "step": 1
+   },
+   "min": 0,
+   "max": 12,
+   "step": 1
+  },
+  {
+   "id": "radio.TxEqualizerDv",
+   "label": "TX Equalizer DV",
+   "category": "audio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "911",
+   "offset": "0x01067",
+   "keywords": "TxEqualizerDv radio.TxEqualizerDv 911 TX Equalizer DV",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 2,
+    "width": 1
+   }
+  },
+  {
+   "id": "radio.TxEqualizerFmNfm",
+   "label": "TX Equalizer FM Nfm",
+   "category": "audio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "911",
+   "offset": "0x01067",
+   "keywords": "TxEqualizerFmNfm radio.TxEqualizerFmNfm 911 TX Equalizer FM Nfm",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 1,
+    "width": 1
+   }
+  },
+  {
+   "id": "radio.VoiceAnnounce",
+   "label": "Voice Announce",
+   "category": "audio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "916",
+   "offset": "0x01073",
+   "keywords": "VoiceAnnounce radio.VoiceAnnounce 916 Voice Announce",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ag"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "Manual"
+    ],
+    [
+     2,
+     "Auto1"
+    ],
+    [
+     3,
+     "Auto2"
+    ]
+   ]
+  },
+  {
+   "id": "radio.VoiceAnnounceVolume",
+   "label": "Voice Announce Volume",
+   "category": "audio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "917",
+   "offset": "0x01074",
+   "keywords": "VoiceAnnounceVolume radio.VoiceAnnounceVolume 917 Voice Announce Volume",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ah"
+   },
+   "options": [
+    [
+     0,
+     "VOL Link"
+    ],
+    [
+     1,
+     "Level 1"
+    ],
+    [
+     2,
+     "Level 2"
+    ],
+    [
+     3,
+     "Level 3"
+    ],
+    [
+     4,
+     "Level 4"
+    ],
+    [
+     5,
+     "Level 5"
+    ],
+    [
+     6,
+     "Level 6"
+    ],
+    [
+     7,
+     "Level 7"
+    ]
+   ]
+  },
+  {
+   "id": "radio.VoiceGuidanceSpeed",
+   "label": "Voice Guidance Speed",
+   "category": "audio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "918",
+   "offset": "0x01097",
+   "keywords": "VoiceGuidanceSpeed radio.VoiceGuidanceSpeed 918 Voice Guidance Speed",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.aj"
+   },
+   "options": [
+    [
+     0,
+     "Speed 1"
+    ],
+    [
+     1,
+     "Speed 2"
+    ],
+    [
+     2,
+     "Speed 3"
+    ],
+    [
+     3,
+     "Speed 4"
+    ]
+   ]
+  },
+  {
+   "id": "radio.AltitudeRain",
+   "label": "Altitude Rain",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "971",
+   "offset": "0x01089",
+   "keywords": "AltitudeRain radio.AltitudeRain 971 Altitude Rain",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.at"
+   },
+   "options": [
+    [
+     0,
+     "feet , inch"
+    ],
+    [
+     1,
+     "m , mm"
+    ]
+   ]
+  },
+  {
+   "id": "radio.AmHighCut",
+   "label": "AM High Cut",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "122",
+   "offset": "0x0100A",
+   "keywords": "AmHighCut radio.AmHighCut 122 AM High Cut",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.i"
+   },
+   "options": [
+    [
+     0,
+     "3.0"
+    ],
+    [
+     1,
+     "4.5"
+    ],
+    [
+     2,
+     "6.0"
+    ],
+    [
+     3,
+     "7.5"
+    ]
+   ]
+  },
+  {
+   "id": "radio.AutoMuteRetTime",
+   "label": "Auto Mute Ret Time",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 1,
+   "menu": "701",
+   "offset": "0x01041",
+   "keywords": "AutoMuteRetTime radio.AutoMuteRetTime 701 Auto Mute Ret Time",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 1,
+    "max": 10,
+    "step": 1
+   },
+   "min": 1,
+   "max": 10,
+   "step": 1
+  },
+  {
+   "id": "radio.AutoOffset",
+   "label": "Auto Offset",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "141",
+   "offset": "0x01018",
+   "keywords": "AutoOffset radio.AutoOffset 141 Auto Offset",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.AutoPowerOff",
+   "label": "Auto Power Off",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "921",
+   "offset": "0x01077",
+   "keywords": "AutoPowerOff radio.AutoPowerOff 921 Auto Power Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.am"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "15"
+    ],
+    [
+     2,
+     "30"
+    ],
+    [
+     3,
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "dv.AutoReply",
+   "label": "Auto Reply",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "312",
+   "offset": "0x01A20",
+   "keywords": "AutoReply dv.AutoReply 312 Auto Reply",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.l"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ]
+   ]
+  },
+  {
+   "id": "radio.AutoWeatherScan",
+   "label": "Auto Weather Scan",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "136",
+   "offset": "0x01013",
+   "keywords": "AutoWeatherScan radio.AutoWeatherScan 136 Auto Weather Scan",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.n"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "15"
+    ],
+    [
+     2,
+     "30"
+    ],
+    [
+     4,
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "radio.BarAntenna",
+   "label": "Bar Antenna",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "104",
+   "offset": "0x01005",
+   "keywords": "BarAntenna radio.BarAntenna 104 Bar Antenna",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.c"
+   },
+   "options": [
+    [
+     0,
+     "ANT Connector"
+    ],
+    [
+     1,
+     "Bar Antenna"
+    ]
+   ]
+  },
+  {
+   "id": "radio.BatterySaver",
+   "label": "Battery Saver",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "920",
+   "offset": "0x01076",
+   "keywords": "BatterySaver radio.BatterySaver 920 Battery Saver",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.al"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "0.2"
+    ],
+    [
+     2,
+     "0.4"
+    ],
+    [
+     3,
+     "0.6"
+    ],
+    [
+     4,
+     "0.8"
+    ],
+    [
+     5,
+     "1.0"
+    ],
+    [
+     6,
+     "2.0"
+    ],
+    [
+     7,
+     "3.0"
+    ],
+    [
+     8,
+     "4.0"
+    ],
+    [
+     9,
+     "5.0"
+    ]
+   ]
+  },
+  {
+   "id": "radio.BeatShift",
+   "label": "Beat Shift",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "101",
+   "offset": "0x01000",
+   "keywords": "BeatShift radio.BeatShift 101 Beat Shift",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.a"
+   },
+   "options": [
+    [
+     0,
+     "Type1"
+    ],
+    [
+     1,
+     "Type2"
+    ],
+    [
+     2,
+     "Type3"
+    ],
+    [
+     3,
+     "Type4"
+    ],
+    [
+     4,
+     "Type5"
+    ],
+    [
+     5,
+     "Type6"
+    ],
+    [
+     6,
+     "Type7"
+    ],
+    [
+     7,
+     "Type8"
+    ]
+   ]
+  },
+  {
+   "id": "radio.CallKey",
+   "label": "Call Key",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "142",
+   "offset": "0x01019",
+   "keywords": "CallKey radio.CallKey 142 Call Key",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.o"
+   },
+   "options": [
+    [
+     0,
+     "CALL"
+    ],
+    [
+     1,
+     "1,750 [Hz]"
+    ]
+   ]
+  },
+  {
+   "id": "radio.CarrierRestart",
+   "label": "Carrier Restart",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 1,
+   "menu": "133",
+   "offset": "0x0100F",
+   "keywords": "CarrierRestart radio.CarrierRestart 133 Carrier Restart",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.m"
+   },
+   "options": [
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "3"
+    ],
+    [
+     4,
+     "4"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "6"
+    ],
+    [
+     7,
+     "7"
+    ],
+    [
+     8,
+     "8"
+    ],
+    [
+     9,
+     "9"
+    ],
+    [
+     10,
+     "10"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Charging",
+   "label": "Charging",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "923",
+   "offset": "0x01094",
+   "keywords": "Charging radio.Charging 923 Charging",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.CursorShift",
+   "label": "Cursor Shift",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "945",
+   "offset": "0x0107F",
+   "keywords": "CursorShift radio.CursorShift 945 Cursor Shift",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ap"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "1.0"
+    ],
+    [
+     2,
+     "1.5"
+    ],
+    [
+     3,
+     "2.0"
+    ]
+   ]
+  },
+  {
+   "id": "radio.CwPitchFreq",
+   "label": "CW Pitch Freq",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "170",
+   "offset": "0x01024",
+   "keywords": "CwPitchFreq radio.CwPitchFreq 170 CW Pitch Freq",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 6,
+    "step": 1
+   },
+   "min": 0,
+   "max": 6,
+   "step": 1
+  },
+  {
+   "id": "radio.CwReverse",
+   "label": "CW Reverse",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "171",
+   "offset": "0x01026",
+   "keywords": "CwReverse radio.CwReverse 171 CW Reverse",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.u"
+   },
+   "options": [
+    [
+     0,
+     "Normal"
+    ],
+    [
+     1,
+     "Reverse"
+    ]
+   ]
+  },
+  {
+   "id": "radio.CwWidth",
+   "label": "CW Width",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "121",
+   "offset": "0x01009",
+   "keywords": "CwWidth radio.CwWidth 121 CW Width",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.h"
+   },
+   "options": [
+    [
+     0,
+     "0.3"
+    ],
+    [
+     1,
+     "0.5"
+    ],
+    [
+     2,
+     "1.0"
+    ],
+    [
+     3,
+     "1.5"
+    ],
+    [
+     4,
+     "2.0"
+    ]
+   ]
+  },
+  {
+   "id": "radio.DetectOutput",
+   "label": "Detect Output",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "102",
+   "offset": "0x01002",
+   "keywords": "DetectOutput radio.DetectOutput 102 Detect Output",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.b"
+   },
+   "options": [
+    [
+     0,
+     "AF"
+    ],
+    [
+     1,
+     "IF"
+    ],
+    [
+     2,
+     "Detect"
+    ]
+   ]
+  },
+  {
+   "id": "radio.DtmfKeys",
+   "label": "DTMF Keys",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "961",
+   "offset": "0x01085",
+   "keywords": "DtmfKeys radio.DtmfKeys 961 DTMF Keys",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.DtmfPauseTime",
+   "label": "DTMF Pause Time",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "161",
+   "offset": "0x01020",
+   "keywords": "DtmfPauseTime radio.DtmfPauseTime 161 DTMF Pause Time",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.t"
+   },
+   "options": [
+    [
+     0,
+     "100"
+    ],
+    [
+     1,
+     "250"
+    ],
+    [
+     2,
+     "500"
+    ],
+    [
+     3,
+     "750"
+    ],
+    [
+     4,
+     "1000"
+    ],
+    [
+     5,
+     "1500"
+    ],
+    [
+     6,
+     "2000"
+    ]
+   ]
+  },
+  {
+   "id": "radio.DtmfSpeed",
+   "label": "DTMF Speed",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "160",
+   "offset": "0x0101F",
+   "keywords": "DtmfSpeed radio.DtmfSpeed 160 DTMF Speed",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.s"
+   },
+   "options": [
+    [
+     0,
+     "50"
+    ],
+    [
+     1,
+     "100"
+    ],
+    [
+     2,
+     "150"
+    ]
+   ]
+  },
+  {
+   "id": "radio.DtmfTxHold",
+   "label": "DTMF TX Hold",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "162",
+   "offset": "0x01021",
+   "keywords": "DtmfTxHold radio.DtmfTxHold 162 DTMF TX Hold",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.FmRadioMode",
+   "label": "FM Radio Mode",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "700",
+   "offset": "0x01040",
+   "keywords": "FmRadioMode radio.FmRadioMode 700 FM Radio Mode",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.GridSquareFormat",
+   "label": "Grid Square Format",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "974",
+   "offset": "0x0108C",
+   "keywords": "GridSquareFormat radio.GridSquareFormat 974 Grid Square Format",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.aw"
+   },
+   "options": [
+    [
+     0,
+     "Maidenhead Grid"
+    ],
+    [
+     1,
+     "SAR Grid (CONV)"
+    ],
+    [
+     2,
+     "SAR Grid (CELL)"
+    ]
+   ]
+  },
+  {
+   "id": "radio.GroupLink0",
+   "label": "Group Link 0",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A0",
+   "keywords": "GroupLink0 radio.GroupLink0 203 Group Link 0",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink1",
+   "label": "Group Link 1",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A1",
+   "keywords": "GroupLink1 radio.GroupLink1 203 Group Link 1",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink10",
+   "label": "Group Link 10",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010AA",
+   "keywords": "GroupLink10 radio.GroupLink10 203 Group Link 10",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink11",
+   "label": "Group Link 11",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010AB",
+   "keywords": "GroupLink11 radio.GroupLink11 203 Group Link 11",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink12",
+   "label": "Group Link 12",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010AC",
+   "keywords": "GroupLink12 radio.GroupLink12 203 Group Link 12",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink13",
+   "label": "Group Link 13",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010AD",
+   "keywords": "GroupLink13 radio.GroupLink13 203 Group Link 13",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink14",
+   "label": "Group Link 14",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010AE",
+   "keywords": "GroupLink14 radio.GroupLink14 203 Group Link 14",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink15",
+   "label": "Group Link 15",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010AF",
+   "keywords": "GroupLink15 radio.GroupLink15 203 Group Link 15",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink16",
+   "label": "Group Link 16",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B0",
+   "keywords": "GroupLink16 radio.GroupLink16 203 Group Link 16",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink17",
+   "label": "Group Link 17",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B1",
+   "keywords": "GroupLink17 radio.GroupLink17 203 Group Link 17",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink18",
+   "label": "Group Link 18",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B2",
+   "keywords": "GroupLink18 radio.GroupLink18 203 Group Link 18",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink19",
+   "label": "Group Link 19",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B3",
+   "keywords": "GroupLink19 radio.GroupLink19 203 Group Link 19",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink2",
+   "label": "Group Link 2",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A2",
+   "keywords": "GroupLink2 radio.GroupLink2 203 Group Link 2",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink20",
+   "label": "Group Link 20",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B4",
+   "keywords": "GroupLink20 radio.GroupLink20 203 Group Link 20",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink21",
+   "label": "Group Link 21",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B5",
+   "keywords": "GroupLink21 radio.GroupLink21 203 Group Link 21",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink22",
+   "label": "Group Link 22",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B6",
+   "keywords": "GroupLink22 radio.GroupLink22 203 Group Link 22",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink23",
+   "label": "Group Link 23",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B7",
+   "keywords": "GroupLink23 radio.GroupLink23 203 Group Link 23",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink24",
+   "label": "Group Link 24",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B8",
+   "keywords": "GroupLink24 radio.GroupLink24 203 Group Link 24",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink25",
+   "label": "Group Link 25",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010B9",
+   "keywords": "GroupLink25 radio.GroupLink25 203 Group Link 25",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink26",
+   "label": "Group Link 26",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010BA",
+   "keywords": "GroupLink26 radio.GroupLink26 203 Group Link 26",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink27",
+   "label": "Group Link 27",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010BB",
+   "keywords": "GroupLink27 radio.GroupLink27 203 Group Link 27",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink28",
+   "label": "Group Link 28",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010BC",
+   "keywords": "GroupLink28 radio.GroupLink28 203 Group Link 28",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink29",
+   "label": "Group Link 29",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010BD",
+   "keywords": "GroupLink29 radio.GroupLink29 203 Group Link 29",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink3",
+   "label": "Group Link 3",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A3",
+   "keywords": "GroupLink3 radio.GroupLink3 203 Group Link 3",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink4",
+   "label": "Group Link 4",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A4",
+   "keywords": "GroupLink4 radio.GroupLink4 203 Group Link 4",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink5",
+   "label": "Group Link 5",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A5",
+   "keywords": "GroupLink5 radio.GroupLink5 203 Group Link 5",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink6",
+   "label": "Group Link 6",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A6",
+   "keywords": "GroupLink6 radio.GroupLink6 203 Group Link 6",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink7",
+   "label": "Group Link 7",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A7",
+   "keywords": "GroupLink7 radio.GroupLink7 203 Group Link 7",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink8",
+   "label": "Group Link 8",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A8",
+   "keywords": "GroupLink8 radio.GroupLink8 203 Group Link 8",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.GroupLink9",
+   "label": "Group Link 9",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "203",
+   "offset": "0x010A9",
+   "keywords": "GroupLink9 radio.GroupLink9 203 Group Link 9",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 255,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     255
+    ]
+   },
+   "min": 0,
+   "max": 255,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    255
+   ]
+  },
+  {
+   "id": "radio.KeyLockTypeFrequencyLock",
+   "label": "Key Lock Type Frequency Lock",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "960",
+   "offset": "0x01084",
+   "keywords": "KeyLockTypeFrequencyLock radio.KeyLockTypeFrequencyLock 960 Key Lock Type Frequency Lock",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 1,
+    "width": 1
+   }
+  },
+  {
+   "id": "radio.KeyLockTypeKeyLock",
+   "label": "Key Lock Type Key Lock",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "960",
+   "offset": "0x01084",
+   "keywords": "KeyLockTypeKeyLock radio.KeyLockTypeKeyLock 960 Key Lock Type Key Lock",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 0,
+    "width": 1
+   }
+  },
+  {
+   "id": "radio.Language",
+   "label": "Language",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "990",
+   "offset": "0x01092",
+   "keywords": "Language radio.Language 990 Language",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.a3"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "radio.LatitudeLongitude",
+   "label": "Latitude Longitude",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "973",
+   "offset": "0x0108B",
+   "keywords": "LatitudeLongitude radio.LatitudeLongitude 973 Latitude Longitude",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.av"
+   },
+   "options": [
+    [
+     0,
+     "dd mm.mm"
+    ],
+    [
+     1,
+     "dd mm ss.s"
+    ]
+   ]
+  },
+  {
+   "id": "radio.LedControl_FmRadio",
+   "label": "Led Control_Fm Radio",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "181",
+   "offset": "0x01028",
+   "keywords": "LedControl_FmRadio radio.LedControl_FmRadio 181 Led Control_Fm Radio",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 1,
+    "width": 1
+   }
+  },
+  {
+   "id": "radio.LedControl_Receive",
+   "label": "Led Control_Receive",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "181",
+   "offset": "0x01028",
+   "keywords": "LedControl_Receive radio.LedControl_Receive 181 Led Control_Receive",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 0,
+    "width": 1
+   }
+  },
+  {
+   "id": "radio.MicKeys",
+   "label": "Mic Keys",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "962",
+   "offset": "0x01086",
+   "keywords": "MicKeys radio.MicKeys 962 Mic Keys",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.MicSensitivity",
+   "label": "Mic Sensitivity",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "112",
+   "offset": "0x01006",
+   "keywords": "MicSensitivity radio.MicSensitivity 112 Mic Sensitivity",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.f"
+   },
+   "options": [
+    [
+     0,
+     "High"
+    ],
+    [
+     1,
+     "Medium"
+    ],
+    [
+     2,
+     "Low"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Pf1Mic",
+   "label": "Pf1 Mic",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "942",
+   "offset": "0x0107C",
+   "keywords": "Pf1Mic radio.Pf1Mic 942 Pf1 Mic",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ao"
+   },
+   "options": [
+    [
+     0,
+     "Recording"
+    ],
+    [
+     1,
+     "Voice Message 1"
+    ],
+    [
+     2,
+     "Voice Message 2"
+    ],
+    [
+     3,
+     "Voice Message 3"
+    ],
+    [
+     4,
+     "Voice Message 4"
+    ],
+    [
+     6,
+     "Voice Guidance"
+    ],
+    [
+     7,
+     "Battery Level"
+    ],
+    [
+     8,
+     "VOX"
+    ],
+    [
+     9,
+     "Group Name"
+    ],
+    [
+     10,
+     "Balance"
+    ],
+    [
+     11,
+     "GPS"
+    ],
+    [
+     12,
+     "Track LOG"
+    ],
+    [
+     13,
+     "SQL"
+    ],
+    [
+     14,
+     "SHIFT"
+    ],
+    [
+     15,
+     "STEP"
+    ],
+    [
+     16,
+     "LOW"
+    ],
+    [
+     17,
+     "Key Lock"
+    ],
+    [
+     18,
+     "Lockout"
+    ],
+    [
+     19,
+     "M>V"
+    ],
+    [
+     20,
+     "T.SEL"
+    ],
+    [
+     21,
+     "NEW"
+    ],
+    [
+     22,
+     "Voice Alert"
+    ],
+    [
+     24,
+     "LCD Brightness"
+    ],
+    [
+     27,
+     "DTMF CH0"
+    ],
+    [
+     28,
+     "ECHOLINK CH0"
+    ],
+    [
+     29,
+     "1,750 [Hz] Tone"
+    ],
+    [
+     31,
+     "Screen Capture"
+    ],
+    [
+     32,
+     "MODE"
+    ],
+    [
+     33,
+     "MENU"
+    ],
+    [
+     34,
+     "A/B"
+    ],
+    [
+     35,
+     "VFO"
+    ],
+    [
+     36,
+     "MR"
+    ],
+    [
+     37,
+     "CALL"
+    ],
+    [
+     38,
+     "MSG"
+    ],
+    [
+     39,
+     "LIST"
+    ],
+    [
+     40,
+     "BCON"
+    ],
+    [
+     41,
+     "REV"
+    ],
+    [
+     42,
+     "TONE"
+    ],
+    [
+     44,
+     "MHz"
+    ],
+    [
+     45,
+     "MARK"
+    ],
+    [
+     46,
+     "DUAL"
+    ],
+    [
+     47,
+     "APRS"
+    ],
+    [
+     48,
+     "OBJ"
+    ],
+    [
+     49,
+     "ATT"
+    ],
+    [
+     50,
+     "FINE"
+    ],
+    [
+     51,
+     "POS"
+    ],
+    [
+     52,
+     "BAND"
+    ],
+    [
+     53,
+     "MONI"
+    ],
+    [
+     54,
+     "UP"
+    ],
+    [
+     55,
+     "DOWN"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Pf1PfKey",
+   "label": "Pf1 PF Key",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "940",
+   "offset": "0x0107A",
+   "keywords": "Pf1PfKey radio.Pf1PfKey 940 Pf1 PF Key",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.an"
+   },
+   "options": [
+    [
+     0,
+     "Recording"
+    ],
+    [
+     1,
+     "Voice Message 1"
+    ],
+    [
+     2,
+     "Voice Message 2"
+    ],
+    [
+     3,
+     "Voice Message 3"
+    ],
+    [
+     4,
+     "Voice Message 4"
+    ],
+    [
+     6,
+     "Voice Guidance"
+    ],
+    [
+     7,
+     "Battery Level"
+    ],
+    [
+     8,
+     "VOX"
+    ],
+    [
+     9,
+     "Group Name"
+    ],
+    [
+     10,
+     "Balance"
+    ],
+    [
+     11,
+     "GPS"
+    ],
+    [
+     12,
+     "Track LOG"
+    ],
+    [
+     13,
+     "SQL"
+    ],
+    [
+     14,
+     "SHIFT"
+    ],
+    [
+     15,
+     "STEP"
+    ],
+    [
+     16,
+     "LOW"
+    ],
+    [
+     17,
+     "Key Lock"
+    ],
+    [
+     18,
+     "Lockout"
+    ],
+    [
+     19,
+     "M>V"
+    ],
+    [
+     20,
+     "T.SEL"
+    ],
+    [
+     21,
+     "NEW"
+    ],
+    [
+     22,
+     "Voice Alert"
+    ],
+    [
+     24,
+     "LCD Brightness"
+    ],
+    [
+     27,
+     "DTMF CH0"
+    ],
+    [
+     28,
+     "ECHOLINK CH0"
+    ],
+    [
+     29,
+     "1,750 [Hz] Tone"
+    ],
+    [
+     30,
+     "M.IN"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Pf2Mic",
+   "label": "Pf2 Mic",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "943",
+   "offset": "0x0107D",
+   "keywords": "Pf2Mic radio.Pf2Mic 943 Pf2 Mic",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ao"
+   },
+   "options": [
+    [
+     0,
+     "Recording"
+    ],
+    [
+     1,
+     "Voice Message 1"
+    ],
+    [
+     2,
+     "Voice Message 2"
+    ],
+    [
+     3,
+     "Voice Message 3"
+    ],
+    [
+     4,
+     "Voice Message 4"
+    ],
+    [
+     6,
+     "Voice Guidance"
+    ],
+    [
+     7,
+     "Battery Level"
+    ],
+    [
+     8,
+     "VOX"
+    ],
+    [
+     9,
+     "Group Name"
+    ],
+    [
+     10,
+     "Balance"
+    ],
+    [
+     11,
+     "GPS"
+    ],
+    [
+     12,
+     "Track LOG"
+    ],
+    [
+     13,
+     "SQL"
+    ],
+    [
+     14,
+     "SHIFT"
+    ],
+    [
+     15,
+     "STEP"
+    ],
+    [
+     16,
+     "LOW"
+    ],
+    [
+     17,
+     "Key Lock"
+    ],
+    [
+     18,
+     "Lockout"
+    ],
+    [
+     19,
+     "M>V"
+    ],
+    [
+     20,
+     "T.SEL"
+    ],
+    [
+     21,
+     "NEW"
+    ],
+    [
+     22,
+     "Voice Alert"
+    ],
+    [
+     24,
+     "LCD Brightness"
+    ],
+    [
+     27,
+     "DTMF CH0"
+    ],
+    [
+     28,
+     "ECHOLINK CH0"
+    ],
+    [
+     29,
+     "1,750 [Hz] Tone"
+    ],
+    [
+     31,
+     "Screen Capture"
+    ],
+    [
+     32,
+     "MODE"
+    ],
+    [
+     33,
+     "MENU"
+    ],
+    [
+     34,
+     "A/B"
+    ],
+    [
+     35,
+     "VFO"
+    ],
+    [
+     36,
+     "MR"
+    ],
+    [
+     37,
+     "CALL"
+    ],
+    [
+     38,
+     "MSG"
+    ],
+    [
+     39,
+     "LIST"
+    ],
+    [
+     40,
+     "BCON"
+    ],
+    [
+     41,
+     "REV"
+    ],
+    [
+     42,
+     "TONE"
+    ],
+    [
+     44,
+     "MHz"
+    ],
+    [
+     45,
+     "MARK"
+    ],
+    [
+     46,
+     "DUAL"
+    ],
+    [
+     47,
+     "APRS"
+    ],
+    [
+     48,
+     "OBJ"
+    ],
+    [
+     49,
+     "ATT"
+    ],
+    [
+     50,
+     "FINE"
+    ],
+    [
+     51,
+     "POS"
+    ],
+    [
+     52,
+     "BAND"
+    ],
+    [
+     53,
+     "MONI"
+    ],
+    [
+     54,
+     "UP"
+    ],
+    [
+     55,
+     "DOWN"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Pf2PfKey",
+   "label": "Pf2 PF Key",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "941",
+   "offset": "0x0107B",
+   "keywords": "Pf2PfKey radio.Pf2PfKey 941 Pf2 PF Key",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.an"
+   },
+   "options": [
+    [
+     0,
+     "Recording"
+    ],
+    [
+     1,
+     "Voice Message 1"
+    ],
+    [
+     2,
+     "Voice Message 2"
+    ],
+    [
+     3,
+     "Voice Message 3"
+    ],
+    [
+     4,
+     "Voice Message 4"
+    ],
+    [
+     6,
+     "Voice Guidance"
+    ],
+    [
+     7,
+     "Battery Level"
+    ],
+    [
+     8,
+     "VOX"
+    ],
+    [
+     9,
+     "Group Name"
+    ],
+    [
+     10,
+     "Balance"
+    ],
+    [
+     11,
+     "GPS"
+    ],
+    [
+     12,
+     "Track LOG"
+    ],
+    [
+     13,
+     "SQL"
+    ],
+    [
+     14,
+     "SHIFT"
+    ],
+    [
+     15,
+     "STEP"
+    ],
+    [
+     16,
+     "LOW"
+    ],
+    [
+     17,
+     "Key Lock"
+    ],
+    [
+     18,
+     "Lockout"
+    ],
+    [
+     19,
+     "M>V"
+    ],
+    [
+     20,
+     "T.SEL"
+    ],
+    [
+     21,
+     "NEW"
+    ],
+    [
+     22,
+     "Voice Alert"
+    ],
+    [
+     24,
+     "LCD Brightness"
+    ],
+    [
+     27,
+     "DTMF CH0"
+    ],
+    [
+     28,
+     "ECHOLINK CH0"
+    ],
+    [
+     29,
+     "1,750 [Hz] Tone"
+    ],
+    [
+     30,
+     "M.IN"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Pf3Mic",
+   "label": "Pf3 Mic",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "944",
+   "offset": "0x0107E",
+   "keywords": "Pf3Mic radio.Pf3Mic 944 Pf3 Mic",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ao"
+   },
+   "options": [
+    [
+     0,
+     "Recording"
+    ],
+    [
+     1,
+     "Voice Message 1"
+    ],
+    [
+     2,
+     "Voice Message 2"
+    ],
+    [
+     3,
+     "Voice Message 3"
+    ],
+    [
+     4,
+     "Voice Message 4"
+    ],
+    [
+     6,
+     "Voice Guidance"
+    ],
+    [
+     7,
+     "Battery Level"
+    ],
+    [
+     8,
+     "VOX"
+    ],
+    [
+     9,
+     "Group Name"
+    ],
+    [
+     10,
+     "Balance"
+    ],
+    [
+     11,
+     "GPS"
+    ],
+    [
+     12,
+     "Track LOG"
+    ],
+    [
+     13,
+     "SQL"
+    ],
+    [
+     14,
+     "SHIFT"
+    ],
+    [
+     15,
+     "STEP"
+    ],
+    [
+     16,
+     "LOW"
+    ],
+    [
+     17,
+     "Key Lock"
+    ],
+    [
+     18,
+     "Lockout"
+    ],
+    [
+     19,
+     "M>V"
+    ],
+    [
+     20,
+     "T.SEL"
+    ],
+    [
+     21,
+     "NEW"
+    ],
+    [
+     22,
+     "Voice Alert"
+    ],
+    [
+     24,
+     "LCD Brightness"
+    ],
+    [
+     27,
+     "DTMF CH0"
+    ],
+    [
+     28,
+     "ECHOLINK CH0"
+    ],
+    [
+     29,
+     "1,750 [Hz] Tone"
+    ],
+    [
+     31,
+     "Screen Capture"
+    ],
+    [
+     32,
+     "MODE"
+    ],
+    [
+     33,
+     "MENU"
+    ],
+    [
+     34,
+     "A/B"
+    ],
+    [
+     35,
+     "VFO"
+    ],
+    [
+     36,
+     "MR"
+    ],
+    [
+     37,
+     "CALL"
+    ],
+    [
+     38,
+     "MSG"
+    ],
+    [
+     39,
+     "LIST"
+    ],
+    [
+     40,
+     "BCON"
+    ],
+    [
+     41,
+     "REV"
+    ],
+    [
+     42,
+     "TONE"
+    ],
+    [
+     44,
+     "MHz"
+    ],
+    [
+     45,
+     "MARK"
+    ],
+    [
+     46,
+     "DUAL"
+    ],
+    [
+     47,
+     "APRS"
+    ],
+    [
+     48,
+     "OBJ"
+    ],
+    [
+     49,
+     "ATT"
+    ],
+    [
+     50,
+     "FINE"
+    ],
+    [
+     51,
+     "POS"
+    ],
+    [
+     52,
+     "BAND"
+    ],
+    [
+     53,
+     "MONI"
+    ],
+    [
+     54,
+     "UP"
+    ],
+    [
+     55,
+     "DOWN"
+    ]
+   ]
+  },
+  {
+   "id": "radio.PriorityScan",
+   "label": "Priority Scan",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "134",
+   "offset": "0x01011",
+   "keywords": "PriorityScan radio.PriorityScan 134 Priority Scan",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.QsoLog",
+   "label": "QSO Log",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "180",
+   "offset": "0x01027",
+   "keywords": "QsoLog radio.QsoLog 180 QSO Log",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.RecallMethod",
+   "label": "Recall Method",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "202",
+   "offset": "0x01030",
+   "keywords": "RecallMethod radio.RecallMethod 202 Recall Method",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.v"
+   },
+   "options": [
+    [
+     0,
+     "All Bands"
+    ],
+    [
+     1,
+     "Current Band"
+    ]
+   ]
+  },
+  {
+   "id": "radio.RecordingBand",
+   "label": "Recording Band",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "302",
+   "offset": "0x01031",
+   "keywords": "RecordingBand radio.RecordingBand 302 Recording Band",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.w"
+   },
+   "options": [
+    [
+     0,
+     "A Band"
+    ],
+    [
+     1,
+     "B Band"
+    ]
+   ]
+  },
+  {
+   "id": "radio.RemoteContorolCode",
+   "label": "Remote Contorol Code",
+   "category": "radio",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "946",
+   "offset": "0x01080",
+   "keywords": "RemoteContorolCode radio.RemoteContorolCode 946 Remote Contorol Code",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 3,
+    "encoding": "utf8"
+   },
+   "maxlength": 3
+  },
+  {
+   "id": "radio.ScanAutoBacklight",
+   "label": "Scan Auto Backlight",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "135",
+   "offset": "0x01012",
+   "keywords": "ScanAutoBacklight radio.ScanAutoBacklight 135 Scan Auto Backlight",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.ScanResumeAnalog",
+   "label": "Scan Resume Analog",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "130",
+   "offset": "0x0100C",
+   "keywords": "ScanResumeAnalog radio.ScanResumeAnalog 130 Scan Resume Analog",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.j"
+   },
+   "options": [
+    [
+     0,
+     "Time Operate"
+    ],
+    [
+     1,
+     "Carrier Operate"
+    ],
+    [
+     2,
+     "Seek"
+    ]
+   ]
+  },
+  {
+   "id": "radio.ScanResumeDigital",
+   "label": "Scan Resume Digital",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "131",
+   "offset": "0x0100D",
+   "keywords": "ScanResumeDigital radio.ScanResumeDigital 131 Scan Resume Digital",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.k"
+   },
+   "options": [
+    [
+     0,
+     "Time Operate"
+    ],
+    [
+     1,
+     "Carrier Operate"
+    ],
+    [
+     2,
+     "Seek"
+    ]
+   ]
+  },
+  {
+   "id": "radio.SpeedDistance",
+   "label": "Speed Distance",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "970",
+   "offset": "0x01088",
+   "keywords": "SpeedDistance radio.SpeedDistance 970 Speed Distance",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.@as"
+   },
+   "options": [
+    [
+     0,
+     "mi/h , mile"
+    ],
+    [
+     1,
+     "km/h , km"
+    ],
+    [
+     2,
+     "knots , nm"
+    ]
+   ]
+  },
+  {
+   "id": "radio.SsbHighCut",
+   "label": "SSB High Cut",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "120",
+   "offset": "0x01008",
+   "keywords": "SsbHighCut radio.SsbHighCut 120 SSB High Cut",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.g"
+   },
+   "options": [
+    [
+     0,
+     "2.2"
+    ],
+    [
+     1,
+     "2.4"
+    ],
+    [
+     2,
+     "2.6"
+    ],
+    [
+     3,
+     "2.8"
+    ],
+    [
+     4,
+     "3.0"
+    ]
+   ]
+  },
+  {
+   "id": "radio.Temperature",
+   "label": "Temperature",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "972",
+   "offset": "0x0108A",
+   "keywords": "Temperature radio.Temperature 972 Temperature",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.au"
+   },
+   "options": [
+    [
+     0,
+     "degree F"
+    ],
+    [
+     1,
+     "degree C"
+    ]
+   ]
+  },
+  {
+   "id": "radio.TimeOutTimer",
+   "label": "Time Out Timer",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "111",
+   "offset": "0x01003",
+   "keywords": "TimeOutTimer radio.TimeOutTimer 111 Time Out Timer",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.e"
+   },
+   "options": [
+    [
+     0,
+     "0.5"
+    ],
+    [
+     1,
+     "1.0"
+    ],
+    [
+     2,
+     "1.5"
+    ],
+    [
+     3,
+     "2.0"
+    ],
+    [
+     4,
+     "2.5"
+    ],
+    [
+     5,
+     "3.0"
+    ],
+    [
+     6,
+     "3.5"
+    ],
+    [
+     7,
+     "4.0"
+    ],
+    [
+     8,
+     "4.5"
+    ],
+    [
+     9,
+     "5.0"
+    ],
+    [
+     10,
+     "10.0"
+    ]
+   ]
+  },
+  {
+   "id": "radio.TimeRestart",
+   "label": "Time Restart",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 1,
+   "menu": "132",
+   "offset": "0x0100E",
+   "keywords": "TimeRestart radio.TimeRestart 132 Time Restart",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.l"
+   },
+   "options": [
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "3"
+    ],
+    [
+     4,
+     "4"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "6"
+    ],
+    [
+     7,
+     "7"
+    ],
+    [
+     8,
+     "8"
+    ],
+    [
+     9,
+     "9"
+    ],
+    [
+     10,
+     "10"
+    ]
+   ]
+  },
+  {
+   "id": "radio.TimeZone",
+   "label": "Time Zone",
+   "category": "radio",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "950",
+   "offset": "0x01083",
+   "keywords": "TimeZone radio.TimeZone 950 Time Zone",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 203,
+    "step": 1,
+    "allowed_values": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     72,
+     73,
+     74,
+     75,
+     76,
+     77,
+     78,
+     79,
+     80,
+     81,
+     82,
+     83,
+     84,
+     85,
+     86,
+     87,
+     88,
+     89,
+     90,
+     91,
+     92,
+     93,
+     94,
+     95,
+     96,
+     97,
+     98,
+     99,
+     100,
+     101,
+     102,
+     103,
+     104,
+     105,
+     106,
+     107,
+     108,
+     109,
+     110,
+     111,
+     112,
+     201,
+     202,
+     203
+    ]
+   },
+   "min": 0,
+   "max": 203,
+   "step": 1,
+   "allowed_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    201,
+    202,
+    203
+   ]
+  },
+  {
+   "id": "radio.TxHold1750Hz",
+   "label": "TX Hold1750 Hz",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "143",
+   "offset": "0x0101A",
+   "keywords": "TxHold1750Hz radio.TxHold1750Hz 143 TX Hold1750 Hz",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.TxInhibit",
+   "label": "TX Inhibit",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "110",
+   "offset": "0x01001",
+   "keywords": "TxInhibit radio.TxInhibit 110 TX Inhibit",
+   "risk": "high",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.TxMonitor",
+   "label": "TX Monitor",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "311",
+   "offset": "0x01032",
+   "keywords": "TxMonitor radio.TxMonitor 311 TX Monitor",
+   "risk": "high",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.VolumeLockOnOff",
+   "label": "Volume Lock On/Off",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "963",
+   "offset": "0x01087",
+   "keywords": "VolumeLockOnOff radio.VolumeLockOnOff 963 Volume Lock On/Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.Vox",
+   "label": "VOX",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "150",
+   "offset": "0x0101B",
+   "keywords": "Vox radio.Vox 150 VOX",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.VoxDelay",
+   "label": "VOX Delay",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "152",
+   "offset": "0x0101D",
+   "keywords": "VoxDelay radio.VoxDelay 152 VOX Delay",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.q"
+   },
+   "options": [
+    [
+     0,
+     "250"
+    ],
+    [
+     1,
+     "500"
+    ],
+    [
+     2,
+     "750"
+    ],
+    [
+     3,
+     "1000"
+    ],
+    [
+     4,
+     "1500"
+    ],
+    [
+     5,
+     "2000"
+    ],
+    [
+     6,
+     "3000"
+    ]
+   ]
+  },
+  {
+   "id": "radio.VoxGain",
+   "label": "VOX Gain",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "151",
+   "offset": "0x0101C",
+   "keywords": "VoxGain radio.VoxGain 151 VOX Gain",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.p"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "3"
+    ],
+    [
+     4,
+     "4"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "6"
+    ],
+    [
+     7,
+     "7"
+    ],
+    [
+     8,
+     "8"
+    ],
+    [
+     9,
+     "9"
+    ]
+   ]
+  },
+  {
+   "id": "radio.VoxTxOnBusy",
+   "label": "VOX TX On Busy",
+   "category": "radio",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "153",
+   "offset": "0x0101E",
+   "keywords": "VoxTxOnBusy radio.VoxTxOnBusy 153 VOX TX On Busy",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.r"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "On"
+    ]
+   ]
+  },
+  {
+   "id": "radio.WxAlert",
+   "label": "Wx Alert",
+   "category": "radio",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "105",
+   "offset": "0x01007",
+   "keywords": "WxAlert radio.WxAlert 105 Wx Alert",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "gps.BatterySaver",
+   "label": "Battery Saver",
+   "category": "gps",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "404",
+   "offset": "0x01103",
+   "keywords": "BatterySaver gps.BatterySaver 404 Battery Saver",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m1.c"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "4"
+    ],
+    [
+     4,
+     "8"
+    ],
+    [
+     5,
+     "Auto"
+    ]
+   ]
+  },
+  {
+   "id": "gps.BuiltInGps",
+   "label": "Built In GPS",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "400",
+   "offset": "0x01100",
+   "keywords": "BuiltInGps gps.BuiltInGps 400 Built In GPS",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "gps.Distance",
+   "label": "Distance",
+   "category": "gps",
+   "description": "",
+   "type": "number",
+   "value": 1,
+   "menu": "414",
+   "offset": "0x01112",
+   "keywords": "Distance gps.Distance 414 Distance",
+   "risk": "normal",
+   "meta": {
+    "kind": "unsigned_le",
+    "type": "number",
+    "width": 2,
+    "min": 1,
+    "max": 999,
+    "step": 1
+   },
+   "min": 1,
+   "max": 999,
+   "step": 1
+  },
+  {
+   "id": "gps.Interval",
+   "label": "Interval",
+   "category": "gps",
+   "description": "",
+   "type": "number",
+   "value": 2,
+   "menu": "413",
+   "offset": "0x01110",
+   "keywords": "Interval gps.Interval 413 Interval",
+   "risk": "normal",
+   "meta": {
+    "kind": "unsigned_le",
+    "type": "number",
+    "width": 2,
+    "min": 2,
+    "max": 1800,
+    "step": 1
+   },
+   "min": 2,
+   "max": 1800,
+   "step": 1
+  },
+  {
+   "id": "gps.MyPositionSelect",
+   "label": "My Position Select",
+   "category": "gps",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "401",
+   "offset": "0x011C0",
+   "keywords": "MyPositionSelect gps.MyPositionSelect 401 My Position Select",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 5,
+    "step": 1
+   },
+   "min": 0,
+   "max": 5,
+   "step": 1
+  },
+  {
+   "id": "gps.OperatingMode",
+   "label": "Operating Mode",
+   "category": "gps",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "403",
+   "offset": "0x01102",
+   "keywords": "OperatingMode gps.OperatingMode 403 Operating Mode",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m1.b"
+   },
+   "options": [
+    [
+     0,
+     "Normal"
+    ],
+    [
+     1,
+     "GPS Receiver"
+    ]
+   ]
+  },
+  {
+   "id": "gps.PcOutput",
+   "label": "Pc Output",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "405",
+   "offset": "0x01104",
+   "keywords": "PcOutput gps.PcOutput 405 Pc Output",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "gps.PositionAmbiguity",
+   "label": "Position Ambiguity",
+   "category": "gps",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "402",
+   "offset": "0x01101",
+   "keywords": "PositionAmbiguity gps.PositionAmbiguity 402 Position Ambiguity",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m1.a"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "1-Digit"
+    ],
+    [
+     2,
+     "2-Digit"
+    ],
+    [
+     3,
+     "3-Digit"
+    ],
+    [
+     4,
+     "4-Digit"
+    ]
+   ]
+  },
+  {
+   "id": "gps.RecodeMethod",
+   "label": "Recode Method",
+   "category": "gps",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "412",
+   "offset": "0x01108",
+   "keywords": "RecodeMethod gps.RecodeMethod 412 Recode Method",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m1.d"
+   },
+   "options": [
+    [
+     0,
+     "Time"
+    ],
+    [
+     1,
+     "Distance"
+    ],
+    [
+     2,
+     "Beacon"
+    ]
+   ]
+  },
+  {
+   "id": "gps.Sentence_Gpgga",
+   "label": "Sentence_Gpgga",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "406",
+   "offset": "0x01105",
+   "keywords": "Sentence_Gpgga gps.Sentence_Gpgga 406 Sentence_Gpgga",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 0,
+    "width": 1
+   }
+  },
+  {
+   "id": "gps.Sentence_Gpgll",
+   "label": "Sentence_Gpgll",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "406",
+   "offset": "0x01105",
+   "keywords": "Sentence_Gpgll gps.Sentence_Gpgll 406 Sentence_Gpgll",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 1,
+    "width": 1
+   }
+  },
+  {
+   "id": "gps.Sentence_Gpgsa",
+   "label": "Sentence_Gpgsa",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "406",
+   "offset": "0x01105",
+   "keywords": "Sentence_Gpgsa gps.Sentence_Gpgsa 406 Sentence_Gpgsa",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 2,
+    "width": 1
+   }
+  },
+  {
+   "id": "gps.Sentence_Gpgsv",
+   "label": "Sentence_Gpgsv",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "406",
+   "offset": "0x01105",
+   "keywords": "Sentence_Gpgsv gps.Sentence_Gpgsv 406 Sentence_Gpgsv",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 3,
+    "width": 1
+   }
+  },
+  {
+   "id": "gps.Sentence_Gprmc",
+   "label": "Sentence_Gprmc",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "406",
+   "offset": "0x01105",
+   "keywords": "Sentence_Gprmc gps.Sentence_Gprmc 406 Sentence_Gprmc",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 4,
+    "width": 1
+   }
+  },
+  {
+   "id": "gps.Sentence_Gpvtg",
+   "label": "Sentence_Gpvtg",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "406",
+   "offset": "0x01105",
+   "keywords": "Sentence_Gpvtg gps.Sentence_Gpvtg 406 Sentence_Gpvtg",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 5,
+    "width": 1
+   }
+  },
+  {
+   "id": "gps.TrackLog",
+   "label": "Track Log",
+   "category": "gps",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "410",
+   "offset": "0x01106",
+   "keywords": "TrackLog gps.TrackLog 410 Track Log",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.AltnetAddress",
+   "label": "Altnet Address",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "591",
+   "offset": "0x01461",
+   "keywords": "AltnetAddress aprs.AltnetAddress 591 Altnet Address",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 6,
+    "encoding": "utf8"
+   },
+   "maxlength": 6
+  },
+  {
+   "id": "aprs.AprsKey",
+   "label": "APRS Key",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "509",
+   "offset": "0x0120A",
+   "keywords": "AprsKey aprs.AprsKey 509 APRS Key",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 2,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.AprsVoice",
+   "label": "APRS Voice",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "575",
+   "offset": "0x01219",
+   "keywords": "AprsVoice aprs.AprsVoice 575 APRS Voice",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.AutoReplyDelayTime",
+   "label": "Auto Reply Delay Time",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "563",
+   "offset": "0x014B1",
+   "keywords": "AutoReplyDelayTime aprs.AutoReplyDelayTime 563 Auto Reply Delay Time",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.s"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "10"
+    ],
+    [
+     2,
+     "20"
+    ],
+    [
+     3,
+     "30"
+    ],
+    [
+     4,
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.AutoReplyMessage",
+   "label": "Auto Reply Message",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "564",
+   "offset": "0x014B2",
+   "keywords": "AutoReplyMessage aprs.AutoReplyMessage 564 Auto Reply Message",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 67,
+    "encoding": "utf8"
+   },
+   "maxlength": 67
+  },
+  {
+   "id": "aprs.AutoReplyOnOff",
+   "label": "Auto Reply On/Off",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "561",
+   "offset": "0x014B0",
+   "keywords": "AutoReplyOnOff aprs.AutoReplyOnOff 561 Auto Reply On/Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.AutoReplyTargetCall",
+   "label": "Auto Reply Target Call",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "562",
+   "offset": "0x014F5",
+   "keywords": "AutoReplyTargetCall aprs.AutoReplyTargetCall 562 Auto Reply Target Call",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 9,
+    "encoding": "utf8"
+   },
+   "maxlength": 9
+  },
+  {
+   "id": "aprs.BeaconAltitudeOff",
+   "label": "Beacon Altitude Off",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "515",
+   "offset": "0x01221",
+   "keywords": "BeaconAltitudeOff aprs.BeaconAltitudeOff 515 Beacon Altitude Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.BeaconSpeedOff",
+   "label": "Beacon Speed Off",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "514",
+   "offset": "0x01220",
+   "keywords": "BeaconSpeedOff aprs.BeaconSpeedOff 514 Beacon Speed Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.BeaconTxDecay",
+   "label": "Beacon TX Decay",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "512",
+   "offset": "0x0136C",
+   "keywords": "BeaconTxDecay aprs.BeaconTxDecay 512 Beacon TX Decay",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.BeaconTxInterval",
+   "label": "Beacon TX Interval",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "511",
+   "offset": "0x0136B",
+   "keywords": "BeaconTxInterval aprs.BeaconTxInterval 511 Beacon TX Interval",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.o"
+   },
+   "options": [
+    [
+     0,
+     "0.2"
+    ],
+    [
+     1,
+     "0.5"
+    ],
+    [
+     2,
+     "1"
+    ],
+    [
+     3,
+     "2"
+    ],
+    [
+     4,
+     "3"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "10"
+    ],
+    [
+     7,
+     "20"
+    ],
+    [
+     8,
+     "30"
+    ],
+    [
+     9,
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.BeaconTxMethod",
+   "label": "Beacon TX Method",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "510",
+   "offset": "0x0136A",
+   "keywords": "BeaconTxMethod aprs.BeaconTxMethod 510 Beacon TX Method",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.n"
+   },
+   "options": [
+    [
+     0,
+     "Manual"
+    ],
+    [
+     1,
+     "PTT"
+    ],
+    [
+     2,
+     "Auto"
+    ],
+    [
+     3,
+     "SmartBeaconing"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.BeaconTxProportion",
+   "label": "Beacon TX Proportion",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "513",
+   "offset": "0x0136D",
+   "keywords": "BeaconTxProportion aprs.BeaconTxProportion 513 Beacon TX Proportion",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.BeaconType",
+   "label": "Beacon Type",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "",
+   "offset": "0x01209",
+   "keywords": "BeaconType aprs.BeaconType  Beacon Type",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.a"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.BulletinGroup",
+   "label": "Bulletin Group",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "595",
+   "offset": "0x0183B",
+   "keywords": "BulletinGroup aprs.BulletinGroup 595 Bulletin Group",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 35,
+    "encoding": "utf8"
+   },
+   "maxlength": 35
+  },
+  {
+   "id": "aprs.CursorControl",
+   "label": "Cursor Control",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "",
+   "offset": "0x0186B",
+   "keywords": "CursorControl aprs.CursorControl  Cursor Control",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.x"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.DigipeatMyCallsign",
+   "label": "Digipeat My Callsign",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "580",
+   "offset": "0x0146C",
+   "keywords": "DigipeatMyCallsign aprs.DigipeatMyCallsign 580 Digipeat My Callsign",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.FastRateTime",
+   "label": "Fast Rate Time",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 10,
+   "menu": "532",
+   "offset": "0x01371",
+   "keywords": "FastRateTime aprs.FastRateTime 532 Fast Rate Time",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 10,
+    "max": 180,
+    "step": 1
+   },
+   "min": 10,
+   "max": 180,
+   "step": 1
+  },
+  {
+   "id": "aprs.FilterPositionLimit",
+   "label": "Filter Position Limit",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "550",
+   "offset": "0x01365",
+   "keywords": "FilterPositionLimit aprs.FilterPositionLimit 550 Filter Position Limit",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 250,
+    "step": 1
+   },
+   "min": 0,
+   "max": 250,
+   "step": 1
+  },
+  {
+   "id": "aprs.FilterType_1Way",
+   "label": "Filter Type_1 Way",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "551",
+   "offset": "0x01366",
+   "keywords": "FilterType_1Way aprs.FilterType_1Way 551 Filter Type_1 Way",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 5,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.FilterType_Digipeater",
+   "label": "Filter Type_Digipeater",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "551",
+   "offset": "0x01366",
+   "keywords": "FilterType_Digipeater aprs.FilterType_Digipeater 551 Filter Type_Digipeater",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 1,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.FilterType_Mobile",
+   "label": "Filter Type_Mobile",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "551",
+   "offset": "0x01366",
+   "keywords": "FilterType_Mobile aprs.FilterType_Mobile 551 Filter Type_Mobile",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 2,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.FilterType_Navitra",
+   "label": "Filter Type_Navitra",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "551",
+   "offset": "0x01366",
+   "keywords": "FilterType_Navitra aprs.FilterType_Navitra 551 Filter Type_Navitra",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 4,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.FilterType_Object",
+   "label": "Filter Type_Object",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "551",
+   "offset": "0x01366",
+   "keywords": "FilterType_Object aprs.FilterType_Object 551 Filter Type_Object",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 3,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.FilterType_Others",
+   "label": "Filter Type_Others",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "551",
+   "offset": "0x01366",
+   "keywords": "FilterType_Others aprs.FilterType_Others 551 Filter Type_Others",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 6,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.FilterType_Weather",
+   "label": "Filter Type_Weather",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "551",
+   "offset": "0x01366",
+   "keywords": "FilterType_Weather aprs.FilterType_Weather 551 Filter Type_Weather",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 0,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.Frequency",
+   "label": "Frequency",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "509",
+   "offset": "0x0120A",
+   "keywords": "Frequency aprs.Frequency 509 Frequency",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 0,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.HiSpeedSpeed",
+   "label": "Hi Speed Speed",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 2,
+   "menu": "530",
+   "offset": "0x0136F",
+   "keywords": "HiSpeedSpeed aprs.HiSpeedSpeed 530 Hi Speed Speed",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 2,
+    "max": 90,
+    "step": 1
+   },
+   "min": 2,
+   "max": 90,
+   "step": 1
+  },
+  {
+   "id": "aprs.IconNavitra",
+   "label": "Icon Navitra",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "501",
+   "offset": "0x01369",
+   "keywords": "IconNavitra aprs.IconNavitra 501 Icon Navitra",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 14,
+    "step": 1
+   },
+   "min": 0,
+   "max": 14,
+   "step": 1
+  },
+  {
+   "id": "aprs.IconSymbol",
+   "label": "Icon Symbol",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 33,
+   "menu": "501",
+   "offset": "0x01368",
+   "keywords": "IconSymbol aprs.IconSymbol 501 Icon Symbol",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 33,
+    "max": 126,
+    "step": 1
+   },
+   "min": 33,
+   "max": 126,
+   "step": 1
+  },
+  {
+   "id": "aprs.IconTableOverlay",
+   "label": "Icon Table Overlay",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 47,
+   "menu": "501",
+   "offset": "0x01367",
+   "keywords": "IconTableOverlay aprs.IconTableOverlay 501 Icon Table Overlay",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 47,
+    "max": 90,
+    "step": 1,
+    "allowed_values": [
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     72,
+     73,
+     74,
+     75,
+     76,
+     77,
+     78,
+     79,
+     80,
+     81,
+     82,
+     83,
+     84,
+     85,
+     86,
+     87,
+     88,
+     89,
+     90
+    ]
+   },
+   "min": 47,
+   "max": 90,
+   "step": 1,
+   "allowed_values": [
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90
+   ]
+  },
+  {
+   "id": "aprs.InterruptDisplayArea",
+   "label": "Interrupt Display Area",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "573",
+   "offset": "0x01869",
+   "keywords": "InterruptDisplayArea aprs.InterruptDisplayArea 573 Interrupt Display Area",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.v"
+   },
+   "options": [
+    [
+     0,
+     "One Line"
+    ],
+    [
+     1,
+     "Entire Display"
+    ],
+    [
+     2,
+     "Entire Always"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.InterruptDisplayTime",
+   "label": "Interrupt Display Time",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "574",
+   "offset": "0x0186A",
+   "keywords": "InterruptDisplayTime aprs.InterruptDisplayTime 574 Interrupt Display Time",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.w"
+   },
+   "options": [
+    [
+     0,
+     "3"
+    ],
+    [
+     1,
+     "5"
+    ],
+    [
+     2,
+     "10"
+    ],
+    [
+     3,
+     "20"
+    ],
+    [
+     4,
+     "30"
+    ],
+    [
+     5,
+     "60"
+    ],
+    [
+     6,
+     "Infinite"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.LowSpeedSpeed",
+   "label": "Low Speed Speed",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 2,
+   "menu": "530",
+   "offset": "0x0136E",
+   "keywords": "LowSpeedSpeed aprs.LowSpeedSpeed 530 Low Speed Speed",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 2,
+    "max": 30,
+    "step": 1
+   },
+   "min": 2,
+   "max": 30,
+   "step": 1
+  },
+  {
+   "id": "aprs.MessageGroup",
+   "label": "Message Group",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "594",
+   "offset": "0x01800",
+   "keywords": "MessageGroup aprs.MessageGroup 594 Message Group",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 59,
+    "encoding": "utf8"
+   },
+   "maxlength": 59
+  },
+  {
+   "id": "aprs.MyCallsign",
+   "label": "My Callsign",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "500",
+   "offset": "0x01200",
+   "keywords": "MyCallsign aprs.MyCallsign 500 My Callsign",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 9,
+    "encoding": "utf8"
+   },
+   "maxlength": 9
+  },
+  {
+   "id": "aprs.NavitraGroupCode",
+   "label": "Navitra Group Code",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "",
+   "offset": "0x01872",
+   "keywords": "NavitraGroupCode aprs.NavitraGroupCode  Navitra Group Code",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 3,
+    "encoding": "utf8"
+   },
+   "maxlength": 3
+  },
+  {
+   "id": "aprs.NavitraGroupModeOnOff",
+   "label": "Navitra Group Mode On/Off",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "",
+   "offset": "0x01871",
+   "keywords": "NavitraGroupModeOnOff aprs.NavitraGroupModeOnOff  Navitra Group Mode On/Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.NavitraMessageSelect",
+   "label": "Navitra Message Select",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "",
+   "offset": "0x018D9",
+   "keywords": "NavitraMessageSelect aprs.NavitraMessageSelect  Navitra Message Select",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 4,
+    "step": 1
+   },
+   "min": 0,
+   "max": 4,
+   "step": 1
+  },
+  {
+   "id": "aprs.NetworkType",
+   "label": "Network Type",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "591",
+   "offset": "0x01460",
+   "keywords": "NetworkType aprs.NetworkType 591 Network Type",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.r"
+   },
+   "options": [
+    [
+     0,
+     "APRS (APK005)"
+    ],
+    [
+     1,
+     "Altnet"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.ObjectUsedNo",
+   "label": "Object Used No",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "516",
+   "offset": "0x019C0",
+   "keywords": "ObjectUsedNo aprs.ObjectUsedNo 516 Object Used No",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 2,
+    "step": 1
+   },
+   "min": 0,
+   "max": 2,
+   "step": 1
+  },
+  {
+   "id": "aprs.PacketPathAbbr",
+   "label": "Packet Path Abbr",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "504",
+   "offset": "0x0137A",
+   "keywords": "PacketPathAbbr aprs.PacketPathAbbr 504 Packet Path Abbr",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 5,
+    "encoding": "utf8"
+   },
+   "maxlength": 5
+  },
+  {
+   "id": "aprs.PacketPathNewNHops",
+   "label": "Packet Path New N Hops",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "504",
+   "offset": "0x01377",
+   "keywords": "PacketPathNewNHops aprs.PacketPathNewNHops 504 Packet Path New N Hops",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.q"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "3"
+    ],
+    [
+     4,
+     "4"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "6"
+    ],
+    [
+     7,
+     "7"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.PacketPathNewNWide11",
+   "label": "Packet Path New N Wide 11",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "504",
+   "offset": "0x01376",
+   "keywords": "PacketPathNewNWide11 aprs.PacketPathNewNWide11 504 Packet Path New N Wide 11",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.PacketPathOthers",
+   "label": "Packet Path Others",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "504",
+   "offset": "0x01380",
+   "keywords": "PacketPathOthers aprs.PacketPathOthers 504 Packet Path Others",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 79,
+    "encoding": "utf8"
+   },
+   "maxlength": 79
+  },
+  {
+   "id": "aprs.PacketPathOthers2",
+   "label": "Packet Path Others 2",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "504",
+   "offset": "0x013CF",
+   "keywords": "PacketPathOthers2 aprs.PacketPathOthers2 504 Packet Path Others 2",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 29,
+    "encoding": "utf8"
+   },
+   "maxlength": 29
+  },
+  {
+   "id": "aprs.PacketPathOthers3",
+   "label": "Packet Path Others 3",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "504",
+   "offset": "0x01400",
+   "keywords": "PacketPathOthers3 aprs.PacketPathOthers3 504 Packet Path Others 3",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 29,
+    "encoding": "utf8"
+   },
+   "maxlength": 29
+  },
+  {
+   "id": "aprs.PacketPathRegionHops",
+   "label": "Packet Path Region Hops",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "504",
+   "offset": "0x0137F",
+   "keywords": "PacketPathRegionHops aprs.PacketPathRegionHops 504 Packet Path Region Hops",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.q"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "3"
+    ],
+    [
+     4,
+     "4"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "6"
+    ],
+    [
+     7,
+     "7"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.PacketPathRelayHops",
+   "label": "Packet Path Relay Hops",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "504",
+   "offset": "0x01379",
+   "keywords": "PacketPathRelayHops aprs.PacketPathRelayHops 504 Packet Path Relay Hops",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.q"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "3"
+    ],
+    [
+     4,
+     "4"
+    ],
+    [
+     5,
+     "5"
+    ],
+    [
+     6,
+     "6"
+    ],
+    [
+     7,
+     "7"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.PacketPathRelayRelay",
+   "label": "Packet Path Relay Relay",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "504",
+   "offset": "0x01378",
+   "keywords": "PacketPathRelayRelay aprs.PacketPathRelayRelay 504 Packet Path Relay Relay",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.PacketPathType",
+   "label": "Packet Path Type",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "504",
+   "offset": "0x01375",
+   "keywords": "PacketPathType aprs.PacketPathType 504 Packet Path Type",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.p"
+   },
+   "options": [
+    [
+     0,
+     "New-N"
+    ],
+    [
+     1,
+     "Relay"
+    ],
+    [
+     2,
+     "Region"
+    ],
+    [
+     3,
+     "Others1"
+    ],
+    [
+     4,
+     "Others2"
+    ],
+    [
+     5,
+     "Others3"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.PcOutput",
+   "label": "Pc Output",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "590",
+   "offset": "0x01216",
+   "keywords": "PcOutput aprs.PcOutput 590 Pc Output",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.g"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "Raw Packets"
+    ],
+    [
+     2,
+     "Waypoints"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.PositionComment",
+   "label": "Position Comment",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "502",
+   "offset": "0x01222",
+   "keywords": "PositionComment aprs.PositionComment 502 Position Comment",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.m"
+   },
+   "options": [
+    [
+     0,
+     "Off Duty"
+    ],
+    [
+     1,
+     "Enroute"
+    ],
+    [
+     2,
+     "In Service"
+    ],
+    [
+     3,
+     "Returning"
+    ],
+    [
+     4,
+     "Committed"
+    ],
+    [
+     5,
+     "Special"
+    ],
+    [
+     6,
+     "PRIORITY"
+    ],
+    [
+     7,
+     "CUSTOM 0"
+    ],
+    [
+     8,
+     "CUSTOM 1"
+    ],
+    [
+     9,
+     "CUSTOM 2"
+    ],
+    [
+     10,
+     "CUSTOM 3"
+    ],
+    [
+     11,
+     "CUSTOM 4"
+    ],
+    [
+     12,
+     "CUSTOM 5"
+    ],
+    [
+     13,
+     "CUSTOM 6"
+    ],
+    [
+     14,
+     "EMERGENCY!"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.Ptt",
+   "label": "Ptt",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "509",
+   "offset": "0x0120A",
+   "keywords": "Ptt aprs.Ptt 509 Ptt",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 1,
+    "width": 1
+   }
+  },
+  {
+   "id": "aprs.QsyInStatus",
+   "label": "Qsy In Status",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "520",
+   "offset": "0x01361",
+   "keywords": "QsyInStatus aprs.QsyInStatus 520 Qsy In Status",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.QsyLimit",
+   "label": "Qsy Limit",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "523",
+   "offset": "0x01364",
+   "keywords": "QsyLimit aprs.QsyLimit 523 Qsy Limit",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 250,
+    "step": 1
+   },
+   "min": 0,
+   "max": 250,
+   "step": 1
+  },
+  {
+   "id": "aprs.QsyShiftOffset",
+   "label": "Qsy Shift Offset",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "522",
+   "offset": "0x01363",
+   "keywords": "QsyShiftOffset aprs.QsyShiftOffset 522 Qsy Shift Offset",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.QsyToneNarrow",
+   "label": "Qsy Tone Narrow",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "521",
+   "offset": "0x01362",
+   "keywords": "QsyToneNarrow aprs.QsyToneNarrow 521 Qsy Tone Narrow",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.RxBeepType",
+   "label": "RX Beep Type",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "570",
+   "offset": "0x0185E",
+   "keywords": "RxBeepType aprs.RxBeepType 570 RX Beep Type",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.u"
+   },
+   "options": [
+    [
+     0,
+     "All"
+    ],
+    [
+     1,
+     "All New"
+    ],
+    [
+     2,
+     "Mine"
+    ],
+    [
+     3,
+     "Message Only"
+    ],
+    [
+     4,
+     "Off"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.SlowRateTime",
+   "label": "Slow Rate Time",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 1,
+   "menu": "531",
+   "offset": "0x01370",
+   "keywords": "SlowRateTime aprs.SlowRateTime 531 Slow Rate Time",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 1,
+    "max": 100,
+    "step": 1
+   },
+   "min": 1,
+   "max": 100,
+   "step": 1
+  },
+  {
+   "id": "aprs.SpecialCall",
+   "label": "Special Call",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "572",
+   "offset": "0x01860",
+   "keywords": "SpecialCall aprs.SpecialCall 572 Special Call",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 9,
+    "encoding": "utf8"
+   },
+   "maxlength": 9
+  },
+  {
+   "id": "aprs.StatusTextSelect",
+   "label": "Status Text Select",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "503",
+   "offset": "0x0122F",
+   "keywords": "StatusTextSelect aprs.StatusTextSelect 503 Status Text Select",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 4,
+    "step": 1
+   },
+   "min": 0,
+   "max": 4,
+   "step": 1
+  },
+  {
+   "id": "aprs.TncDataBand",
+   "label": "TNC Data Band",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "506",
+   "offset": "0x0120B",
+   "keywords": "TncDataBand aprs.TncDataBand 506 TNC Data Band",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.c"
+   },
+   "options": [
+    [
+     0,
+     "A-Band"
+    ],
+    [
+     1,
+     "B-Band"
+    ],
+    [
+     2,
+     "2"
+    ],
+    [
+     3,
+     "3"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.TncDataSpeed",
+   "label": "TNC Data Speed",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "505",
+   "offset": "0x0120C",
+   "keywords": "TncDataSpeed aprs.TncDataSpeed 505 TNC Data Speed",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.d"
+   },
+   "options": [
+    [
+     0,
+     "1200"
+    ],
+    [
+     1,
+     "9600"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.TncDcdSense",
+   "label": "TNC Dcd Sense",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "507",
+   "offset": "0x0120D",
+   "keywords": "TncDcdSense aprs.TncDcdSense 507 TNC Dcd Sense",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.e"
+   },
+   "options": [
+    [
+     0,
+     "Busy"
+    ],
+    [
+     1,
+     "Detect Data"
+    ],
+    [
+     2,
+     "Off (Ignore)"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.TncTxDelay",
+   "label": "TNC TX Delay",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "508",
+   "offset": "0x0120F",
+   "keywords": "TncTxDelay aprs.TncTxDelay 508 TNC TX Delay",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.f"
+   },
+   "options": [
+    [
+     0,
+     "100"
+    ],
+    [
+     1,
+     "150"
+    ],
+    [
+     2,
+     "200"
+    ],
+    [
+     3,
+     "300"
+    ],
+    [
+     4,
+     "400"
+    ],
+    [
+     5,
+     "500"
+    ],
+    [
+     6,
+     "750"
+    ],
+    [
+     7,
+     "1000"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.TurnAngleDeg",
+   "label": "Turn Angle Deg",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 5,
+   "menu": "533",
+   "offset": "0x01372",
+   "keywords": "TurnAngleDeg aprs.TurnAngleDeg 533 Turn Angle Deg",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 5,
+    "max": 90,
+    "step": 1
+   },
+   "min": 5,
+   "max": 90,
+   "step": 1
+  },
+  {
+   "id": "aprs.TurnSlopeDegSpeed",
+   "label": "Turn Slope Deg Speed",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 1,
+   "menu": "534",
+   "offset": "0x01373",
+   "keywords": "TurnSlopeDegSpeed aprs.TurnSlopeDegSpeed 534 Turn Slope Deg Speed",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 1,
+    "max": 255,
+    "step": 1
+   },
+   "min": 1,
+   "max": 255,
+   "step": 1
+  },
+  {
+   "id": "aprs.TurnTimeTime",
+   "label": "Turn Time Time",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 5,
+   "menu": "535",
+   "offset": "0x01374",
+   "keywords": "TurnTimeTime aprs.TurnTimeTime 535 Turn Time Time",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 5,
+    "max": 180,
+    "step": 1
+   },
+   "min": 5,
+   "max": 180,
+   "step": 1
+  },
+  {
+   "id": "aprs.TxBeepOnOff",
+   "label": "TX Beep On/Off",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "571",
+   "offset": "0x0185F",
+   "keywords": "TxBeepOnOff aprs.TxBeepOnOff 571 TX Beep On/Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.UIcheck",
+   "label": "U Icheck",
+   "category": "aprs",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "581",
+   "offset": "0x0146D",
+   "keywords": "UIcheck aprs.UIcheck 581 U Icheck",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 250,
+    "step": 1
+   },
+   "min": 0,
+   "max": 250,
+   "step": 1
+  },
+  {
+   "id": "aprs.UIdigiAliases",
+   "label": "U Idigi Aliases",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "583",
+   "offset": "0x0146F",
+   "keywords": "UIdigiAliases aprs.UIdigiAliases 583 U Idigi Aliases",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 39,
+    "encoding": "utf8"
+   },
+   "maxlength": 39
+  },
+  {
+   "id": "aprs.UIdigipeat",
+   "label": "U Idigipeat",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "582",
+   "offset": "0x0146E",
+   "keywords": "UIdigipeat aprs.UIdigipeat 582 U Idigipeat",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.UIflood",
+   "label": "U Iflood",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "584",
+   "offset": "0x014A6",
+   "keywords": "UIflood aprs.UIflood 584 U Iflood",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.UIfloodAliases",
+   "label": "U Iflood Aliases",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "585",
+   "offset": "0x014A7",
+   "keywords": "UIfloodAliases aprs.UIfloodAliases 585 U Iflood Aliases",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 5,
+    "encoding": "utf8"
+   },
+   "maxlength": 5
+  },
+  {
+   "id": "aprs.UIfloodSubstitution",
+   "label": "U Iflood Substitution",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "586",
+   "offset": "0x014AC",
+   "keywords": "UIfloodSubstitution aprs.UIfloodSubstitution 586 U Iflood Substitution",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.t"
+   },
+   "options": [
+    [
+     0,
+     "ID"
+    ],
+    [
+     1,
+     "NOID"
+    ],
+    [
+     2,
+     "First"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.UItrace",
+   "label": "U Itrace",
+   "category": "aprs",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "587",
+   "offset": "0x014A0",
+   "keywords": "UItrace aprs.UItrace 587 U Itrace",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "aprs.UItraceAliases",
+   "label": "U Itrace Aliases",
+   "category": "aprs",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "588",
+   "offset": "0x014A1",
+   "keywords": "UItraceAliases aprs.UItraceAliases 588 U Itrace Aliases",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 5,
+    "encoding": "utf8"
+   },
+   "maxlength": 5
+  },
+  {
+   "id": "aprs.VoiceAlertOnOff",
+   "label": "Voice Alert On/Off",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "592",
+   "offset": "0x0121A",
+   "keywords": "VoiceAlertOnOff aprs.VoiceAlertOnOff 592 Voice Alert On/Off",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.h"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "On"
+    ],
+    [
+     2,
+     "RX Only"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.VoiceAlertToneNo",
+   "label": "Voice Alert Tone No",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "593",
+   "offset": "0x0121B",
+   "keywords": "VoiceAlertToneNo aprs.VoiceAlertToneNo 593 Voice Alert Tone No",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.i"
+   },
+   "options": [
+    [
+     0,
+     "67.0"
+    ],
+    [
+     1,
+     "69.3"
+    ],
+    [
+     2,
+     "71.9"
+    ],
+    [
+     3,
+     "74.4"
+    ],
+    [
+     4,
+     "77.0"
+    ],
+    [
+     5,
+     "79.7"
+    ],
+    [
+     6,
+     "82.5"
+    ],
+    [
+     7,
+     "85.4"
+    ],
+    [
+     8,
+     "88.5"
+    ],
+    [
+     9,
+     "91.5"
+    ],
+    [
+     10,
+     "94.8"
+    ],
+    [
+     11,
+     "97.4"
+    ],
+    [
+     12,
+     "100.0"
+    ],
+    [
+     13,
+     "103.5"
+    ],
+    [
+     14,
+     "107.2"
+    ],
+    [
+     15,
+     "110.9"
+    ],
+    [
+     16,
+     "114.8"
+    ],
+    [
+     17,
+     "118.8"
+    ],
+    [
+     18,
+     "123.0"
+    ],
+    [
+     19,
+     "127.3"
+    ],
+    [
+     20,
+     "131.8"
+    ],
+    [
+     21,
+     "136.5"
+    ],
+    [
+     22,
+     "141.3"
+    ],
+    [
+     23,
+     "146.2"
+    ],
+    [
+     24,
+     "151.4"
+    ],
+    [
+     25,
+     "156.7"
+    ],
+    [
+     26,
+     "159.8"
+    ],
+    [
+     27,
+     "162.2"
+    ],
+    [
+     28,
+     "165.5"
+    ],
+    [
+     29,
+     "167.9"
+    ],
+    [
+     30,
+     "171.3"
+    ],
+    [
+     31,
+     "173.8"
+    ],
+    [
+     32,
+     "177.3"
+    ],
+    [
+     33,
+     "179.9"
+    ],
+    [
+     34,
+     "183.5"
+    ],
+    [
+     35,
+     "186.2"
+    ],
+    [
+     36,
+     "189.9"
+    ],
+    [
+     37,
+     "192.8"
+    ],
+    [
+     38,
+     "196.6"
+    ],
+    [
+     39,
+     "199.5"
+    ],
+    [
+     40,
+     "203.5"
+    ],
+    [
+     41,
+     "206.5"
+    ],
+    [
+     42,
+     "210.7"
+    ],
+    [
+     43,
+     "218.1"
+    ],
+    [
+     44,
+     "225.7"
+    ],
+    [
+     45,
+     "229.1"
+    ],
+    [
+     46,
+     "233.6"
+    ],
+    [
+     47,
+     "241.8"
+    ],
+    [
+     48,
+     "250.3"
+    ],
+    [
+     49,
+     "254.1"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.WaypointFormat",
+   "label": "Waypoint Format",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "540",
+   "offset": "0x01213",
+   "keywords": "WaypointFormat aprs.WaypointFormat 540 Waypoint Format",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.j"
+   },
+   "options": [
+    [
+     0,
+     "NMEA"
+    ],
+    [
+     1,
+     "MAGELLAN"
+    ],
+    [
+     2,
+     "KENWOOD"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.WaypointLength",
+   "label": "Waypoint Length",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 6,
+   "menu": "541",
+   "offset": "0x01214",
+   "keywords": "WaypointLength aprs.WaypointLength 541 Waypoint Length",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.k"
+   },
+   "options": [
+    [
+     6,
+     "6-Character"
+    ],
+    [
+     7,
+     "7-Character"
+    ],
+    [
+     8,
+     "8-Character"
+    ],
+    [
+     9,
+     "9-Character"
+    ]
+   ]
+  },
+  {
+   "id": "aprs.WaypointOutput",
+   "label": "Waypoint Output",
+   "category": "aprs",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "542",
+   "offset": "0x01215",
+   "keywords": "WaypointOutput aprs.WaypointOutput 542 Waypoint Output",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "l4.l"
+   },
+   "options": [
+    [
+     0,
+     "All"
+    ],
+    [
+     1,
+     "Local"
+    ],
+    [
+     2,
+     "Filtered"
+    ]
+   ]
+  },
+  {
+   "id": "dv.AutoReplyTimingTxRx",
+   "label": "Auto Reply Timing TX RX",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "613",
+   "offset": "0x01A01",
+   "keywords": "AutoReplyTimingTxRx dv.AutoReplyTimingTxRx 613 Auto Reply Timing TX RX",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.a"
+   },
+   "options": [
+    [
+     0,
+     "Immediate"
+    ],
+    [
+     1,
+     "5"
+    ],
+    [
+     2,
+     "10"
+    ],
+    [
+     3,
+     "20"
+    ],
+    [
+     4,
+     "30"
+    ],
+    [
+     5,
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "dv.AutoTxGpsDataTx",
+   "label": "Auto TX GPS Data TX",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "632",
+   "offset": "0x01A0C",
+   "keywords": "AutoTxGpsDataTx dv.AutoTxGpsDataTx 632 Auto TX GPS Data TX",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.e"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "0.2"
+    ],
+    [
+     2,
+     "0.5"
+    ],
+    [
+     3,
+     "1"
+    ],
+    [
+     4,
+     "2"
+    ],
+    [
+     5,
+     "3"
+    ],
+    [
+     6,
+     "5"
+    ],
+    [
+     7,
+     "10"
+    ],
+    [
+     8,
+     "20"
+    ],
+    [
+     9,
+     "30"
+    ],
+    [
+     10,
+     "60"
+    ]
+   ]
+  },
+  {
+   "id": "dv.CallsignAnnounceRxNotification",
+   "label": "Callsign Announce RX Notification",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "644",
+   "offset": "0x01A11",
+   "keywords": "CallsignAnnounceRxNotification dv.CallsignAnnounceRxNotification 644 Callsign Announce RX Notification",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.j"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "Kerchunk"
+    ],
+    [
+     2,
+     "Except Kerchunk"
+    ],
+    [
+     3,
+     "My Station"
+    ],
+    [
+     4,
+     "All"
+    ]
+   ]
+  },
+  {
+   "id": "dv.DataFrameOutputTxRx",
+   "label": "Data Frame Output TX RX",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "618",
+   "offset": "0x01A06",
+   "keywords": "DataFrameOutputTxRx dv.DataFrameOutputTxRx 618 Data Frame Output TX RX",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.d"
+   },
+   "options": [
+    [
+     0,
+     "All"
+    ],
+    [
+     1,
+     "Linked DSQ"
+    ],
+    [
+     2,
+     "Linked Data Mode"
+    ]
+   ]
+  },
+  {
+   "id": "dv.DataTxEndTimingTxRx",
+   "label": "Data TX End Timing TX RX",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "614",
+   "offset": "0x01A02",
+   "keywords": "DataTxEndTimingTxRx dv.DataTxEndTimingTxRx 614 Data TX End Timing TX RX",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.b"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "0.5"
+    ],
+    [
+     2,
+     "1.0"
+    ],
+    [
+     3,
+     "1.5"
+    ],
+    [
+     4,
+     "2.0"
+    ]
+   ]
+  },
+  {
+   "id": "dv.DeviceNameDvGateway",
+   "label": "Device Name DV Gateway",
+   "category": "dv",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "654",
+   "offset": "0x01AD0",
+   "keywords": "DeviceNameDvGateway dv.DeviceNameDvGateway 654 Device Name DV Gateway",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 16,
+    "encoding": "utf8"
+   },
+   "maxlength": 16
+  },
+  {
+   "id": "dv.DirectReplyTxRx",
+   "label": "Direct Reply TX RX",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "612",
+   "offset": "0x01A00",
+   "keywords": "DirectReplyTxRx dv.DirectReplyTxRx 612 Direct Reply TX RX",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "dv.DisplayHoldTimeRxNotification",
+   "label": "Display Hold Time RX Notification",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "643",
+   "offset": "0x01A10",
+   "keywords": "DisplayHoldTimeRxNotification dv.DisplayHoldTimeRxNotification 643 Display Hold Time RX Notification",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.i"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "3"
+    ],
+    [
+     2,
+     "5"
+    ],
+    [
+     3,
+     "10"
+    ],
+    [
+     4,
+     "20"
+    ],
+    [
+     5,
+     "30"
+    ],
+    [
+     6,
+     "60"
+    ],
+    [
+     7,
+     "Infinite"
+    ]
+   ]
+  },
+  {
+   "id": "dv.DisplayMethodRxNotification",
+   "label": "Display Method RX Notification",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "640",
+   "offset": "0x01A0D",
+   "keywords": "DisplayMethodRxNotification dv.DisplayMethodRxNotification 640 Display Method RX Notification",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.f"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "All"
+    ],
+    [
+     2,
+     "Related to DSQ"
+    ],
+    [
+     3,
+     "My Station Only"
+    ]
+   ]
+  },
+  {
+   "id": "dv.DualDisplaySizeRxNotification",
+   "label": "Dual Display Size RX Notification",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "642",
+   "offset": "0x01A0F",
+   "keywords": "DualDisplaySizeRxNotification dv.DualDisplaySizeRxNotification 642 Dual Display Size RX Notification",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.h"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "dv.DvGatewayModeDvGateway",
+   "label": "DV Gateway Mode DV Gateway",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "650",
+   "offset": "0x01CA0",
+   "keywords": "DvGatewayModeDvGateway dv.DvGatewayModeDvGateway 650 DV Gateway Mode DV Gateway",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.k"
+   },
+   "options": [
+    [
+     0,
+     "Off"
+    ],
+    [
+     1,
+     "Reflector Terminal Mode"
+    ]
+   ]
+  },
+  {
+   "id": "dv.EmrVolumeLevelTxRx",
+   "label": "EMR Volume Level TX RX",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 1,
+   "menu": "615",
+   "offset": "0x01A03",
+   "keywords": "EmrVolumeLevelTxRx dv.EmrVolumeLevelTxRx 615 EMR Volume Level TX RX",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.c"
+   },
+   "options": [
+    [
+     1,
+     "Level 1"
+    ],
+    [
+     2,
+     "Level 2"
+    ],
+    [
+     3,
+     "Level 3"
+    ],
+    [
+     4,
+     "Level 4"
+    ],
+    [
+     5,
+     "Level 5"
+    ],
+    [
+     6,
+     "Level 6"
+    ],
+    [
+     7,
+     "Level 7"
+    ],
+    [
+     8,
+     "Level 8"
+    ],
+    [
+     9,
+     "Level 9"
+    ],
+    [
+     10,
+     "Level 10"
+    ],
+    [
+     11,
+     "Level 11"
+    ],
+    [
+     12,
+     "Level 12"
+    ],
+    [
+     13,
+     "Level 13"
+    ],
+    [
+     14,
+     "Level 14"
+    ],
+    [
+     15,
+     "Level 15"
+    ],
+    [
+     16,
+     "Level 16"
+    ],
+    [
+     17,
+     "Level 17"
+    ],
+    [
+     18,
+     "Level 18"
+    ],
+    [
+     19,
+     "Level 19"
+    ],
+    [
+     20,
+     "Level 20"
+    ],
+    [
+     21,
+     "Level 21"
+    ],
+    [
+     22,
+     "Level 22"
+    ],
+    [
+     23,
+     "Level 23"
+    ],
+    [
+     24,
+     "Level 24"
+    ],
+    [
+     25,
+     "Level 25"
+    ],
+    [
+     26,
+     "Level 26"
+    ],
+    [
+     27,
+     "Level 27"
+    ],
+    [
+     28,
+     "Level 28"
+    ],
+    [
+     29,
+     "Level 29"
+    ],
+    [
+     30,
+     "Level 30"
+    ],
+    [
+     31,
+     "Level 31"
+    ],
+    [
+     32,
+     "Level 32"
+    ],
+    [
+     33,
+     "Level 33"
+    ],
+    [
+     34,
+     "Level 34"
+    ],
+    [
+     35,
+     "Level 35"
+    ],
+    [
+     36,
+     "Level 36"
+    ],
+    [
+     37,
+     "Level 37"
+    ],
+    [
+     38,
+     "Level 38"
+    ],
+    [
+     39,
+     "Level 39"
+    ],
+    [
+     40,
+     "Level 40"
+    ],
+    [
+     41,
+     "Level 41"
+    ],
+    [
+     42,
+     "Level 42"
+    ],
+    [
+     43,
+     "Level 43"
+    ],
+    [
+     44,
+     "Level 44"
+    ],
+    [
+     45,
+     "Level 45"
+    ],
+    [
+     46,
+     "Level 46"
+    ],
+    [
+     47,
+     "Level 47"
+    ],
+    [
+     48,
+     "Level 48"
+    ],
+    [
+     49,
+     "Level 49"
+    ],
+    [
+     50,
+     "Level 50"
+    ]
+   ]
+  },
+  {
+   "id": "dv.FmAutoDetOnDvTxRx",
+   "label": "FM Auto Det On DV TX RX",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "617",
+   "offset": "0x01A05",
+   "keywords": "FmAutoDetOnDvTxRx dv.FmAutoDetOnDvTxRx 617 FM Auto Det On DV TX RX",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "dv.GpsInfoInFrameGpsDataTx",
+   "label": "GPS Info In Frame GPS Data TX",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "630",
+   "offset": "0x01A0A",
+   "keywords": "GpsInfoInFrameGpsDataTx dv.GpsInfoInFrameGpsDataTx 630 GPS Info In Frame GPS Data TX",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "dv.MyCallsignSelectDvGateway",
+   "label": "My Callsign Select DV Gateway",
+   "category": "dv",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "651",
+   "offset": "0x01CA1",
+   "keywords": "MyCallsignSelectDvGateway dv.MyCallsignSelectDvGateway 651 My Callsign Select DV Gateway",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 5,
+    "step": 1
+   },
+   "min": 0,
+   "max": 5,
+   "step": 1
+  },
+  {
+   "id": "dv.MyDvMessageSelect",
+   "label": "My DV Message Select",
+   "category": "dv",
+   "description": "",
+   "type": "number",
+   "value": 0,
+   "menu": "611",
+   "offset": "0x01A60",
+   "keywords": "MyDvMessageSelect dv.MyDvMessageSelect 611 My DV Message Select",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "number",
+    "min": 0,
+    "max": 5,
+    "step": 1
+   },
+   "min": 0,
+   "max": 5,
+   "step": 1
+  },
+  {
+   "id": "dv.RPT1DvGateway",
+   "label": "RPT1 DV Gateway",
+   "category": "dv",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "652",
+   "offset": "0x01CF0",
+   "keywords": "RPT1DvGateway dv.RPT1DvGateway 652 RPT1 DV Gateway",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 8,
+    "encoding": "utf8"
+   },
+   "maxlength": 8
+  },
+  {
+   "id": "dv.RPT2DvGateway",
+   "label": "RPT2 DV Gateway",
+   "category": "dv",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "653",
+   "offset": "0x01CF8",
+   "keywords": "RPT2DvGateway dv.RPT2DvGateway 653 RPT2 DV Gateway",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 8,
+    "encoding": "utf8"
+   },
+   "maxlength": 8
+  },
+  {
+   "id": "dv.RxAfcTxRx",
+   "label": "RX Afc TX RX",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "616",
+   "offset": "0x01A04",
+   "keywords": "RxAfcTxRx dv.RxAfcTxRx 616 RX Afc TX RX",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "dv.SentenceGpsDataTx_Aprs",
+   "label": "Sentence GPS Data Tx_Aprs",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "631",
+   "offset": "0x01A0B",
+   "keywords": "SentenceGpsDataTx_Aprs dv.SentenceGpsDataTx_Aprs 631 Sentence GPS Data Tx_Aprs",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 6,
+    "width": 1
+   }
+  },
+  {
+   "id": "dv.SentenceGpsDataTx_Gpgga",
+   "label": "Sentence GPS Data Tx_Gpgga",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "631",
+   "offset": "0x01A0B",
+   "keywords": "SentenceGpsDataTx_Gpgga dv.SentenceGpsDataTx_Gpgga 631 Sentence GPS Data Tx_Gpgga",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 0,
+    "width": 1
+   }
+  },
+  {
+   "id": "dv.SentenceGpsDataTx_Gpgll",
+   "label": "Sentence GPS Data Tx_Gpgll",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "631",
+   "offset": "0x01A0B",
+   "keywords": "SentenceGpsDataTx_Gpgll dv.SentenceGpsDataTx_Gpgll 631 Sentence GPS Data Tx_Gpgll",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 1,
+    "width": 1
+   }
+  },
+  {
+   "id": "dv.SentenceGpsDataTx_Gpgsa",
+   "label": "Sentence GPS Data Tx_Gpgsa",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "631",
+   "offset": "0x01A0B",
+   "keywords": "SentenceGpsDataTx_Gpgsa dv.SentenceGpsDataTx_Gpgsa 631 Sentence GPS Data Tx_Gpgsa",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 2,
+    "width": 1
+   }
+  },
+  {
+   "id": "dv.SentenceGpsDataTx_Gpgsv",
+   "label": "Sentence GPS Data Tx_Gpgsv",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "631",
+   "offset": "0x01A0B",
+   "keywords": "SentenceGpsDataTx_Gpgsv dv.SentenceGpsDataTx_Gpgsv 631 Sentence GPS Data Tx_Gpgsv",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 3,
+    "width": 1
+   }
+  },
+  {
+   "id": "dv.SentenceGpsDataTx_Gprmc",
+   "label": "Sentence GPS Data Tx_Gprmc",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "631",
+   "offset": "0x01A0B",
+   "keywords": "SentenceGpsDataTx_Gprmc dv.SentenceGpsDataTx_Gprmc 631 Sentence GPS Data Tx_Gprmc",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 4,
+    "width": 1
+   }
+  },
+  {
+   "id": "dv.SentenceGpsDataTx_Gpvtg",
+   "label": "Sentence GPS Data Tx_Gpvtg",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "631",
+   "offset": "0x01A0B",
+   "keywords": "SentenceGpsDataTx_Gpvtg dv.SentenceGpsDataTx_Gpvtg 631 Sentence GPS Data Tx_Gpvtg",
+   "risk": "normal",
+   "meta": {
+    "kind": "bit",
+    "type": "toggle",
+    "bit": 5,
+    "width": 1
+   }
+  },
+  {
+   "id": "dv.SingleDisplaySizeRxNotification",
+   "label": "Single Display Size RX Notification",
+   "category": "dv",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "641",
+   "offset": "0x01A0E",
+   "keywords": "SingleDisplaySizeRxNotification dv.SingleDisplaySizeRxNotification 641 Single Display Size RX Notification",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "mu.g"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "dv.StandbyBeepRxNotification",
+   "label": "Standby Beep RX Notification",
+   "category": "dv",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "645",
+   "offset": "0x01A12",
+   "keywords": "StandbyBeepRxNotification dv.StandbyBeepRxNotification 645 Standby Beep RX Notification",
+   "risk": "normal",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.BluetoothAutoConnect",
+   "label": "Bluetooth Auto Connect",
+   "category": "bluetooth",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "936",
+   "offset": "0x01079",
+   "keywords": "BluetoothAutoConnect radio.BluetoothAutoConnect 936 Bluetooth Auto Connect",
+   "risk": "high",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.BluetoothDeviceName",
+   "label": "Bluetooth Device Name",
+   "category": "bluetooth",
+   "description": "",
+   "type": "text",
+   "value": "",
+   "menu": "935",
+   "offset": "0x010D0",
+   "keywords": "BluetoothDeviceName radio.BluetoothDeviceName 935 Bluetooth Device Name",
+   "risk": "normal",
+   "meta": {
+    "kind": "fixed_string",
+    "type": "text",
+    "length": 19,
+    "encoding": "utf8"
+   },
+   "maxlength": 19
+  },
+  {
+   "id": "radio.BluetoothOnOff",
+   "label": "Bluetooth On/Off",
+   "category": "bluetooth",
+   "description": "",
+   "type": "toggle",
+   "value": false,
+   "menu": "930",
+   "offset": "0x01078",
+   "keywords": "BluetoothOnOff radio.BluetoothOnOff 930 Bluetooth On/Off",
+   "risk": "high",
+   "meta": {
+    "kind": "bool",
+    "type": "toggle"
+   }
+  },
+  {
+   "id": "radio.DigitalModeInterface",
+   "label": "Digital Mode Interface",
+   "category": "interfaces",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "984",
+   "offset": "0x01091",
+   "keywords": "DigitalModeInterface radio.DigitalModeInterface 984 Digital Mode Interface",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.a1"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "radio.DvGatewayInterface",
+   "label": "DV Gateway Interface",
+   "category": "interfaces",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "985",
+   "offset": "0x01093",
+   "keywords": "DvGatewayInterface radio.DvGatewayInterface 985 DV Gateway Interface",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.a2"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "radio.KissModeInterface",
+   "label": "Kiss Mode Interface",
+   "category": "interfaces",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "983",
+   "offset": "0x01090",
+   "keywords": "KissModeInterface radio.KissModeInterface 983 Kiss Mode Interface",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.a0"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "radio.PcOutputInterfaceAprs",
+   "label": "Pc Output Interface APRS",
+   "category": "interfaces",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "982",
+   "offset": "0x0108F",
+   "keywords": "PcOutputInterfaceAprs radio.PcOutputInterfaceAprs 982 Pc Output Interface APRS",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.az"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "radio.PcOutputInterfaceGps",
+   "label": "Pc Output Interface GPS",
+   "category": "interfaces",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "981",
+   "offset": "0x0108E",
+   "keywords": "PcOutputInterfaceGps radio.PcOutputInterfaceGps 981 Pc Output Interface GPS",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ay"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "radio.UsbFunction",
+   "label": "USB Function",
+   "category": "interfaces",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "980",
+   "offset": "0x0108D",
+   "keywords": "UsbFunction radio.UsbFunction 980 USB Function",
+   "risk": "high",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ax"
+   },
+   "options": [
+    [
+     0,
+     "COM + AF/IF Output"
+    ],
+    [
+     1,
+     "Mass Storage"
+    ]
+   ]
+  },
+  {
+   "id": "radio.EarphoneAntenna",
+   "label": "Earphone Antenna",
+   "category": "other",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "",
+   "offset": "0x01042",
+   "keywords": "EarphoneAntenna radio.EarphoneAntenna  Earphone Antenna",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.d"
+   },
+   "options": [
+    [
+     0,
+     "0"
+    ],
+    [
+     1,
+     "1"
+    ]
+   ]
+  },
+  {
+   "id": "radio.UsbAudioOutLevel",
+   "label": "USB Audio Out Level",
+   "category": "other",
+   "description": "",
+   "type": "select",
+   "value": 0,
+   "menu": "91A",
+   "offset": "0x01075",
+   "keywords": "UsbAudioOutLevel radio.UsbAudioOutLevel 91A USB Audio Out Level",
+   "risk": "normal",
+   "meta": {
+    "kind": "byte",
+    "type": "select",
+    "enum_type": "m9.ai"
+   },
+   "options": [
+    [
+     0,
+     "Level 1"
+    ],
+    [
+     1,
+     "Level 2"
+    ],
+    [
+     2,
+     "Level 3"
+    ],
+    [
+     3,
+     "Level 4"
+    ],
+    [
+     4,
+     "Level 5"
+    ],
+    [
+     5,
+     "Level 6"
+    ],
+    [
+     6,
+     "Level 7"
+    ]
+   ]
+  }
+ ]
+}
