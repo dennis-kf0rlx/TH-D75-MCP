@@ -546,7 +546,7 @@ async function refreshScreen() {
   const transport = isBluetooth ? "Bluetooth" : "USB";
   const expected = isBluetooth
     ? "Bluetooth full-frame refresh is about 10–14 s"
-    : "USB full-frame refresh is about 5–7 s";
+    : "USB full-frame refresh is about 2 s";
   const started = performance.now();
   if (els.screenCaption) {
     els.screenCaption.textContent = isBluetooth
@@ -571,7 +571,7 @@ async function refreshScreen() {
     }
   } finally {
     screenBusy = false;
-    if (screenVisible) screenTimer = setTimeout(refreshScreen, 5000);
+    if (screenVisible) screenTimer = setTimeout(refreshScreen, isBluetooth ? 5000 : 1000);
   }
 }
 

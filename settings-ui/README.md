@@ -63,6 +63,10 @@ from `d75mon`'s DDR fields. The **LCD** button toggles `/api/monitor/screen.png`
 inside the page. Both endpoints are proxied through the settings server, so only
 port 8098 needs to be tunneled.
 
+Full-frame timing is transport-dependent: USB captures in about 1 s and the UI
+re-captures after a 1 s gap (~2 s cadence); Bluetooth takes about 6 s per frame
+and waits 5 s (~10–14 s cadence).
+
 ## Bluetooth
 
 TH-D75 CAT works over Bluetooth Classic SPP (RFCOMM channel 2). Use
