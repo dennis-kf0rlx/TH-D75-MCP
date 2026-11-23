@@ -1,7 +1,7 @@
 [Unit]
 Description=TH-D75 monitor widget (d75mon)
-After=network-online.target bluetooth.target
-Wants=network-online.target
+# user-unit scope: no ordering against system targets (network/bluetooth are
+# system units); the bind service runs at system scope and d75mon reconnects.
 
 [Service]
 Type=simple

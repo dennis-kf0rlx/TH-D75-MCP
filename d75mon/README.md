@@ -19,7 +19,7 @@ d75mon/
 ├── web/style.css
 ├── web/app.js             # SSE client (fallback polling)
 ├── config.json
-├── systemd/d75mon.service # user unit
+├── systemd/d75mon.service.example # user unit template
 ├── tools/bt-bind.sh       # rfcomm bind helper (BT SPP)
 └── tests/test_cat.py      # parser / state tests
 ```

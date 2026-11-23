@@ -1,30 +1,39 @@
-# Public-release checklist
+# Release and skill-split checklist
 
-The tools repo can be public; the Agent Skill is request-only. GitHub has no
-per-file access control, so the skill must be moved out before the tools repo
-becomes public.
+The tools repo is **public** (first public release `v0.1.0`, 2026-11-22; current
+`v0.1.9`). The Agent Skill is request-only: GitHub has no per-file access
+control, so the skill lives in the private `TH-D75-agent-skill` repository, and
+the public tree keeps only `skills/REQUEST-ACCESS.md` + `skills/README.md`.
 
-## Before making the tools repo public
+## Public-release state (completed 2026-11-22)
 
-1. Move `skills/th-d75-tools/` to a **private** `TH-D75-agent-skill` repository.
-2. Replace it in the public repo with `skills/REQUEST-ACCESS.md` (already
-   present). **Done.**
-3. Remove `skills/README.md` instructions that imply the skill is bundled.
-4. Search the public tree for:
-   - `values.json`, `backups/`, clone images
-   - firmware binaries or MCP-D75 installers
-   - callsigns, coordinates, addresses, serials, API keys
-   - hostnames/IPs from the author's lab
-5. Confirm `README`, `SECURITY.md`, `docs/SAFETY.md`, and
-   `docs/PROVENANCE.md` are present and linked.
-6. Run `make check`.
-7. Run `docs/INSTALL.md`'s local `--check` install against a built tarball.
-8. Run the docs warning audit: every `sudo`, systemd, udev, or radio-write block
-   has a warning immediately above it.
-9. Make the tools repo public; keep the skill repo private and grant access to
-   the private repo on request only.
-10. Push a `v*` tag; the release workflow builds the tarball/checksum/installer
-    and refuses to publish if the skill is still in the tree.
+1. `skills/th-d75-tools/` moved to the private `TH-D75-agent-skill` repository.
+2. Public tree replaced it with `skills/REQUEST-ACCESS.md` + `skills/README.md`.
+3. Public tree audited for `values.json`, `backups/`, clone images, firmware
+   binaries/installers, callsigns, coordinates, serials, API keys, and
+   author lab hostnames/IPs (only the author's own radio MAC appears, as an
+   editable example in `infra/systemd/`).
+4. `README`, `SECURITY.md`, `docs/SAFETY.md`, and `docs/PROVENANCE.md` present
+   and linked.
+5. `make check` (9 tests) and `scripts/test-installer.sh` pass.
+6. `v0.1.0` tagged and released; later `v0.1.x` releases follow the checklist
+   below.
+
+## Checklist for each new release
+
+1. `make check` and `make test-installer` pass locally.
+2. Working tree clean; no `__pycache__`, `.venv`, `dist/`, `values.json`, or
+   `backups/` in the tree.
+3. Docs still match the code and the current release state (public repo, latest
+   tag, ports, endpoints, paths).
+4. Push a `v*` tag. `.github/workflows/release.yml` re-runs `make check`,
+   refuses to publish if `skills/th-d75-tools/SKILL.md` is in the tree, builds
+   the tarball/checksum/installer with `infra/` included, rejects
+   `__pycache__`/private artifacts, and creates the GitHub release.
+5. Verify the published assets: `thd75-tools-vX.Y.Z.tar.gz` (+ `.sha256`),
+   `thd75-tools.tar.gz` (+ `.sha256`) as the latest alias, `install.sh`.
+6. Quick public-path test: `bash install.sh --check --no-browser --prefix /tmp/x`
+   against the real release.
 
 ## Skill access policy
 

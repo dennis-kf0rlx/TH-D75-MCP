@@ -7,9 +7,11 @@ StartLimitIntervalSec=0
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-# Replace these two values before installing.
-Environment=THD75_BT_MAC=90:CE:B8:D7:A5:F4
-Environment=THD75_BT_OWNER=dennis
+# Replace both values before installing:
+#   THD75_BT_MAC   = the radio's Bluetooth MAC (bluetoothctl devices)
+#   THD75_BT_OWNER = the desktop user who runs d75mon / settings-ui
+Environment=THD75_BT_MAC=AA:BB:CC:DD:EE:FF
+Environment=THD75_BT_OWNER=youruser
 ExecStart=/usr/local/sbin/thd75-bt-bind
 Restart=on-failure
 RestartSec=5

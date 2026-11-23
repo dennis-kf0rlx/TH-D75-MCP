@@ -61,4 +61,4 @@ re-enumeration, and restarts the monitor.
 This is independent interoperability research. It is not affiliated with or
 endorsed by Kenwood/JVCKenwood. Modifying settings or firmware behavior can void
 warranty or violate local rules; you are responsible for your radio and
-licence. No warranty is provided; see [LICENSE](LICENSE).
+licence. No warranty is provided; see [LICENSE](../LICENSE).

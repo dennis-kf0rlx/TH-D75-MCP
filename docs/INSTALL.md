@@ -1,12 +1,13 @@
 # Install with curl
 
-## Public-release gate
+## Public release
 
-This path requires the tools repo/release to be **public**. The request-only
-Agent Skill must already be moved to its private repo; the release archive does
-not contain it.
+The tools repo and its releases are **public**, so this path works as written.
+The request-only Agent Skill is not in the release; request it via
+`skills/REQUEST-ACCESS.md`.
 
-If the repo is private, use `LAZY.md`'s clone path instead.
+For a fork/private mirror, set `THD75_RELEASE_BASE` or use `LAZY.md`'s clone
+path instead.
 
 ## The command
 
@@ -55,7 +56,9 @@ No sudo is used by `install.sh` itself. No radio settings are written.
 --local-tarball FILE    Use a local tarball (testing/offline)
 --sha256 FILE           Checksum for --local-tarball
 --check                 Extract and run non-privileged checks only
+--setup                 Run the interactive setup (default)
 --no-setup              Skip the interactive udev/systemd setup
+--no-browser            Do not open the install report
 ```
 
 Examples:
@@ -93,8 +96,9 @@ A release contains:
 - `install.sh`
 
 The tarball has a single top-level `thd75-tools/` directory and includes
-`scripts/bootstrap.sh`, the apps, docs, and the request stub. It does not include
-the request-only skill, firmware, clone images, values, or backups.
+`scripts/bootstrap.sh`, the apps, docs, `infra/` (Bluetooth bind unit), and the
+request stub. It does not include the request-only skill, firmware, clone
+images, values, or backups.
 
 ## Validation
 
@@ -139,7 +143,7 @@ The script refuses `/`, `$HOME`, and non-TH-D75 directories unless forced.
 - unsafe archive path → abort
 - existing prefix → refuse overwrite
 - no TTY for `--setup` → tell the user to use `--check` or `--no-setup`
-- private/inaccessible release → clear access guidance
+- unreachable release (bad URL/network) → clear download error with guidance
 - no radio → installation still valid; radio-less installs are supported
 
 See `SECURITY.md` and `docs/SAFETY.md` before exposing any port.

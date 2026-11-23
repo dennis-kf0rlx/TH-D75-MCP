@@ -1,5 +1,8 @@
 # Clean-room test record
 
+Historical record: these runs pre-date the public release (`v0.1.0`,
+2026-11-22). The tools repo is public now; the Agent Skill remains request-only.
+
 Purpose: verify that the request-only Agent Skill is sufficient for an agent
 with **no prior context** to install and validate the project on a minimal
 Linux host.

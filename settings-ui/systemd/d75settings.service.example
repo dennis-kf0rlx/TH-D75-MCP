@@ -1,6 +1,7 @@
 [Unit]
 Description=TH-D75 settings web UI
-After=network-online.target
+# user-unit scope: connections to system services (rfcomm bind) are
+# handled by retry/reconnect in the service itself, not by unit ordering.
 
 [Service]
 Type=simple

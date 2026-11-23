@@ -1,7 +1,7 @@
 # Bare-metal test on a generic Linux desktop
 
-Use this when the test machine is **not on the lab LAN** and the GitHub release
-is not public yet.
+Use this when the test machine is **not on the lab LAN** or when you prefer an
+offline kit over downloading from GitHub.
 
 ## What you need
 
@@ -69,5 +69,6 @@ cd ~/thd75-web-console
 
 ## GitHub curl
 
-Not yet. The tools repo/release is private. Use the USB kit until it is made
-public and a release is tagged.
+The tools repo and releases are public; the curl installer in `docs/INSTALL.md`
+is the normal path. Use the USB kit above only when the test machine has no
+GitHub access.

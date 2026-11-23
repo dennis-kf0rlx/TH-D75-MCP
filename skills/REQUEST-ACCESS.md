@@ -1,7 +1,7 @@
 # Request access to the Agent Skill
 
 The TH-D75 Agent Skill is **request-only**. It is not installed by cloning the
-tools repo and it is not licensed for redistribution.
+public tools repo and it is not licensed for redistribution.
 
 ## Why request-only
 
@@ -23,7 +23,7 @@ first, then clone; a minimal Debian image lacks Git/Make/venv:
 ```bash
 sudo apt-get update
 sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils
-git clone git@github.com:dennis-kf0rlx/thd75-web-console.git
+git clone https://github.com/dennis-kf0rlx/thd75-web-console.git
 cd thd75-web-console
 ```
 
@@ -39,9 +39,9 @@ repo or use the maintainer contact on the profile) and include:
 - what you want to do (install only / monitor only / settings operation);
 - the Linux distribution and radio connection type (USB or Bluetooth).
 
-Until the split, request read access to this private tools repository on a
-case-by-case basis. After the public release, access is granted through the
-private `TH-D75-agent-skill` repository.
+The tools repo is public, so you can clone and run the installer without asking
+first. The skill itself is granted through the private `TH-D75-agent-skill`
+repository; request access to that repository.
 
 ## What you get
 

@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Build a self-contained USB-style installer kit for a generic Linux desktop.
-# The GitHub release is not public yet; this kit uses --local-tarball.
+# The kit bundles the same checksum-verified tarball as the public release, so
+# it works offline or on a machine without GitHub access.
 set -euo pipefail
 
 REPO_ROOT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)"
@@ -16,9 +17,8 @@ TH-D75 tools — USB test kit
 Version: $VERSION
 Built:   $(date -u +%Y-%m-%dT%H:%M:%SZ)
 
-This is not a GitHub release. The repo/release is currently private, so use
-the local-tarball path below. Internet access is still needed for distro
-packages and PyPI.
+This is an offline copy of the public GitHub release. Internet access is still
+needed for distro packages and PyPI, but GitHub is not required.
 
 CachyOS / Arch:
 
@@ -46,7 +46,7 @@ Headless/check-only:
     --sha256 latest/download/thd75-tools.tar.gz.sha256 \\
     --check --no-browser --prefix /tmp/thd75-check
 
-No lab LAN or public GitHub release is required.
+No lab LAN or GitHub access is required.
 
 Uninstall:
 

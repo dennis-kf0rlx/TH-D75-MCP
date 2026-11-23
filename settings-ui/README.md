@@ -46,9 +46,9 @@ High-risk settings require explicit confirmation.
 ```text
 GET  /api/status        -> {sessionActive, monitorActive, serialPresent, transport, serialPath, busy, lastError}
 GET  /api/catalog       -> {generated, schema_version, settings:[...]}
-GET  /api/values        -> {model, firmware, values:{id:value}, updatedAt}
+GET  /api/values        -> {model, firmware, values:{id:value}, updatedAt (after a read)}
 GET  /api/monitor/state -> proxy of d75mon /state (VFO A/B + status)
-GET  /api/monitor/screen.png -> proxy of d75mon /screen.png (90×? LCD frame)
+GET  /api/monitor/screen.png -> proxy of d75mon /screen.png (240×180 LCD frame)
 GET  /api/read          -> enter/read settings mode; {values, readAt, settingsMode}
 POST /api/apply         -> {changes:[{id,value}], confirmHighRisk}
 POST /api/session/stop  -> leave settings mode; one USB reset, monitor restarted

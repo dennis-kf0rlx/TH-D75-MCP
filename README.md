@@ -89,9 +89,9 @@ Accessibility is part of the mission, not a separate mode.
 - TH-D75 connected over USB CDC (`/dev/ttyACM*`; `/dev/thd75` recommended)
 - No compiler, npm, or frontend build step is required
 
-## Fast path (public release only)
+## Fast path (curl installer)
 
-Once the tools repo has a public release:
+The tools repo and its releases are **public** (see GitHub Releases):
 
 ```bash
 curl -fsSL -o thd75-install.sh \
@@ -103,14 +103,14 @@ bash thd75-install.sh
 The installer verifies the tarball checksum, extracts to `~/thd75-web-console`, and runs
 the interactive setup. On a desktop it opens an install-notes page in the browser
 and then redirects to the settings UI. See `docs/INSTALL.md`. The request-only
-Agent Skill is not in the release.
+Agent Skill is not in the release (see `skills/REQUEST-ACCESS.md`).
 
 ## Build
 
 There is nothing to compile; “build” is the Python environment:
 
 ```bash
-git clone git@github.com:dennis-kf0rlx/thd75-web-console.git
+git clone https://github.com/dennis-kf0rlx/thd75-web-console.git
 cd thd75-web-console
 
 python3 -m venv .venv
@@ -299,9 +299,9 @@ large vertical error. Full procedure: `docs/gps-altitude.md`.
 ## Agent skill (request-only)
 
 The install/operate Agent Skill is intentionally **not part of the public tools
-release**. It lives in this private repo today; before the tools repo is made
-public, move `skills/th-d75-tools/` to the private `TH-D75-agent-skill` repo
-(see `docs/RELEASE.md`). Access is granted by request; do not redistribute it.
+release**. It lives in the private `TH-D75-agent-skill` repository and is
+granted by request; do not redistribute it (see `skills/REQUEST-ACCESS.md`).
+`docs/RELEASE.md` records the split and the release checklist.
 
 The public repo keeps a request stub at `skills/REQUEST-ACCESS.md`. The skill
 covers install-only, monitor-only, and explicitly confirmed settings-operation
@@ -317,10 +317,6 @@ make test-installer    # build local release fixture + test installer end-to-end
 
 `make test-installer` needs no GitHub release, sudo, services, or radio. See
 `docs/TESTING.md`.
-
-```bash
-make check
-```
 
 Equivalent:
 
@@ -364,6 +360,7 @@ d75mon/               read-only monitor widget
 docs/                 menu map, row map, MCP protocol, firmware findings, GPS
 skills/               request-gated Agent Skill + public request stub
 infra/proxmox/        disposable-VM test runway (maintainer use)
+infra/systemd/        persistent Bluetooth SPP bind unit (system scope)
 screenshots/
 install.sh
 Makefile
@@ -420,7 +417,7 @@ session.
 - `docs/BLUETOOTH.md` — Classic SPP CAT, pairing, rfcomm, settings UI
 - `infra/systemd/thd75-bt-bind.service.example` — persistent Bluetooth bind
 - `scripts/uninstall.sh` — remove an installed instance safely
-- `docs/RELEASE.md` — public-release and skill-split checklist
+- `docs/RELEASE.md` — release + skill-split checklist (split done; repo public)
 - `LAZY.md` — shortest install path for humans
 - `docs/CLEANROOM.md` — fresh-agent install/build test record
 - `skills/REQUEST-ACCESS.md` — request-only skill access

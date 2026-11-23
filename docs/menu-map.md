@@ -14,7 +14,9 @@ Columns:
 | `firmware_rows` | row index in the firmware menu-label table |
 | `firmware_labels` | label(s) recovered from the firmware table |
 
-Coverage: **400 settings**, **388 with handheld menu numbers**.
+Coverage: **400 settings**, **388 with handheld menu numbers**. The web settings
+UI exposes the **255 scalar fields** (`settings-ui/catalog.json`); the rest are
+lists, actions, and status rows.
 
 ## `menu-rows.tsv`
 

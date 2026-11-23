@@ -8,7 +8,7 @@ the radio, but it removes most terminal archaeology.
 ## You need
 
 - Linux host physically connected to the TH-D75 via USB or Bluetooth SPP
-- Repo/skill access (request-only skill)
+- The public tools repo; the Agent Skill is request-only
 - About five minutes
 - An agent, or a terminal if you are feeling brave
 
@@ -19,8 +19,8 @@ Give your agent this prompt:
 ```text
 Install the TH-D75 tools on this Linux host.
 
-Repo: git@github.com:dennis-kf0rlx/thd75-web-console.git
-Skill: skills/th-d75-tools/SKILL.md
+Repo: https://github.com/dennis-kf0rlx/thd75-web-console
+Skill: request it via skills/REQUEST-ACCESS.md in the repo (the skill is not bundled)
 
 Follow the skill. Start with bootstrap.sh --check. If this is an interactive
 human session, run bootstrap.sh --setup and ask me before sudo, udev, systemd,
@@ -36,9 +36,9 @@ The agent may ask you to approve:
 
 Those are the only privileged parts. Say yes if you want the lazy path.
 
-## Fast path — curl installer (once released)
+## Fast path — curl installer
 
-When the tools release is public:
+The tools release is public:
 
 ```bash
 curl -fsSL -o thd75-install.sh \
@@ -55,7 +55,7 @@ the default.
 ## Path B — do it yourself from a clone
 
 ```bash
-git clone git@github.com:dennis-kf0rlx/thd75-web-console.git
+git clone https://github.com/dennis-kf0rlx/thd75-web-console.git
 cd thd75-web-console
 ./scripts/bootstrap.sh --setup
 ```

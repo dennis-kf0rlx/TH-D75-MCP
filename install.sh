@@ -197,7 +197,7 @@ else
   fi
   note "downloading $TARBALL_URL"
   curl -fL --retry 3 --connect-timeout 15 -o "$TARBALL" "$TARBALL_URL" || \
-    die "download failed; private repo/release needs access, or use a public release"
+    die "download failed; check the release URL and network, or use --local-tarball"
   curl -fL --retry 3 --connect-timeout 15 -o "$CHECKSUM" "$CHECKSUM_URL" || \
     die "checksum download failed"
 fi

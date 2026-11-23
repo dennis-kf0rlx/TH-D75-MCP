@@ -1,4 +1,7 @@
-# Testing the installer without a public release
+# Testing the installer locally
+
+The public release exists, but this loop tests a local release fixture so you
+do not depend on GitHub or publish a tag to check installer changes.
 
 ## One command
 
