@@ -51,10 +51,14 @@ const els = {
   screenToggle: document.getElementById("screen-toggle"),
   screenModal: document.getElementById("screen-modal"),
   screenClose: document.getElementById("screen-close"),
-  screenModalImg: document.getElementById("screen-modal-img")
+  screenModalImg: document.getElementById("screen-modal-img"),
+  screenCaption: document.getElementById("screen-caption")
 };
 let sessionActive = false;
 let screenVisible = false;
+let screenBusy = false;
+let screenTimer = null;
+let screenObjectUrl = null;
 
 for (const setting of state.settings) {
   state.original.set(setting.id, cloneValue(setting.value));
@@ -522,13 +526,31 @@ async function pollMonitor() {
   }
 }
 
-function refreshScreen() {
-  if (!screenVisible || !els.screenModalImg) return;
-  els.screenModalImg.src = `/api/monitor/screen.png?t=${Date.now()}`;
+async function refreshScreen() {
+  if (!screenVisible || screenBusy || !els.screenModalImg) return;
+  screenBusy = true;
+  if (els.screenCaption) els.screenCaption.textContent = "Capturing 240×180 framebuffer…";
+  try {
+    const resp = await fetch(`/api/monitor/screen.png?t=${Date.now()}`, {cache: "no-store"});
+    if (!resp.ok) throw new Error(`screen ${resp.status}`);
+    const blob = await resp.blob();
+    if (screenObjectUrl) URL.revokeObjectURL(screenObjectUrl);
+    screenObjectUrl = URL.createObjectURL(blob);
+    els.screenModalImg.src = screenObjectUrl;
+    if (els.screenCaption) els.screenCaption.textContent = "Live 240×180 DDR framebuffer · next capture in 5 s";
+  } catch (error) {
+    if (els.screenCaption) {
+      els.screenCaption.textContent = "Screen capture unavailable — monitor stopped or Bluetooth link busy";
+    }
+  } finally {
+    screenBusy = false;
+    if (screenVisible) screenTimer = setTimeout(refreshScreen, 5000);
+  }
 }
 
 function setScreenVisible(visible) {
   screenVisible = Boolean(visible);
+  if (screenTimer) { clearTimeout(screenTimer); screenTimer = null; }
   if (els.screenModal) els.screenModal.hidden = !screenVisible;
   if (els.screenToggle) {
     els.screenToggle.setAttribute("aria-pressed", String(screenVisible));
@@ -683,8 +705,6 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && screenVisible) setScreenVisible(false);
 });
 setInterval(pollMonitor, 1000);
-setInterval(() => { if (screenVisible) refreshScreen(); }, 1000);
-
 renderCategories();
 renderList();
 updateChangeUI();

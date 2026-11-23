@@ -637,7 +637,7 @@ class Handler(SimpleHTTPRequestHandler):
         if path == "/api/monitor/state":
             return self._proxy_monitor("/state", "application/json; charset=utf-8")
         if path == "/api/monitor/screen.png":
-            return self._proxy_monitor("/screen.png", "image/png", timeout=8.0)
+            return self._proxy_monitor("/screen.png", "image/png", timeout=45.0)
         if path == "/api/status":
             return self._json(200, self._status())
         if path == "/api/catalog":

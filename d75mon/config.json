@@ -10,6 +10,7 @@
   "poll_interval": 2.0,
   "reconnect_interval": 3.0,
   "command_timeout": 0.6,
+  "screen_cache_seconds": 10.0,
   "web_dir": "web",
   "asset_dir": ""
 }
