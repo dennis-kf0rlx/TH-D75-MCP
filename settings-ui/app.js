@@ -6,16 +6,16 @@
 // Until then, this page uses window.D75_CATALOG and keeps edits in memory only.
 
 const CATEGORY_META = {
-  all:        {name:"All settings", color:"#93a2b7"},
-  display:    {name:"Display",      color:"#7db5ff"},
-  audio:      {name:"Audio",        color:"#f3bd64"},
-  radio:      {name:"Radio",        color:"#63e0b2"},
-  gps:        {name:"GPS",          color:"#c8a2ff"},
-  aprs:       {name:"APRS",         color:"#ff9f7d"},
-  dv:         {name:"DV / D-STAR",  color:"#7de0e6"},
-  bluetooth:  {name:"Bluetooth",    color:"#a5b8ff"},
-  interfaces: {name:"Interfaces",   color:"#9acd7a"},
-  other:      {name:"Other",        color:"#8b949e"}
+  all:        {name:"All settings", color:"#93a2b7", desc:"Every setting in the catalogue"},
+  display:    {name:"Display",      color:"#7db5ff", desc:"Screen, backlight, and appearance"},
+  audio:      {name:"Audio",        color:"#f3bd64", desc:"Volume, beeps, and receive equalizer"},
+  radio:      {name:"Radio",        color:"#63e0b2", desc:"RF, channels, and transmit behavior"},
+  gps:        {name:"GPS",          color:"#c8a2ff", desc:"GPS receiver and NMEA output"},
+  aprs:       {name:"APRS",         color:"#ff9f7d", desc:"Beaconing, filters, and packet paths"},
+  dv:         {name:"DV / D-STAR",  color:"#7de0e6", desc:"D-STAR voice and DV gateway"},
+  bluetooth:  {name:"Bluetooth",    color:"#a5b8ff", desc:"Pairing and device identity"},
+  interfaces: {name:"Interfaces",   color:"#9acd7a", desc:"USB/Bluetooth data routing"},
+  other:      {name:"Other",        color:"#8b949e", desc:"Miscellaneous settings"}
 };
 
 const state = {
@@ -197,12 +197,15 @@ function renderList() {
     head.className = "group-head";
     const title = document.createElement("h2");
     title.textContent = CATEGORY_META[category]?.name || category;
+    const desc = document.createElement("span");
+    desc.className = "group-desc";
+    desc.textContent = CATEGORY_META[category]?.desc || "";
     const line = document.createElement("span");
     line.className = "group-line";
     const count = document.createElement("span");
     count.className = "group-count";
     count.textContent = `${items.length}`;
-    head.append(title, line, count);
+    head.append(title, desc, line, count);
 
     const rows = document.createElement("div");
     rows.className = "rows";
@@ -522,7 +525,9 @@ async function pollMonitor() {
     const fields = data.fields || {};
     setVfo("a", fields.vfo_a_hz?.value);
     setVfo("b", fields.vfo_b_hz?.value);
-    setVfoStatus(data.connected ? `monitor · ${data.transport || "live"}` : "monitor offline", Boolean(data.connected));
+    const transport = data.transport === "bluetooth" ? "Bluetooth" : "USB";
+    const port = data.port ? ` · ${data.port}` : "";
+    setVfoStatus(data.connected ? `${transport}${port}` : "Monitor offline", Boolean(data.connected));
   } catch (error) {
     setVfo("a", null);
     setVfo("b", null);
