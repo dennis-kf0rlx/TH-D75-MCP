@@ -482,6 +482,9 @@ async function pollStatus() {
     const resp = await fetch("/api/status", {cache: "no-store"});
     if (!resp.ok) return;
     const status = await resp.json();
+    const transport = status.transport === "bluetooth" ? "Bluetooth" : "USB";
+    const serialPath = status.serialPath ? ` · ${status.serialPath}` : "";
+    setRadioMeta(`TH-D75 · V1.03 · ${transport}${serialPath}`);
     if (status.lastError) setConnection("Radio error · click Read", false);
     updateSessionUI(status.sessionActive);
     if (status.sessionActive) setConnection("Settings mode · radio held", true);

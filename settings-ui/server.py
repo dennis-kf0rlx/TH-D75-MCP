@@ -27,6 +27,26 @@ CATALOG_PATH = os.path.join(BASE, "catalog.json")
 VALUES_PATH = os.path.join(BASE, "values.json")
 BACKUP_DIR = os.path.join(BASE, "backups")
 SERIAL = os.environ.get("D75_SERIAL", "/dev/thd75")
+TRANSPORT_ENV = os.environ.get("D75_TRANSPORT", "auto").strip().lower()
+
+
+def _is_rfcomm(path: str) -> bool:
+    return os.path.basename(path).startswith("rfcomm")
+
+
+def _detect_transport(path: str) -> str:
+    if TRANSPORT_ENV not in ("auto", "usb", "bluetooth"):
+        raise SystemExit("D75_TRANSPORT must be auto, usb, or bluetooth")
+    if TRANSPORT_ENV == "auto":
+        return "bluetooth" if _is_rfcomm(path) else "usb"
+    if TRANSPORT_ENV == "usb" and _is_rfcomm(path):
+        raise SystemExit("D75_TRANSPORT=usb conflicts with an rfcomm D75_SERIAL")
+    if TRANSPORT_ENV == "bluetooth" and not _is_rfcomm(path):
+        raise SystemExit("D75_TRANSPORT=bluetooth requires an rfcomm D75_SERIAL")
+    return TRANSPORT_ENV
+
+
+TRANSPORT = _detect_transport(SERIAL)
 MONITOR_UNIT = os.environ.get("D75_MONITOR_UNIT", "d75mon")
 HOST = os.environ.get("D75SETTINGS_HOST", "127.0.0.1")
 PORT = int(os.environ.get("D75SETTINGS_PORT", "8098"))
@@ -91,6 +111,14 @@ def serial_present() -> bool:
 
 
 def wait_serial_cycle(timeout: float = 30.0) -> bool:
+    if TRANSPORT == "bluetooth":
+        # RFCOMM does not disappear/reappear like USB CDC after MCP exit.
+        end = time.time() + min(timeout, 2.0)
+        while time.time() < end:
+            if serial_present():
+                return True
+            time.sleep(0.2)
+        return serial_present()
     start = time.time()
     saw_absent = False
     while time.time() - start < timeout:
@@ -210,8 +238,11 @@ class McpSession:
                 pass
             self.active = False
             self.port = None
-            log("MCP exited; waiting for USB re-enumeration")
-            wait_serial_cycle(30.0)
+            if TRANSPORT == "bluetooth":
+                log("MCP exited; Bluetooth link released (no USB reset)")
+            else:
+                log("MCP exited; waiting for USB re-enumeration")
+                wait_serial_cycle(30.0)
 
 
 def page_span(offset: int, size: int) -> set[int]:
@@ -481,7 +512,13 @@ def apply_changes(changes: list[dict], confirm_high_risk: bool = False) -> dict:
             raise ValueError(f"unknown setting {sid}")
         if item.get("risk") == "high" and not confirm_high_risk:
             raise ValueError(f"{sid} is high-risk; explicit confirmation required")
-        plan.append((item, validate_value(item, change.get("value"))))
+        value = validate_value(item, change.get("value"))
+        if (TRANSPORT == "bluetooth" and sid == "radio.BluetoothOnOff"
+                and value is False):
+            raise ValueError(
+                "radio.BluetoothOnOff=false would disconnect the active "
+                "Bluetooth settings session; use USB or keep Bluetooth on")
+        plan.append((item, value))
     if not plan:
         return {"ok": True, "written": 0, "verified": 0, "values": {}, "settingsMode": True}
 
@@ -558,6 +595,8 @@ class Handler(SimpleHTTPRequestHandler):
         return {"sessionActive": SESSION is not None and SESSION.active,
                 "monitorActive": monitor_active(),
                 "serialPresent": serial_present(),
+                "transport": TRANSPORT,
+                "serialPath": SERIAL,
                 "busy": LOCK.locked(),
                 "lastError": LAST_ERROR}
 
@@ -656,7 +695,7 @@ def main() -> int:
     atexit.register(cleanup)
     signal.signal(signal.SIGTERM, lambda *_: (cleanup(), os._exit(0)))
     signal.signal(signal.SIGINT, lambda *_: (cleanup(), os._exit(0)))
-    log(f"loaded {len(BY_ID)} settings; listening on {HOST}:{PORT}")
+    log(f"loaded {len(BY_ID)} settings; transport={TRANSPORT} serial={SERIAL}; listening on {HOST}:{PORT}")
     if HOST not in ("127.0.0.1", "localhost", "::1"):
         log("WARNING: no authentication; do not expose this port to the internet")
     httpd = ThreadingHTTPServer((HOST, PORT), Handler)

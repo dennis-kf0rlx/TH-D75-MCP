@@ -7,7 +7,7 @@ the radio, but it removes most terminal archaeology.
 
 ## You need
 
-- Linux host physically connected to the TH-D75 via USB
+- Linux host physically connected to the TH-D75 via USB or Bluetooth SPP
 - Repo/skill access (request-only skill)
 - About five minutes
 - An agent, or a terminal if you are feeling brave
@@ -71,7 +71,8 @@ Open locally:
 - Monitor: **http://127.0.0.1:8099/**
 
 The settings UI does not read the radio until you click **Read from radio**.
-Settings mode intentionally pauses the monitor and takes one USB reset on exit.
+Settings mode intentionally pauses the monitor. USB exits with one USB reset;
+Bluetooth exits by closing the SPP link instead. See `docs/BLUETOOTH.md`.
 If MCP wedges, the radio may need a physical power cycle — the UI/agent cannot
 press the button for you.
 

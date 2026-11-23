@@ -23,7 +23,7 @@ does not use CHIRP per operation. It:
 3. keeps the session alive with a single-page read every **0.5 s** (this
    firmware drops it after ~2 s of silence);
 4. exits MCP on **Exit settings** or after 5 minutes idle — exactly one USB
-   reset — then restarts the monitor.
+   reset on USB; no USB reset on Bluetooth — then restarts the monitor.
 
 While settings mode is active the radio is held in MCP mode and the monitor is
 stopped deliberately. The UI says so.
@@ -42,7 +42,7 @@ High-risk settings require explicit confirmation.
 ## API
 
 ```text
-GET  /api/status        -> {sessionActive, monitorActive, serialPresent, busy, lastError}
+GET  /api/status        -> {sessionActive, monitorActive, serialPresent, transport, serialPath, busy, lastError}
 GET  /api/catalog       -> {generated, schema_version, settings:[...]}
 GET  /api/values        -> {model, firmware, values:{id:value}, updatedAt}
 GET  /api/read          -> enter/read settings mode; {values, readAt, settingsMode}
@@ -52,6 +52,13 @@ POST /api/session/stop  -> leave settings mode; one USB reset, monitor restarted
 
 A process lock serializes operations; a second request gets HTTP 409.
 
+## Bluetooth
+
+TH-D75 CAT works over Bluetooth Classic SPP (RFCOMM channel 2). Use
+`D75_TRANSPORT=bluetooth D75_SERIAL=/dev/rfcomm0`; see
+[`../docs/BLUETOOTH.md`](../docs/BLUETOOTH.md) for pairing, `rfcomm` binding,
+service override, and the Bluetooth-off guard.
+
 ## Configuration
 
 Environment variables:
@@ -60,7 +67,8 @@ Environment variables:
 |---|---|---|
 | `D75SETTINGS_HOST` | `127.0.0.1` | bind address (loopback by default) |
 | `D75SETTINGS_PORT` | `8098` | HTTP port |
-| `D75_SERIAL` | `/dev/thd75` | radio serial device |
+| `D75_TRANSPORT` | `auto` | `auto`, `usb`, or `bluetooth`; auto infers rfcomm |
+| `D75_SERIAL` | `/dev/thd75` | radio serial device (`/dev/rfcomm0` on Bluetooth) |
 | `D75_MONITOR_UNIT` | `d75mon` | systemd **user** monitor unit to pause/restart |
 | `D75SETTINGS_IDLE` | `300` | idle seconds before releasing MCP |
 | `D75SETTINGS_KEEPALIVE` | `0.5` | MCP keepalive interval, seconds |
