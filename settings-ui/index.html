@@ -43,9 +43,6 @@
         <div class="vfo-row"><span class="vfo-label">VFO A</span><b class="vfo-freq" id="vfo-a">—</b></div>
         <div class="vfo-row"><span class="vfo-label">VFO B</span><b class="vfo-freq" id="vfo-b">—</b></div>
         <div class="radio-panel-status" id="vfo-status">monitor</div>
-        <div class="screen-wrap" id="screen-wrap" hidden>
-          <img id="screen-img" alt="Live TH-D75 LCD" width="240" height="180">
-        </div>
       </section>
 
       <div class="sidebar-note">
@@ -89,6 +86,19 @@
   </footer>
 
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <div class="screen-modal" id="screen-modal" hidden>
+    <div class="screen-dialog" role="dialog" aria-modal="true" aria-label="Live TH-D75 LCD">
+      <div class="screen-dialog-head">
+        <span>TH-D75 LCD</span>
+        <button class="mini-btn" id="screen-close" type="button">Close</button>
+      </div>
+      <div class="screen-bezel">
+        <img id="screen-modal-img" alt="Live TH-D75 LCD framebuffer" width="240" height="180">
+      </div>
+      <div class="screen-caption">Live 240×180 DDR framebuffer · refresh 1 s</div>
+    </div>
+  </div>
 
   <script src="catalog.js"></script>
   <script src="app.js"></script>

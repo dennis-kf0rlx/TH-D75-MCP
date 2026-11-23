@@ -49,8 +49,9 @@ const els = {
   vfoB: document.getElementById("vfo-b"),
   vfoStatus: document.getElementById("vfo-status"),
   screenToggle: document.getElementById("screen-toggle"),
-  screenWrap: document.getElementById("screen-wrap"),
-  screenImg: document.getElementById("screen-img")
+  screenModal: document.getElementById("screen-modal"),
+  screenClose: document.getElementById("screen-close"),
+  screenModalImg: document.getElementById("screen-modal-img")
 };
 let sessionActive = false;
 let screenVisible = false;
@@ -522,18 +523,22 @@ async function pollMonitor() {
 }
 
 function refreshScreen() {
-  if (!screenVisible || !els.screenImg) return;
-  els.screenImg.src = `/api/monitor/screen.png?t=${Date.now()}`;
+  if (!screenVisible || !els.screenModalImg) return;
+  els.screenModalImg.src = `/api/monitor/screen.png?t=${Date.now()}`;
 }
 
-function toggleScreen() {
-  screenVisible = !screenVisible;
-  if (els.screenWrap) els.screenWrap.hidden = !screenVisible;
+function setScreenVisible(visible) {
+  screenVisible = Boolean(visible);
+  if (els.screenModal) els.screenModal.hidden = !screenVisible;
   if (els.screenToggle) {
     els.screenToggle.setAttribute("aria-pressed", String(screenVisible));
     els.screenToggle.textContent = screenVisible ? "Hide" : "LCD";
   }
   if (screenVisible) refreshScreen();
+}
+
+function toggleScreen() {
+  setScreenVisible(!screenVisible);
 }
 
 async function pollStatus() {
@@ -670,6 +675,13 @@ window.addEventListener("pagehide", () => {
 setInterval(pollStatus, 15000);
 
 els.screenToggle?.addEventListener("click", toggleScreen);
+els.screenClose?.addEventListener("click", () => setScreenVisible(false));
+els.screenModal?.addEventListener("click", (event) => {
+  if (event.target === els.screenModal) setScreenVisible(false);
+});
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && screenVisible) setScreenVisible(false);
+});
 setInterval(pollMonitor, 1000);
 setInterval(() => { if (screenVisible) refreshScreen(); }, 1000);
 

@@ -404,3 +404,43 @@ input[type="number"] { text-align: right; padding-right: 38px; }
   .radio-panel { margin: 8px 8px 10px; }
   .screen-wrap img { max-width: 240px; margin: 0 auto; }
 }
+
+/* Enlarged LCD framebuffer emulator */
+.screen-modal {
+  position: fixed; inset: 0; z-index: 60;
+  display: grid; place-items: center;
+  padding: 24px;
+  background: rgba(4, 7, 11, .62);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  backdrop-filter: blur(12px) saturate(130%);
+}
+.screen-dialog {
+  width: min(620px, calc(100vw - 32px));
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 16px;
+  padding: 14px;
+  background: linear-gradient(180deg, rgba(22,31,43,.86), rgba(10,15,22,.78));
+  box-shadow: 0 30px 90px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.07);
+}
+.screen-dialog-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+  color: var(--faint); font-size: 11px; font-weight: 650;
+  text-transform: uppercase; letter-spacing: .12em;
+}
+.screen-bezel {
+  padding: 12px;
+  border-radius: 10px;
+  background: #05080c;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.8);
+}
+.screen-bezel img {
+  display: block; width: 100%; height: auto;
+  image-rendering: pixelated;
+  border-radius: 4px;
+  background: #000;
+}
+.screen-caption { margin-top: 9px; color: var(--faint); font-size: 11px; text-align: center; }
+
+.screen-modal[hidden] { display: none; }
