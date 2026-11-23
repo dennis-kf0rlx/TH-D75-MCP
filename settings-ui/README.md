@@ -22,8 +22,10 @@ does not use CHIRP per operation. It:
    or save;
 3. keeps the session alive with a single-page read every **0.5 s** (this
    firmware drops it after ~2 s of silence);
-4. exits MCP on **Exit settings** or after 5 minutes idle — exactly one USB
-   reset on USB; no USB reset on Bluetooth — then restarts the monitor.
+4. exits MCP after **Apply** by default, on **Exit settings**, or after 5
+   minutes idle — exactly one USB reset on USB; no USB reset on Bluetooth — then
+   restarts the monitor. Set `D75_AUTO_RELEASE=0` to keep the session open for
+   multiple edits.
 
 While settings mode is active the radio is held in MCP mode and the monitor is
 stopped deliberately. The UI says so.
@@ -71,6 +73,7 @@ Environment variables:
 | `D75_SERIAL` | `/dev/thd75` | radio serial device (`/dev/rfcomm0` on Bluetooth) |
 | `D75_SERIAL_FALLBACK` | `/dev/rfcomm0` | used only when `D75_SERIAL` is absent; USB still wins |
 | `D75_MONITOR_UNIT` | `d75mon` | systemd **user** monitor unit to pause/restart |
+| `D75_AUTO_RELEASE` | `1` | release settings mode after a successful Apply |
 | `D75SETTINGS_IDLE` | `300` | idle seconds before releasing MCP |
 | `D75SETTINGS_KEEPALIVE` | `0.5` | MCP keepalive interval, seconds |
 

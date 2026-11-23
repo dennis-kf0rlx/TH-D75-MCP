@@ -122,7 +122,8 @@ USB:
 Bluetooth:
 
 - entry/exit use the open rfcomm stream
-- exit closes the link and **does not wait for USB re-enumeration**
+- after Apply, settings mode releases automatically; exit closes the link and
+  **does not wait for USB re-enumeration**
 - `/dev/rfcomm0` normally remains bound
 - monitor restarts and reconnects over Bluetooth
 

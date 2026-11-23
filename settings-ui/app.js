@@ -566,9 +566,12 @@ async function applyChanges() {
     CACHE_HAS_VALUES = true;
     renderList();
     updateChangeUI();
-    updateSessionUI(true);
+    updateSessionUI(Boolean(data.settingsMode));
+    if (!data.settingsMode) setConnection("Cached values · click Read", false);
     const backup = data.backup ? " Backup saved." : "";
-    toast(`Applied and verified ${data.verified || changes.length} change${changes.length === 1 ? "" : "s"}.${backup}`);
+    const released = data.settingsMode ? "" : " Settings mode released.";
+    toast(`Applied and verified ${data.verified || changes.length} change${changes.length === 1 ? "" : "s"}.${backup}${released}`);
+    await pollStatus();
   } catch (error) {
     setConnection("Apply failed", false);
     toast(`Apply failed: ${error.message}`);

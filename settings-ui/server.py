@@ -53,6 +53,7 @@ def _detect_transport(path: str) -> str:
 
 
 TRANSPORT = _detect_transport(SERIAL)
+AUTO_RELEASE = os.environ.get("D75_AUTO_RELEASE", "1").strip().lower() not in ("0", "false", "no")
 MONITOR_UNIT = os.environ.get("D75_MONITOR_UNIT", "d75mon")
 HOST = os.environ.get("D75SETTINGS_HOST", "127.0.0.1")
 PORT = int(os.environ.get("D75SETTINGS_PORT", "8098"))
@@ -565,9 +566,18 @@ def apply_changes(changes: list[dict], confirm_high_risk: bool = False) -> dict:
     save_cache(values_from_image(session.image_for_pages(all_pages())))
     LAST_ACTIVITY = time.time()
     LAST_ERROR = None
+    settings_mode = True
+    if AUTO_RELEASE:
+        try:
+            release_session(restart_monitor=True)
+            settings_mode = False
+            log("apply complete; auto-released settings mode")
+        except Exception as exc:  # noqa: BLE001
+            LAST_ERROR = f"settings mode release failed: {exc}"
+            log(LAST_ERROR)
     return {"ok": True, "written": len(plan), "verified": len(plan),
             "values": {item["id"]: after_values[item["id"]] for item, _ in plan},
-            "backup": backup, "settingsMode": True}
+            "backup": backup, "settingsMode": settings_mode}
 
 
 def release_settings() -> dict:
@@ -701,7 +711,8 @@ def main() -> int:
     atexit.register(cleanup)
     signal.signal(signal.SIGTERM, lambda *_: (cleanup(), os._exit(0)))
     signal.signal(signal.SIGINT, lambda *_: (cleanup(), os._exit(0)))
-    log(f"loaded {len(BY_ID)} settings; transport={TRANSPORT} serial={SERIAL}; listening on {HOST}:{PORT}")
+    log(f"loaded {len(BY_ID)} settings; transport={TRANSPORT} serial={SERIAL}; "
+        f"auto_release={AUTO_RELEASE}; listening on {HOST}:{PORT}")
     if HOST not in ("127.0.0.1", "localhost", "::1"):
         log("WARNING: no authentication; do not expose this port to the internet")
     httpd = ThreadingHTTPServer((HOST, PORT), Handler)
