@@ -54,6 +54,24 @@ otherwise the settings UI runs as your user and gets permission denied.
 `bt-bind.sh` releases a stale binding first. It needs root because `rfcomm` is
 deprecated BlueZ tooling.
 
+### Persistent binding at boot
+
+Install the systemd unit after pairing:
+
+```bash
+sudo install -m 0755 infra/systemd/thd75-bt-bind.sh /usr/local/sbin/thd75-bt-bind
+sudo cp infra/systemd/thd75-bt-bind.service.example \
+  /etc/systemd/system/thd75-bt-bind.service
+sudoedit /etc/systemd/system/thd75-bt-bind.service
+# set THD75_BT_MAC and THD75_BT_OWNER
+sudo systemctl daemon-reload
+sudo systemctl enable --now thd75-bt-bind.service
+```
+
+The unit recreates `/dev/rfcomm0`, binds channel 2, and chowns it to the desktop
+user. If the radio is off at boot, run `sudo systemctl restart thd75-bt-bind.service`
+after turning it on.
+
 ## Monitor
 
 `d75mon` config:

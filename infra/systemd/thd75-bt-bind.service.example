@@ -1,0 +1,18 @@
+[Unit]
+Description=Bind TH-D75 Bluetooth SPP serial port
+After=bluetooth.service
+Wants=bluetooth.service
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+# Replace these two values before installing.
+Environment=THD75_BT_MAC=90:CE:B8:D7:A5:F4
+Environment=THD75_BT_OWNER=dennis
+ExecStart=/usr/local/sbin/thd75-bt-bind
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

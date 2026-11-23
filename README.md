@@ -417,6 +417,7 @@ session.
 - `docs/TESTING.md` — local installer/server/browser-preview test loop
 - `docs/BARE-METAL.md` — off-LAN USB-kit test on a generic desktop
 - `docs/BLUETOOTH.md` — Classic SPP CAT, pairing, rfcomm, settings UI
+- `infra/systemd/thd75-bt-bind.service.example` — persistent Bluetooth bind
 - `scripts/uninstall.sh` — remove an installed instance safely
 - `docs/RELEASE.md` — public-release and skill-split checklist
 - `LAZY.md` — shortest install path for humans
