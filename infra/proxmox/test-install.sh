@@ -13,7 +13,7 @@ EXECUTE=0
 
 usage() {
   cat <<'USAGE'
-Usage (on the Proxmox host, from a checkout of TH-D75-MCP):
+Usage (on the Proxmox host, from a checkout of thd75-web-console):
   ./infra/proxmox/test-install.sh --template 9000 --vmid 201 [options]
 
 Default is dry-run. Required with --execute:
@@ -96,11 +96,11 @@ scp -i "$SSH_KEY" -o BatchMode=yes -o StrictHostKeyChecking=accept-new \
 ssh -i "$SSH_KEY" -o BatchMode=yes -o StrictHostKeyChecking=accept-new \
   "$SSH_USER@$IP" '
     set -euo pipefail
-    rm -rf ~/TH-D75-MCP
-    mkdir -p ~/TH-D75-MCP
-    tar -xzf /tmp/d75-repo.tar.gz -C ~/TH-D75-MCP
+    rm -rf ~/thd75-web-console
+    mkdir -p ~/thd75-web-console
+    tar -xzf /tmp/d75-repo.tar.gz -C ~/thd75-web-console
     rm -f /tmp/d75-repo.tar.gz
-    cd ~/TH-D75-MCP
+    cd ~/thd75-web-console
     ./scripts/bootstrap.sh --check
   '
 echo "VM install test passed: VMID $VMID (keep=$KEEP)"

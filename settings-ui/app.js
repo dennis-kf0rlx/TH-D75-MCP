@@ -1,4 +1,4 @@
-// TH-D75 Settings — front-end preview.
+// TH-D75 Web Console — front-end preview.
 // Backend contract (future):
 //   GET  /api/catalog  -> {settings:[{id,label,category,description,type,value,options,min,max,step,unit,menu,offset,keywords}]}
 //   GET  /api/read     -> {values:{id:value}, model:"TH-D75", firmware:"1.03"}

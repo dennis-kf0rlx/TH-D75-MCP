@@ -36,7 +36,7 @@ Debian / Ubuntu:
     --sha256 latest/download/thd75-tools.tar.gz.sha256 \\
     --setup
 
-The installer checks the checksum, installs to ~/TH-D75-MCP, and asks before
+The installer checks the checksum, installs to ~/thd75-web-console, and asks before
 package installation, udev, and systemd user services. On a desktop it opens
 the install report and then the settings UI.
 
@@ -50,7 +50,7 @@ No lab LAN or public GitHub release is required.
 
 Uninstall:
 
-  cd ~/TH-D75-MCP
+  cd ~/thd75-web-console
   ./scripts/uninstall.sh --dry-run
   ./scripts/uninstall.sh
 EOF

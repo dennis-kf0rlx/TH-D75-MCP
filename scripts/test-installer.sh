@@ -51,7 +51,7 @@ python3 -m http.server "$PORT" --bind 127.0.0.1 --directory "$DIST" \
 SERVER_PID=$!
 
 if [ "$KEEP" -eq 0 ]; then
-  PREFIX="$TMP_ROOT/TH-D75-MCP"
+  PREFIX="$TMP_ROOT/thd75-web-console"
 else
   PREFIX="${D75_TEST_PREFIX:-$HOME/thd75-install-test}"
   [ ! -e "$PREFIX" ] || { echo "keep prefix already exists: $PREFIX" >&2; exit 1; }

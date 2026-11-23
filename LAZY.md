@@ -19,7 +19,7 @@ Give your agent this prompt:
 ```text
 Install the TH-D75 tools on this Linux host.
 
-Repo: git@github.com:dennis-kf0rlx/TH-D75-MCP.git
+Repo: git@github.com:dennis-kf0rlx/thd75-web-console.git
 Skill: skills/th-d75-tools/SKILL.md
 
 Follow the skill. Start with bootstrap.sh --check. If this is an interactive
@@ -42,12 +42,12 @@ When the tools release is public:
 
 ```bash
 curl -fsSL -o thd75-install.sh \
-  https://github.com/dennis-kf0rlx/TH-D75-MCP/releases/latest/download/install.sh
+  https://github.com/dennis-kf0rlx/thd75-web-console/releases/latest/download/install.sh
 less thd75-install.sh
 bash thd75-install.sh
 ```
 
-It verifies the release checksum, extracts to `~/TH-D75-MCP`, and asks before
+It verifies the release checksum, extracts to `~/thd75-web-console`, and asks before
 udev/systemd setup. In a graphical terminal it opens an install-report page in
 your browser, then redirects to the settings UI. Do not pipe `curl` to Bash as
 the default.
@@ -55,8 +55,8 @@ the default.
 ## Path B — do it yourself from a clone
 
 ```bash
-git clone git@github.com:dennis-kf0rlx/TH-D75-MCP.git
-cd TH-D75-MCP
+git clone git@github.com:dennis-kf0rlx/thd75-web-console.git
+cd thd75-web-console
 ./scripts/bootstrap.sh --setup
 ```
 

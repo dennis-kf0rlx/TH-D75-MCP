@@ -1,4 +1,4 @@
-// TH-D75 Settings — static catalogue for the front-end design.
+// TH-D75 Web Console — static catalogue for the front-end design.
 // Backend replacement: serve this shape from /api/catalog and values from /api/read.
 window.D75_CATALOG = [
   // Display

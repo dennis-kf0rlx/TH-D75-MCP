@@ -5,8 +5,8 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=%h/TH-D75-MCP/d75mon
-ExecStart=%h/TH-D75-MCP/.venv/bin/python %h/TH-D75-MCP/d75mon/backend/d75mon.py --config %h/TH-D75-MCP/d75mon/config.json
+WorkingDirectory=%h/thd75-web-console/d75mon
+ExecStart=%h/thd75-web-console/.venv/bin/python %h/thd75-web-console/d75mon/backend/d75mon.py --config %h/thd75-web-console/d75mon/config.json
 Restart=always
 RestartSec=3
 Nice=5

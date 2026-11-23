@@ -41,7 +41,7 @@ Serve:
 ```
 
 **ASK FIRST:** service installation is a persistent system change. Adjust paths
-if you cloned outside `~/TH-D75-MCP`.
+if you cloned outside `~/thd75-web-console`.
 
 ```bash
 mkdir -p ~/.config/systemd/user

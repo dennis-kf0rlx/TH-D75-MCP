@@ -188,7 +188,7 @@ UDEV
 }
 
 setup_services() {
-  local expected="$HOME/TH-D75-MCP"
+  local expected="$HOME/thd75-web-console"
   echo
   warn "This installs persistent systemd user units."
   confirm "Install and start d75mon + settings-ui as user services?" || {
@@ -267,7 +267,7 @@ case "$MODE" in
 # Check the paths before running; do not paste blindly.
 mkdir -p ~/.config/systemd/user
 cp settings-ui/systemd/d75settings.service.example ~/.config/systemd/user/d75settings.service
-# Edit WorkingDirectory/ExecStart if the repo is not at ~/TH-D75-MCP.
+# Edit WorkingDirectory/ExecStart if the repo is not at ~/thd75-web-console.
 systemctl --user daemon-reload
 systemctl --user enable --now d75settings.service
 EOF
@@ -276,7 +276,7 @@ EOF
         cat <<'EOF'
 mkdir -p ~/.config/systemd/user
 cp d75mon/systemd/d75mon.service.example ~/.config/systemd/user/d75mon.service
-# Edit WorkingDirectory/ExecStart if the repo is not at ~/TH-D75-MCP.
+# Edit WorkingDirectory/ExecStart if the repo is not at ~/thd75-web-console.
 systemctl --user daemon-reload
 systemctl --user enable --now d75mon.service
 EOF

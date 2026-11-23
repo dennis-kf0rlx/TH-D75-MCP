@@ -4,13 +4,13 @@ After=network-online.target
 
 [Service]
 Type=simple
-WorkingDirectory=%h/TH-D75-MCP/settings-ui
+WorkingDirectory=%h/thd75-web-console/settings-ui
 Environment=D75SETTINGS_HOST=127.0.0.1
 Environment=D75_TRANSPORT=bluetooth
 Environment=D75_SERIAL=/dev/rfcomm0
 # For LAN access, set D75SETTINGS_HOST=0.0.0.0 and firewall the port.
 Environment=D75_MONITOR_UNIT=d75mon
-ExecStart=%h/TH-D75-MCP/.venv/bin/python %h/TH-D75-MCP/settings-ui/server.py
+ExecStart=%h/thd75-web-console/.venv/bin/python %h/thd75-web-console/settings-ui/server.py
 Restart=on-failure
 RestartSec=3
 

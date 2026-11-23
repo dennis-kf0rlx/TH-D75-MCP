@@ -43,7 +43,7 @@ bluetoothctl pair <MAC>
 bluetoothctl trust <MAC>
 
 # Bind RFCOMM channel 2 to /dev/rfcomm0
-/home/p6/TH-D75-MCP/d75mon/tools/bt-bind.sh <MAC>
+/home/p6/thd75-web-console/d75mon/tools/bt-bind.sh <MAC>
 ls -l /dev/rfcomm0
 ```
 

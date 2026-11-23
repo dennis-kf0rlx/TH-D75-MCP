@@ -12,7 +12,7 @@ If the repo is private, use `LAZY.md`'s clone path instead.
 
 ```bash
 curl -fsSL -o thd75-install.sh \
-  https://github.com/dennis-kf0rlx/TH-D75-MCP/releases/latest/download/install.sh
+  https://github.com/dennis-kf0rlx/thd75-web-console/releases/latest/download/install.sh
 less thd75-install.sh
 bash thd75-install.sh
 ```
@@ -26,7 +26,7 @@ Run the installer from a terminal in a graphical desktop session. After the
 checks/setup it writes:
 
 ```text
-~/TH-D75-MCP/install-report.html
+~/thd75-web-console/install-report.html
 ```
 
 and opens it in the default browser. The report contains installation notes,
@@ -41,7 +41,7 @@ suppress the launch. No VM desktop is needed.
 1. downloads the versioned tools tarball and its checksum
 2. verifies SHA-256 **before** extraction
 3. refuses to overwrite an existing install
-4. extracts to `~/TH-D75-MCP`
+4. extracts to `~/thd75-web-console`
 5. runs `scripts/bootstrap.sh --setup` interactively
 6. asks before package installation, udev, and systemd user units
 
@@ -50,7 +50,7 @@ No sudo is used by `install.sh` itself. No radio settings are written.
 ## Options
 
 ```text
---prefix DIR            Install directory (default: ~/TH-D75-MCP)
+--prefix DIR            Install directory (default: ~/thd75-web-console)
 --version X.Y.Z         Release version (default: latest)
 --local-tarball FILE    Use a local tarball (testing/offline)
 --sha256 FILE           Checksum for --local-tarball
@@ -100,7 +100,7 @@ the request-only skill, firmware, clone images, values, or backups.
 
 End-to-end tested on a fresh Debian 13 VM with no git/make:
 
-- `install.sh --local-tarball ... --sha256 ... --setup --prefix ~/TH-D75-MCP`
+- `install.sh --local-tarball ... --sha256 ... --setup --prefix ~/thd75-web-console`
 - checksum verified before extraction
 - interactive setup installed packages, udev rule, and both user services
 - `d75mon` and `d75settings` active and bound only to
@@ -112,7 +112,7 @@ End-to-end tested on a fresh Debian 13 VM with no git/make:
 From the install directory:
 
 ```bash
-cd ~/TH-D75-MCP
+cd ~/thd75-web-console
 ./scripts/uninstall.sh --dry-run     # preview
 ./scripts/uninstall.sh               # prompts
 ```

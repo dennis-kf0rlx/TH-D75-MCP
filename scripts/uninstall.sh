@@ -3,7 +3,7 @@
 # udev rule. Never removes system packages or radio settings.
 set -euo pipefail
 
-PREFIX="${THD75_PREFIX:-$HOME/TH-D75-MCP}"
+PREFIX="${THD75_PREFIX:-$HOME/thd75-web-console}"
 UNIT_DIR="$HOME/.config/systemd/user"
 UDEV_RULE="/etc/udev/rules.d/99-kenwood-thd75.rules"
 DRY_RUN=0
@@ -18,7 +18,7 @@ usage() {
 Usage: scripts/uninstall.sh [options]
 
 Options:
-  --prefix DIR        Installation to remove (default: ~/TH-D75-MCP)
+  --prefix DIR        Installation to remove (default: ~/thd75-web-console)
   --remove-udev       Also remove /etc/udev/rules.d/99-kenwood-thd75.rules
   --keep-data         Archive settings-ui/values.json and backups before removal
   --purge             Do not archive values/backups
@@ -77,7 +77,15 @@ case "$PREFIX" in
   "~/"*) PREFIX="$HOME/${PREFIX#\~/}" ;;
 esac
 
-[ -d "$PREFIX" ] || die "install path not found: $PREFIX"
+[ -d "$PREFIX" ] || {
+  # Preserve removal of installs created under the old repo name.
+  if [ -d "$HOME/TH-D75-MCP" ] && [ "$PREFIX" = "$HOME/thd75-web-console" ]; then
+    warn "new prefix not found; using legacy install at $HOME/TH-D75-MCP"
+    PREFIX="$HOME/TH-D75-MCP"
+  else
+    die "install path not found: $PREFIX"
+  fi
+}
 
 REAL="$(realpath "$PREFIX")"
 case "$REAL" in
@@ -109,7 +117,8 @@ for svc in d75mon d75settings; do
   fi
   unit_match=0
   grep -qF "$PREFIX" "$unit" && unit_match=1
-  if [ "$PREFIX" = "$HOME/TH-D75-MCP" ] && grep -qF '%h/TH-D75-MCP' "$unit"; then
+  if [ "$PREFIX" = "$HOME/thd75-web-console" ] && \
+     { grep -qF '%h/thd75-web-console' "$unit" || grep -qF '%h/TH-D75-MCP' "$unit"; }; then
     unit_match=1
   fi
   if [ "$unit_match" -eq 0 ]; then

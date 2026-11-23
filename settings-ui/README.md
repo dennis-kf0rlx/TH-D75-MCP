@@ -1,4 +1,4 @@
-# TH-D75 Settings UI
+# TH-D75 Web Console UI
 
 A searchable, scalable web settings editor for the TH-D75 — built to replace
 the radio's tiny screen and keypad for menu work, and to make obscure settings

@@ -4,9 +4,9 @@
 # helper. No curl|bash; no sudo in this script.
 set -euo pipefail
 
-REPO_SLUG="${THD75_REPO_SLUG:-dennis-kf0rlx/TH-D75-MCP}"
+REPO_SLUG="${THD75_REPO_SLUG:-dennis-kf0rlx/thd75-web-console}"
 RELEASE_BASE="${THD75_RELEASE_BASE:-https://github.com/$REPO_SLUG/releases}"
-PREFIX="${THD75_PREFIX:-$HOME/TH-D75-MCP}"
+PREFIX="${THD75_PREFIX:-$HOME/thd75-web-console}"
 VERSION="latest"
 LOCAL_TARBALL=""
 SHA_FILE=""
@@ -21,7 +21,7 @@ Usage: install.sh [options]
 Downloads a checksum-verified TH-D75 tools release and installs it.
 
 Options:
-  --prefix DIR            Install directory (default: ~/TH-D75-MCP)
+  --prefix DIR            Install directory (default: ~/thd75-web-console)
   --version X.Y.Z         Release version (default: latest)
   --local-tarball FILE    Use a local tarball (testing/offline)
   --sha256 FILE           Checksum file for --local-tarball

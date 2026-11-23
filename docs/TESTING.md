@@ -57,7 +57,7 @@ test host and choose the setup prompts.
 bash install.sh \
   --local-tarball dist/latest/download/thd75-tools.tar.gz \
   --sha256 dist/latest/download/thd75-tools.tar.gz.sha256 \
-  --setup --prefix ~/TH-D75-MCP
+  --setup --prefix ~/thd75-web-console
 ```
 
 This exercises package installation, udev, services, and the report redirect.

@@ -1,7 +1,8 @@
-# TH-D75 tools
+# TH-D75 Web Console
 
-Open-source tools and reverse-engineering notes for the **Kenwood TH-D75**
-amateur radio (V1.03), built and tested on Linux.
+TH-D75 Web Console is a browser-based settings editor, live VFO, and LCD
+emulator for the **Kenwood TH-D75** amateur radio (V1.03), built and tested on
+Linux.
 
 Two runnable tools:
 
@@ -94,12 +95,12 @@ Once the tools repo has a public release:
 
 ```bash
 curl -fsSL -o thd75-install.sh \
-  https://github.com/dennis-kf0rlx/TH-D75-MCP/releases/latest/download/install.sh
+  https://github.com/dennis-kf0rlx/thd75-web-console/releases/latest/download/install.sh
 less thd75-install.sh
 bash thd75-install.sh
 ```
 
-The installer verifies the tarball checksum, extracts to `~/TH-D75-MCP`, and runs
+The installer verifies the tarball checksum, extracts to `~/thd75-web-console`, and runs
 the interactive setup. On a desktop it opens an install-notes page in the browser
 and then redirects to the settings UI. See `docs/INSTALL.md`. The request-only
 Agent Skill is not in the release.
@@ -109,8 +110,8 @@ Agent Skill is not in the release.
 There is nothing to compile; “build” is the Python environment:
 
 ```bash
-git clone git@github.com:dennis-kf0rlx/TH-D75-MCP.git
-cd TH-D75-MCP
+git clone git@github.com:dennis-kf0rlx/thd75-web-console.git
+cd thd75-web-console
 
 python3 -m venv .venv
 .venv/bin/pip install -r requirements.txt
@@ -194,12 +195,12 @@ adjust `D75_MONITOR_UNIT`; the service expects the same user as the monitor.
 mkdir -p ~/.config/systemd/user
 cp settings-ui/systemd/d75settings.service.example \
    ~/.config/systemd/user/d75settings.service
-# Edit WorkingDirectory/ExecStart if you cloned outside ~/TH-D75-MCP.
+# Edit WorkingDirectory/ExecStart if you cloned outside ~/thd75-web-console.
 systemctl --user daemon-reload
 systemctl --user enable --now d75settings.service
 ```
 
-The example unit uses loopback and `%h/TH-D75-MCP` + `.venv`.
+The example unit uses loopback and `%h/thd75-web-console` + `.venv`.
 
 ### Settings environment
 

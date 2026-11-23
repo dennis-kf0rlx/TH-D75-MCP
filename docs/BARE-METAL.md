@@ -62,7 +62,7 @@ the group was just added.
 ## Remove
 
 ```bash
-cd ~/TH-D75-MCP
+cd ~/thd75-web-console
 ./scripts/uninstall.sh --dry-run
 ./scripts/uninstall.sh
 ```

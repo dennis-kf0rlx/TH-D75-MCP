@@ -23,8 +23,8 @@ first, then clone; a minimal Debian image lacks Git/Make/venv:
 ```bash
 sudo apt-get update
 sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils
-git clone git@github.com:dennis-kf0rlx/TH-D75-MCP.git
-cd TH-D75-MCP
+git clone git@github.com:dennis-kf0rlx/thd75-web-console.git
+cd thd75-web-console
 ```
 
 Then continue with `SKILL.md` §0/§1. Installation/build is valid with no radio
