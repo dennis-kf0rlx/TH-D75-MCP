@@ -34,6 +34,20 @@
     <aside class="sidebar" aria-label="Categories">
       <div class="sidebar-head">Categories</div>
       <nav id="category-nav" class="category-nav"></nav>
+
+      <section class="radio-panel" aria-label="Live radio status">
+        <div class="radio-panel-head">
+          <span>Radio</span>
+          <button class="mini-btn" id="screen-toggle" type="button" aria-pressed="false">LCD</button>
+        </div>
+        <div class="vfo-row"><span class="vfo-label">VFO A</span><b class="vfo-freq" id="vfo-a">—</b></div>
+        <div class="vfo-row"><span class="vfo-label">VFO B</span><b class="vfo-freq" id="vfo-b">—</b></div>
+        <div class="radio-panel-status" id="vfo-status">monitor</div>
+        <div class="screen-wrap" id="screen-wrap" hidden>
+          <img id="screen-img" alt="Live TH-D75 LCD" width="240" height="180">
+        </div>
+      </section>
+
       <div class="sidebar-note">
         <strong>Live catalogue.</strong> Values are read from the radio's clone
         image; Apply writes only the changed bytes and verifies them by read-back.

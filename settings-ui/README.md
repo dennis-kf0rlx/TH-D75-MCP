@@ -47,12 +47,21 @@ High-risk settings require explicit confirmation.
 GET  /api/status        -> {sessionActive, monitorActive, serialPresent, transport, serialPath, busy, lastError}
 GET  /api/catalog       -> {generated, schema_version, settings:[...]}
 GET  /api/values        -> {model, firmware, values:{id:value}, updatedAt}
+GET  /api/monitor/state -> proxy of d75mon /state (VFO A/B + status)
+GET  /api/monitor/screen.png -> proxy of d75mon /screen.png (90×? LCD frame)
 GET  /api/read          -> enter/read settings mode; {values, readAt, settingsMode}
 POST /api/apply         -> {changes:[{id,value}], confirmHighRisk}
 POST /api/session/stop  -> leave settings mode; one USB reset, monitor restarted
 ```
 
 A process lock serializes operations; a second request gets HTTP 409.
+
+## Live VFO / LCD
+
+The sidebar Radio panel polls `/api/monitor/state` and shows VFO A/B generated
+from `d75mon`'s DDR fields. The **LCD** button toggles `/api/monitor/screen.png`
+inside the page. Both endpoints are proxied through the settings server, so only
+port 8098 needs to be tunneled.
 
 ## Bluetooth
 

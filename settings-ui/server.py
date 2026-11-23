@@ -19,6 +19,7 @@ import time
 from datetime import datetime
 from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse
+import urllib.request
 
 import serial
 
@@ -55,6 +56,7 @@ def _detect_transport(path: str) -> str:
 TRANSPORT = _detect_transport(SERIAL)
 AUTO_RELEASE = os.environ.get("D75_AUTO_RELEASE", "1").strip().lower() not in ("0", "false", "no")
 MONITOR_UNIT = os.environ.get("D75_MONITOR_UNIT", "d75mon")
+MONITOR_URL = os.environ.get("D75_MONITOR_URL", "http://127.0.0.1:8099").rstrip("/")
 HOST = os.environ.get("D75SETTINGS_HOST", "127.0.0.1")
 PORT = int(os.environ.get("D75SETTINGS_PORT", "8098"))
 IDLE_RELEASE_SEC = int(os.environ.get("D75SETTINGS_IDLE", "300"))
@@ -607,6 +609,19 @@ class Handler(SimpleHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(body)
 
+    def _proxy_monitor(self, path: str, content_type: str, timeout: float = 3.0) -> None:
+        try:
+            with urllib.request.urlopen(MONITOR_URL + path, timeout=timeout) as resp:
+                body = resp.read()
+        except Exception as exc:  # noqa: BLE001
+            return self._json(503, {"error": f"monitor unavailable: {exc}"})
+        self.send_response(200)
+        self.send_header("Content-Type", content_type)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Cache-Control", "no-store")
+        self.end_headers()
+        self.wfile.write(body)
+
     def _status(self) -> dict:
         return {"sessionActive": SESSION is not None and SESSION.active,
                 "monitorActive": monitor_active(),
@@ -619,6 +634,10 @@ class Handler(SimpleHTTPRequestHandler):
     def do_GET(self):  # noqa: N802
         global LAST_ERROR
         path = urlparse(self.path).path
+        if path == "/api/monitor/state":
+            return self._proxy_monitor("/state", "application/json; charset=utf-8")
+        if path == "/api/monitor/screen.png":
+            return self._proxy_monitor("/screen.png", "image/png", timeout=8.0)
         if path == "/api/status":
             return self._json(200, self._status())
         if path == "/api/catalog":

@@ -44,9 +44,16 @@ const els = {
   connectionChip: document.getElementById("connection-chip"),
   connectionText: document.getElementById("connection-text"),
   radioMeta: document.getElementById("radio-meta"),
-  exitSettings: document.getElementById("exit-settings")
+  exitSettings: document.getElementById("exit-settings"),
+  vfoA: document.getElementById("vfo-a"),
+  vfoB: document.getElementById("vfo-b"),
+  vfoStatus: document.getElementById("vfo-status"),
+  screenToggle: document.getElementById("screen-toggle"),
+  screenWrap: document.getElementById("screen-wrap"),
+  screenImg: document.getElementById("screen-img")
 };
 let sessionActive = false;
+let screenVisible = false;
 
 for (const setting of state.settings) {
   state.original.set(setting.id, cloneValue(setting.value));
@@ -477,6 +484,58 @@ async function loadFromApi() {
   }
 }
 
+function formatHz(raw) {
+  const n = Number(raw);
+  if (!Number.isFinite(n) || n <= 0) return "—";
+  return (n / 1000000).toFixed(6);
+}
+
+function setVfo(which, raw) {
+  const el = which === "a" ? els.vfoA : els.vfoB;
+  if (el) el.textContent = formatHz(raw);
+}
+
+function setVfoStatus(text, live) {
+  if (!els.vfoStatus) return;
+  els.vfoStatus.textContent = text;
+  els.vfoStatus.classList.toggle("live", Boolean(live));
+}
+
+async function pollMonitor() {
+  if (sessionActive) {
+    setVfoStatus("monitor paused", false);
+    return;
+  }
+  try {
+    const resp = await fetch("/api/monitor/state", {cache: "no-store"});
+    if (!resp.ok) throw new Error(`monitor ${resp.status}`);
+    const data = await resp.json();
+    const fields = data.fields || {};
+    setVfo("a", fields.vfo_a_hz?.value);
+    setVfo("b", fields.vfo_b_hz?.value);
+    setVfoStatus(data.connected ? `monitor · ${data.transport || "live"}` : "monitor offline", Boolean(data.connected));
+  } catch (error) {
+    setVfo("a", null);
+    setVfo("b", null);
+    setVfoStatus("monitor unavailable", false);
+  }
+}
+
+function refreshScreen() {
+  if (!screenVisible || !els.screenImg) return;
+  els.screenImg.src = `/api/monitor/screen.png?t=${Date.now()}`;
+}
+
+function toggleScreen() {
+  screenVisible = !screenVisible;
+  if (els.screenWrap) els.screenWrap.hidden = !screenVisible;
+  if (els.screenToggle) {
+    els.screenToggle.setAttribute("aria-pressed", String(screenVisible));
+    els.screenToggle.textContent = screenVisible ? "Hide" : "LCD";
+  }
+  if (screenVisible) refreshScreen();
+}
+
 async function pollStatus() {
   try {
     const resp = await fetch("/api/status", {cache: "no-store"});
@@ -594,6 +653,9 @@ if (params.get("changed") === "1") {
   state.changedOnly = true;
   els.changedOnly.checked = true;
 }
+if (params.get("screen") === "1") {
+  toggleScreen();
+}
 if (params.get("advanced") === "1") {
   state.advanced = true;
   document.body.classList.add("advanced");
@@ -607,7 +669,12 @@ window.addEventListener("pagehide", () => {
 });
 setInterval(pollStatus, 15000);
 
+els.screenToggle?.addEventListener("click", toggleScreen);
+setInterval(pollMonitor, 1000);
+setInterval(() => { if (screenVisible) refreshScreen(); }, 1000);
+
 renderCategories();
 renderList();
 updateChangeUI();
 loadFromApi();
+pollMonitor();
