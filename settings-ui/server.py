@@ -27,6 +27,12 @@ CATALOG_PATH = os.path.join(BASE, "catalog.json")
 VALUES_PATH = os.path.join(BASE, "values.json")
 BACKUP_DIR = os.path.join(BASE, "backups")
 SERIAL = os.environ.get("D75_SERIAL", "/dev/thd75")
+# Auto path fallback: USB is preferred, but a bound Bluetooth SPP tty is usable
+# when the USB device is absent.
+if not os.path.exists(SERIAL):
+    _fallback = os.environ.get("D75_SERIAL_FALLBACK", "/dev/rfcomm0")
+    if os.path.exists(_fallback):
+        SERIAL = _fallback
 TRANSPORT_ENV = os.environ.get("D75_TRANSPORT", "auto").strip().lower()
 
 

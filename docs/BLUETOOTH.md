@@ -83,7 +83,9 @@ D75_TRANSPORT=bluetooth D75_SERIAL=/dev/rfcomm0 \
   .venv/bin/python settings-ui/server.py
 ```
 
-`D75_TRANSPORT=auto` also infers Bluetooth from an rfcomm serial path.
+`D75_TRANSPORT=auto` also infers Bluetooth from an rfcomm serial path. If
+`D75_SERIAL` (`/dev/thd75`) is absent, the server falls back to
+`D75_SERIAL_FALLBACK` (`/dev/rfcomm0`) automatically; USB wins when present.
 
 For a systemd user service, edit your existing unit:
 

@@ -69,6 +69,7 @@ Environment variables:
 | `D75SETTINGS_PORT` | `8098` | HTTP port |
 | `D75_TRANSPORT` | `auto` | `auto`, `usb`, or `bluetooth`; auto infers rfcomm |
 | `D75_SERIAL` | `/dev/thd75` | radio serial device (`/dev/rfcomm0` on Bluetooth) |
+| `D75_SERIAL_FALLBACK` | `/dev/rfcomm0` | used only when `D75_SERIAL` is absent; USB still wins |
 | `D75_MONITOR_UNIT` | `d75mon` | systemd **user** monitor unit to pause/restart |
 | `D75SETTINGS_IDLE` | `300` | idle seconds before releasing MCP |
 | `D75SETTINGS_KEEPALIVE` | `0.5` | MCP keepalive interval, seconds |
