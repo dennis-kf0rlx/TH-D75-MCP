@@ -55,6 +55,7 @@ const els = {
   screenCaption: document.getElementById("screen-caption")
 };
 let sessionActive = false;
+let radioTransport = null;
 let screenVisible = false;
 let screenBusy = false;
 let screenTimer = null;
@@ -515,6 +516,9 @@ async function pollMonitor() {
     const resp = await fetch("/api/monitor/state", {cache: "no-store"});
     if (!resp.ok) throw new Error(`monitor ${resp.status}`);
     const data = await resp.json();
+    if (data.transport === "bluetooth" || data.transport === "usb") {
+      radioTransport = data.transport;
+    }
     const fields = data.fields || {};
     setVfo("a", fields.vfo_a_hz?.value);
     setVfo("b", fields.vfo_b_hz?.value);
@@ -529,7 +533,26 @@ async function pollMonitor() {
 async function refreshScreen() {
   if (!screenVisible || screenBusy || !els.screenModalImg) return;
   screenBusy = true;
-  if (els.screenCaption) els.screenCaption.textContent = "Capturing 240×180 framebuffer…";
+  if (!radioTransport) {
+    try {
+      const sr = await fetch("/api/status", {cache: "no-store"});
+      if (sr.ok) {
+        const sd = await sr.json();
+        if (sd.transport === "bluetooth" || sd.transport === "usb") radioTransport = sd.transport;
+      }
+    } catch (error) { /* fall through */ }
+  }
+  const isBluetooth = radioTransport === "bluetooth";
+  const transport = isBluetooth ? "Bluetooth" : "USB";
+  const expected = isBluetooth
+    ? "Bluetooth full-frame refresh is about 10–14 s"
+    : "USB full-frame refresh is about 5–7 s";
+  const started = performance.now();
+  if (els.screenCaption) {
+    els.screenCaption.textContent = isBluetooth
+      ? "Bluetooth · capturing full 240×180 frame (about 6 s)…"
+      : "USB · capturing full 240×180 frame…";
+  }
   try {
     const resp = await fetch(`/api/monitor/screen.png?t=${Date.now()}`, {cache: "no-store"});
     if (!resp.ok) throw new Error(`screen ${resp.status}`);
@@ -537,10 +560,14 @@ async function refreshScreen() {
     if (screenObjectUrl) URL.revokeObjectURL(screenObjectUrl);
     screenObjectUrl = URL.createObjectURL(blob);
     els.screenModalImg.src = screenObjectUrl;
-    if (els.screenCaption) els.screenCaption.textContent = "Live 240×180 DDR framebuffer · next capture in 5 s";
+    const elapsed = ((performance.now() - started) / 1000).toFixed(1);
+    if (els.screenCaption) {
+      const elapsedLabel = Number(elapsed) < 0.1 ? "cached frame" : `captured in ${elapsed}s`;
+      els.screenCaption.textContent = `${transport} · ${elapsedLabel} · ${expected}`;
+    }
   } catch (error) {
     if (els.screenCaption) {
-      els.screenCaption.textContent = "Screen capture unavailable — monitor stopped or Bluetooth link busy";
+      els.screenCaption.textContent = `${transport} · capture failed — monitor stopped or link busy`;
     }
   } finally {
     screenBusy = false;
@@ -559,6 +586,7 @@ function setScreenVisible(visible) {
   if (screenVisible) refreshScreen();
 }
 
+
 function toggleScreen() {
   setScreenVisible(!screenVisible);
 }
@@ -568,6 +596,9 @@ async function pollStatus() {
     const resp = await fetch("/api/status", {cache: "no-store"});
     if (!resp.ok) return;
     const status = await resp.json();
+    if (status.transport === "bluetooth" || status.transport === "usb") {
+      radioTransport = status.transport;
+    }
     const transport = status.transport === "bluetooth" ? "Bluetooth" : "USB";
     const serialPath = status.serialPath ? ` · ${status.serialPath}` : "";
     setRadioMeta(`TH-D75 · V1.03 · ${transport}${serialPath}`);
