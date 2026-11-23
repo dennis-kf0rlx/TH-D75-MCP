@@ -19,4 +19,9 @@ fi
 # Rebind cleanly if a stale channel exists.
 sudo rfcomm release /dev/rfcomm0 2>/dev/null || true
 sudo rfcomm bind /dev/rfcomm0 "$MAC" "$CHANNEL"
+# rfcomm creates root:root 0600; hand it to the invoking user so d75mon and the
+# settings UI can open it without running as root.
+if [ -n "${SUDO_USER:-}" ]; then
+  sudo chown "$SUDO_USER:$(id -gn "$SUDO_USER")" /dev/rfcomm0
+fi
 ls -l /dev/rfcomm0

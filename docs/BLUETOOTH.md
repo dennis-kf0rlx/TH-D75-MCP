@@ -47,6 +47,10 @@ bluetoothctl trust <MAC>
 ls -l /dev/rfcomm0
 ```
 
+When invoked via `sudo`, `bt-bind.sh` hands `/dev/rfcomm0` to the invoking
+user. If you bind manually, `sudo chown "$USER:$USER" /dev/rfcomm0` is required;
+otherwise the settings UI runs as your user and gets permission denied.
+
 `bt-bind.sh` releases a stale binding first. It needs root because `rfcomm` is
 deprecated BlueZ tooling.
 
