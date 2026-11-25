@@ -213,7 +213,7 @@ official-class PSU and a short data-capable cable before blaming the software.
 |---|---|
 | `Python 3.10+ required, found 3.9...` | Bullseye or older — use Bookworm/Trixie, or upgrade |
 | `Temporary failure resolving` / TLS errors during apt or pip | clock not NTP-synced yet on a fresh Pi; check `timedatectl`, set the time, retry |
-| Installer appears to hang before installing packages | cloud-init's final stage (`cloud-final`) can wait on `network-online` on isolated links; the bootstrap waits at most 60 s, then continues |
+| Installer appears to hang before installing packages | fixed: setup no longer waits on cloud-init (its final stage can stall on `network-online` on isolated links); update to v0.1.14+ |
 | `python3 venv unavailable` | `sudo apt-get install -y python3-venv` |
 | `ls: /dev/thd75: No such file` | udev rule not installed, or radio not in COM+AF/IF mode (Menu 980); replug |
 | `Permission denied: /dev/ttyACM0` | not in `dialout`: `sudo usermod -aG dialout "$USER"`, log out/in |

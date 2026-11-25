@@ -181,13 +181,6 @@ install_deps_if_needed() {
     die "install git, make, Python 3 with venv/pip, ca-certificates, usbutils first"
   command -v sudo >/dev/null 2>&1 || die "sudo not found; install prerequisites manually"
 
-  # cloud-final can wait forever for network-online on isolated links; never
-  # block the installer on it (seen on Raspberry Pi OS with cloud-init enabled).
-  if command -v cloud-init >/dev/null 2>&1; then
-    if ! sudo timeout 60 cloud-init status --wait >/dev/null 2>&1; then
-      warn "cloud-init did not finish within 60s; continuing without waiting"
-    fi
-  fi
 
   # shellcheck disable=SC1091
   . /etc/os-release
