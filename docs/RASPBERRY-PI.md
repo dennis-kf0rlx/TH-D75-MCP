@@ -68,10 +68,22 @@ Use `--no-browser` on a headless Pi: there is no desktop browser to open the
 install report, and the installer prints its path instead. Install into the
 default `~/thd75-web-console`.
 
-## Headless access (the normal Pi case)
+After setup, see **Accessing the interfaces** below: a local or RDP/VNC session
+needs no tunnel; only a headless machine browsed from another computer does.
 
-Both services bind **loopback only** by default, and they have **no
-authentication** — do not bind them to the LAN. From your own computer:
+## Accessing the interfaces
+
+Both services bind **loopback only** by default (`127.0.0.1`) and have **no
+authentication** — do not bind them to the LAN. How you reach them depends on
+where you are:
+
+| Where the console runs | How to open it |
+|---|---|
+| Same machine — a Linux laptop or desktop | `http://127.0.0.1:8098/` in that machine's browser. **No tunnel.** |
+| A Pi you control through a remote desktop (RDP/VNC) | `http://127.0.0.1:8098/` in a browser *inside* that remote desktop. **No tunnel.** |
+| A headless machine you browse from a different computer | SSH tunnel (see below), or deliberately bind to the LAN. |
+
+Headless machine, browsing from another computer:
 
 ```bash
 ssh -N -L 8098:127.0.0.1:8098 -L 8099:127.0.0.1:8099 <user>@<pi-address>
@@ -79,6 +91,10 @@ ssh -N -L 8098:127.0.0.1:8098 -L 8099:127.0.0.1:8099 <user>@<pi-address>
 
 Then open `http://127.0.0.1:8098/` (settings) and `http://127.0.0.1:8099/`
 (monitor) in your local browser. Keep the SSH session open while you use them.
+
+**Tunnels are only for the third case.** If you are sitting at the machine
+directly, or you are inside an RDP/VNC session to it, you are already "on" that
+machine and never need a tunnel.
 
 If you deliberately want LAN access, set `D75SETTINGS_HOST=0.0.0.0` (settings)
 or `host` in `d75mon/config.json`, and firewall the ports to your LAN — but the
@@ -197,6 +213,7 @@ official-class PSU and a short data-capable cable before blaming the software.
 |---|---|
 | `Python 3.10+ required, found 3.9...` | Bullseye or older — use Bookworm/Trixie, or upgrade |
 | `Temporary failure resolving` / TLS errors during apt or pip | clock not NTP-synced yet on a fresh Pi; check `timedatectl`, set the time, retry |
+| Installer appears to hang before installing packages | cloud-init's final stage (`cloud-final`) can wait on `network-online` on isolated links; the bootstrap waits at most 60 s, then continues |
 | `python3 venv unavailable` | `sudo apt-get install -y python3-venv` |
 | `ls: /dev/thd75: No such file` | udev rule not installed, or radio not in COM+AF/IF mode (Menu 980); replug |
 | `Permission denied: /dev/ttyACM0` | not in `dialout`: `sudo usermod -aG dialout "$USER"`, log out/in |

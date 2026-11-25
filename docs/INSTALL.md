@@ -37,6 +37,15 @@ to the settings UI at `http://127.0.0.1:8098/` after five seconds.
 Headless/SSH users get the file path printed instead. Use `--no-browser` to
 suppress the launch. No VM desktop is needed.
 
+## Accessing the UI afterwards
+
+- **Same machine** (laptop/desktop install): open `http://127.0.0.1:8098/` in
+  the local browser — no tunnel.
+- **Remote desktop (RDP/VNC) into the host**: open it inside that desktop
+  session — no tunnel; you are already on the host.
+- **Headless host, browser on another computer**: use the SSH tunnel that setup
+  prints (or docs/RASPBERRY-PI.md), not port-forwarding.
+
 ## What it does
 
 1. downloads the versioned tools tarball and its checksum

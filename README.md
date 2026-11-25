@@ -110,7 +110,10 @@ Agent Skill is not in the release (see `skills/REQUEST-ACCESS.md`).
 
 On a headless Raspberry Pi the installer detects the missing display, prints the
 report path, and setup offers the systemd lingering step needed for the services
-to start at boot — see [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md).
+to start at boot. If you reach the Pi through a remote desktop (RDP/VNC), open
+the UIs inside it — no SSH tunnel is needed; only a headless machine browsed
+from another computer needs the printed tunnel. See
+[docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md).
 
 ## Build
 
@@ -166,12 +169,19 @@ intend to expose it on a trusted, firewall-restricted network.
 # http://127.0.0.1:8098/
 ```
 
-SSH tunnel from another machine:
+You only need a tunnel when the browser is on a **different machine** than the
+console:
 
-```bash
-ssh -L 8098:127.0.0.1:8098 user@radio-host
-# then open http://127.0.0.1:8098/ on the client
-```
+- **Same machine** (this is a laptop/desktop install): open
+  `http://127.0.0.1:8098/` directly — no tunnel.
+- **Remote desktop (RDP/VNC) into the host**: open it inside that desktop
+  session — no tunnel; you are already on the host.
+- **Headless host, browser elsewhere**: tunnel from your computer:
+
+  ```bash
+  ssh -L 8098:127.0.0.1:8098 user@radio-host
+  # then open http://127.0.0.1:8098/ on the client
+  ```
 
 Explicit LAN opt-in (warned in the log):
 
@@ -283,7 +293,8 @@ Neither service has authentication. Treat both as **local administrative
 interfaces**:
 
 - default bind: loopback
-- remote access: SSH tunnel, not port-forwarding
+- access from another computer: SSH tunnel, not port-forwarding
+  (same-machine and remote-desktop sessions need no tunnel)
 - no internet exposure, no public reverse proxy
 - if LAN access is unavoidable, firewall to trusted source addresses
 

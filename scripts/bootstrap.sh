@@ -72,8 +72,11 @@ print_headless_access() {
   host="$(hostname -I 2>/dev/null | awk '{print $1}')"
   host="${host:-<host>}"
   echo
-  note "Headless session: reach the UIs through an SSH tunnel from your machine:"
-  echo "  ssh -N -L 8098:127.0.0.1:8098 -L 8099:127.0.0.1:8099 $USER@$host"
+  note "No local display in this shell. To open the UIs:"
+  echo "  - RDP/VNC into this host: open http://127.0.0.1:8098/ in that session — no tunnel"
+  echo "  - console on this same machine: open http://127.0.0.1:8098/ — no tunnel"
+  echo "  - headless host, browser on another computer: tunnel"
+  echo "    ssh -N -L 8098:127.0.0.1:8098 -L 8099:127.0.0.1:8099 $USER@$host"
   echo "  settings: http://127.0.0.1:8098/   monitor: http://127.0.0.1:8099/"
   echo "  Both services bind loopback only; see docs/RASPBERRY-PI.md."
 }
@@ -178,8 +181,12 @@ install_deps_if_needed() {
     die "install git, make, Python 3 with venv/pip, ca-certificates, usbutils first"
   command -v sudo >/dev/null 2>&1 || die "sudo not found; install prerequisites manually"
 
+  # cloud-final can wait forever for network-online on isolated links; never
+  # block the installer on it (seen on Raspberry Pi OS with cloud-init enabled).
   if command -v cloud-init >/dev/null 2>&1; then
-    sudo cloud-init status --wait || true
+    if ! sudo timeout 60 cloud-init status --wait >/dev/null 2>&1; then
+      warn "cloud-init did not finish within 60s; continuing without waiting"
+    fi
   fi
 
   # shellcheck disable=SC1091
