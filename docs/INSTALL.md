@@ -44,7 +44,9 @@ suppress the launch. No VM desktop is needed.
 3. refuses to overwrite an existing install
 4. extracts to `~/thd75-web-console`
 5. runs `scripts/bootstrap.sh --setup` interactively
-6. asks before package installation, udev, and systemd user units
+6. asks before package installation, udev, and systemd user units; after the
+   units are installed it offers `loginctl enable-linger` (needed on headless
+   hosts such as a Raspberry Pi, harmless on a desktop)
 
 No sudo is used by `install.sh` itself. No radio settings are written.
 

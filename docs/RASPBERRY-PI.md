@@ -16,18 +16,31 @@ of the menu map and backend to maintain.
 | Item | Status |
 |---|---|
 | Raspberry Pi 3B+ / 4 / 5 / Zero 2 W | **Raspberry Pi OS Bookworm or Trixie** (Python 3.10+) |
-| 64-bit (aarch64) | recommended; tested |
+| 64-bit (aarch64) | recommended; fully tested (Pi 3B+) |
 | 32-bit armhf | expected to work (no compiled dependencies); not tested |
 | Pi 1 / Zero v1 | not supported: single core and 512 MB is untested territory |
 | Python 3.9 (Bullseye) or older | rejected by the preflight — upgrade the OS |
-| 1 GB RAM | enough; a 904 MiB Pi 3B+ runs both tools |
+| 1 GB RAM | enough; 904 MiB Pi 3B+ ran both tools at ~50 MB RSS |
 
-Verified check-only on a **Raspberry Pi 3B+ Rev 1.3**, Raspberry Pi OS
-(Debian 13 trixie), aarch64, Python 3.13.5, release **v0.1.11**:
-`install.sh --check` passed (checksum, extraction, venv, `pyserial`, `make
-check` 9/9), and both `settings-ui` and `d75mon` started and listened on
-`127.0.0.1:8098` / `:8099` (HTTP responses were not probed before cleanup). Radio, udev, and Bluetooth were not exercised on
-that Pi; report results below if you test them.
+## Validated configuration (2026-11-25)
+
+Fully exercised on **Raspberry Pi 3B+ Rev 1.3**, Raspberry Pi OS Lite
+**Trixie (Debian 13)**, aarch64, Python 3.13.5, using the `raspberry-pi`
+branch build (commit `6b5e129`, the changes described here):
+
+| Check | Result |
+|---|---|
+| Installer check (`install.sh --local-tarball … --check`) | checksum + extraction OK, `make check` **9/9** |
+| User services + lingering | `d75settings`/`d75mon` active; `Linger=yes`; still active after reboot |
+| Radio over USB | `lsusb` `2166:9023 JVC Kenwood TH-D75`; `/dev/thd75 -> ttyACM0`; monitor `serialPresent: true` |
+| Settings read | **255 values**, model `TH-D75`, firmware `1.03`, no errors |
+| Settings write | `radio.Beep` off then on, `written: 1, verified: 1` both directions |
+| UI access | settings `:8098` and monitor `:8099` **HTTP 200** through an SSH tunnel |
+| Load | 88–99% idle, ~50 MB RSS for both tools, 690 MB RAM available |
+
+Not exercised on a Pi yet: Bluetooth SPP, 32-bit armhf, and Pi 4/5/Zero 2 W
+hardware (same OS family, expected to work). Report model, OS, `uname -m`,
+`python3 -V`, and `--check` output when you test them.
 
 ## Prerequisites
 
@@ -152,11 +165,38 @@ Writes are minimal and user-driven:
 That is negligible wear for a Pi SD card. If you want zero local writes, install
 to a USB SSD or an NFS-mounted home instead.
 
+## No router? Direct link to a laptop
+
+The UIs only need TCP; the Pi can run on a point-to-point Ethernet link to a
+laptop instead of a LAN. On the laptop, make its Ethernet interface a shared
+connection so it hands out DHCP:
+
+```bash
+nmcli con add type ethernet ifname <laptop-eth-iface> con-name pi-link \
+  ipv4.method shared ipv6.method ignore
+nmcli con up pi-link
+```
+
+Then SSH to the address the Pi receives (the laptop's NetworkManager dnsmasq
+lease file shows it, typically `10.42.0.x`). If the laptop runs a host firewall,
+allow DHCP (UDP 67) and DNS (UDP/TCP 53) inbound on that interface, and allow
+routed traffic out to the internet if the Pi should reach PyPI for the install.
+No router configuration is required.
+
+## Power is part of the test
+
+A 3B+ with a USB radio attached needs a solid 5 V supply. During the validated
+run the Pi logged `hwmon hwmon1: Undervoltage detected!` and
+`vcgencmd get_throttled` returned `0x50005` while everything still worked — it
+is a real warning, not noise. If you see those lines, use a 5.1 V / 2.5 A+
+official-class PSU and a short data-capable cable before blaming the software.
+
 ## Troubleshooting
 
 | Symptom | Cause / fix |
 |---|---|
 | `Python 3.10+ required, found 3.9...` | Bullseye or older — use Bookworm/Trixie, or upgrade |
+| `Temporary failure resolving` / TLS errors during apt or pip | clock not NTP-synced yet on a fresh Pi; check `timedatectl`, set the time, retry |
 | `python3 venv unavailable` | `sudo apt-get install -y python3-venv` |
 | `ls: /dev/thd75: No such file` | udev rule not installed, or radio not in COM+AF/IF mode (Menu 980); replug |
 | `Permission denied: /dev/ttyACM0` | not in `dialout`: `sudo usermod -aG dialout "$USER"`, log out/in |

@@ -89,6 +89,8 @@ Accessibility is part of the mission, not a separate mode.
 - systemd **user** units for service mode
 - TH-D75 connected over USB CDC (`/dev/ttyACM*`; `/dev/thd75` recommended)
 - No compiler, npm, or frontend build step is required
+- Tested on **Raspberry Pi 3B+** (Raspberry Pi OS Trixie) with the radio over
+  USB — see [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md)
 
 ## Fast path (curl installer)
 

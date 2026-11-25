@@ -35,6 +35,24 @@ the public tree keeps only `skills/REQUEST-ACCESS.md` + `skills/README.md`.
 6. Quick public-path test: `bash install.sh --check --no-browser --prefix /tmp/x`
    against the real release.
 
+## Release-notes draft — v0.1.12 (Raspberry Pi / headless)
+
+- **Raspberry Pi OS (Bookworm/Trixie, 64-bit) is now supported and tested** on
+  a Pi 3B+ with the radio over USB: install, both user services, 255-setting
+  read, verified write, and both UIs over an SSH tunnel. No fork; same code
+  path as x86_64.
+- `scripts/bootstrap.sh` now prints the platform (`linux/aarch64 (Raspberry Pi
+  3 Model B Plus Rev 1.3)`), offers `loginctl enable-linger` after installing
+  the user units, and prints the SSH-tunnel URLs on headless hosts.
+- New `docs/RASPBERRY-PI.md`: requirements, headless install, lingering, USB
+  udev/`dialout`, Bluetooth, direct laptop link, power, SD writes,
+  troubleshooting, validated matrix.
+- README/INSTALL/TESTING: ARM requirements, linger note, Pi results.
+- Desktop installs: one extra prompt during `--setup` (lingering choice);
+  graphical behavior otherwise unchanged.
+- Release assets and installer flags unchanged; no code changes in
+  `settings-ui/`, `d75mon/`, or the unit templates.
+
 ## Skill access policy
 
 - Do not paste the skill into public issues, gists, or unlisted links.
