@@ -81,7 +81,8 @@ Accessibility is part of the mission, not a separate mode.
 
 ## Requirements
 
-- Linux with Python **3.10+**
+- Linux with Python **3.10+** — x86_64 and ARM both work; for Raspberry Pi
+  (Bookworm/Trixie, Pi 3B+ or newer) see [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md)
 - Minimal build tools: `git`, `make`, `python3-venv`/`python3-pip`
   (Debian/Ubuntu: `sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils`)
 - `pyserial` (installed into a venv below)
@@ -104,6 +105,10 @@ The installer verifies the tarball checksum, extracts to `~/thd75-web-console`, 
 the interactive setup. On a desktop it opens an install-notes page in the browser
 and then redirects to the settings UI. See `docs/INSTALL.md`. The request-only
 Agent Skill is not in the release (see `skills/REQUEST-ACCESS.md`).
+
+On a headless Raspberry Pi the installer detects the missing display, prints the
+report path, and setup offers the systemd lingering step needed for the services
+to start at boot — see [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md).
 
 ## Build
 
@@ -357,7 +362,8 @@ d75mon/               read-only monitor widget
   config.json
   systemd/d75mon.service.example
   tests/
-docs/                 menu map, row map, MCP protocol, firmware findings, GPS
+docs/                 menu map, row map, MCP protocol, firmware findings, GPS,
+                      Raspberry Pi guide, install/testing notes
 skills/               request-gated Agent Skill + public request stub
 infra/proxmox/        disposable-VM test runway (maintainer use)
 infra/systemd/        persistent Bluetooth SPP bind unit (system scope)

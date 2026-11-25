@@ -33,6 +33,51 @@ die() { printf 'ERROR: %s\n' "$*" >&2; exit 1; }
 note() { printf '==> %s\n' "$*"; }
 warn() { printf 'WARNING: %s\n' "$*" >&2; }
 
+platform_desc() {
+  local arch model=""
+  arch="$(uname -m 2>/dev/null || echo unknown)"
+  if [ -r /proc/device-tree/model ]; then
+    model="$(tr -d '\0' </proc/device-tree/model 2>/dev/null | sed 's/[[:space:]]*$//')"
+  fi
+  printf '%s' "platform: linux/$arch${model:+ ($model)}"
+}
+
+linger_enabled() {
+  command -v loginctl >/dev/null 2>&1 || return 1
+  loginctl show-user "$USER" -p Linger 2>/dev/null | grep -qx 'Linger=yes'
+}
+
+setup_linger() {
+  linger_enabled && return 0
+  echo
+  warn "systemd lingering is off for $USER: user services stop at logout and"
+  warn "do not start at boot — the usual failure on a headless Raspberry Pi."
+  if ! command -v loginctl >/dev/null 2>&1; then
+    warn "loginctl not found; enable lingering manually if your distro supports it."
+    return 0
+  fi
+  confirm "Enable lingering for $USER now (sudo loginctl enable-linger $USER)?" && \
+    sudo loginctl enable-linger "$USER" || \
+    warn "Not enabled. Run: sudo loginctl enable-linger $USER"
+  if linger_enabled; then
+    note "Lingering enabled; user services will start at boot."
+  else
+    warn "Lingering still reports off; services will not start at boot."
+  fi
+}
+
+print_headless_access() {
+  [ -z "${DISPLAY:-}${WAYLAND_DISPLAY:-}" ] || return 0
+  local host
+  host="$(hostname -I 2>/dev/null | awk '{print $1}')"
+  host="${host:-<host>}"
+  echo
+  note "Headless session: reach the UIs through an SSH tunnel from your machine:"
+  echo "  ssh -N -L 8098:127.0.0.1:8098 -L 8099:127.0.0.1:8099 $USER@$host"
+  echo "  settings: http://127.0.0.1:8098/   monitor: http://127.0.0.1:8099/"
+  echo "  Both services bind loopback only; see docs/RASPBERRY-PI.md."
+}
+
 confirm() {
   local answer=""
   read -r -p "$1 [y/N] " answer || true
@@ -209,11 +254,13 @@ setup_services() {
   systemctl --user enable --now d75mon.service
   systemctl --user enable --now d75settings.service
   note "Services installed. Both bind to loopback by default."
+  setup_linger
 }
 
 setup_mode() {
   [ -t 0 ] || die "--setup is interactive; use --check for scripts/agents"
   note "Lazy setup: no radio settings are written by this script."
+  note "$(platform_desc)"
   install_deps_if_needed
   validate_skill
 
@@ -222,6 +269,7 @@ setup_mode() {
 
   setup_udev
   setup_services
+  print_headless_access
 
   echo
   echo "------------------------------------------------------------"
@@ -236,6 +284,7 @@ setup_mode() {
 }
 
 if [ "$MODE" != "setup" ]; then
+  note "$(platform_desc)"
   note "repo: $REPO_ROOT"
   need python3
   need git

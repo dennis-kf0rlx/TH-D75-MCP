@@ -87,6 +87,13 @@ Debian/Ubuntu:
 sudo apt-get install -y git make python3-venv python3-pip ca-certificates usbutils
 ```
 
+Raspberry Pi: Raspberry Pi OS is Debian-based, so use the Debian line above.
+It needs **Bookworm or Trixie** (Python 3.10+); Bullseye fails the preflight.
+On a headless Pi the installer prints the install report path instead of opening
+it, and the service setup offers the `loginctl enable-linger` step that keeps
+the user services running at boot. Full guide:
+[RASPBERRY-PI.md](RASPBERRY-PI.md).
+
 ## Release assets
 
 A release contains:

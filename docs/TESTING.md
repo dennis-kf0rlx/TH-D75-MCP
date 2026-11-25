@@ -65,3 +65,28 @@ bash install.sh \
 
 This exercises package installation, udev, services, and the report redirect.
 Do this only in a throwaway VM or a machine where those changes are acceptable.
+
+## ARM / Raspberry Pi
+
+There is no separate ARM code path, but check the platform explicitly:
+
+```bash
+uname -m
+python3 -V
+bash install.sh --check --no-browser --prefix /tmp/thd75-pi-check
+```
+
+Verified check-only on **Raspberry Pi 3B+ Rev 1.3**, Raspberry Pi OS
+(Debian 13 trixie), aarch64, Python 3.13.5, release v0.1.11:
+
+- installer checksum verified, extraction OK
+- venv created and `pyserial` installed
+- `make check` passed 9/9
+- `settings-ui` listened on `127.0.0.1:8098`, `d75mon` on `127.0.0.1:8099`
+  (processes were removed after the check; HTTP responses not probed)
+
+Not yet exercised on a Pi: radio over USB, udev rule, Bluetooth SPP, settings
+apply, and 32-bit armhf. Pi 4/5 and Zero 2 W should behave the same (same OS),
+but that is unverified — record model, OS, and `--check` output when you test.
+The bootstrap changes on this branch are bash-only and were exercised on
+x86_64; re-run the check on a Pi after merge.
