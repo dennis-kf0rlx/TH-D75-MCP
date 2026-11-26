@@ -63,6 +63,11 @@ from `d75mon`'s DDR fields. The **LCD** button toggles `/api/monitor/screen.png`
 inside the page. Both endpoints are proxied through the settings server, so only
 port 8098 needs to be tunneled.
 
+Live VFO and LCD capture require a running `d75mon` and a radio that already
+has the GM reader firmware patch. The monitor polls `GM` automatically. On
+stock V1.03, `GM` can reboot the radio into GPS-only mode, so keep `d75mon`
+stopped on stock firmware. **Read from radio** works independently over USB.
+
 Full-frame timing is transport-dependent: USB captures in about 1 s and the UI
 re-captures after a 1 s gap (~2 s cadence); Bluetooth takes about 6 s per frame
 and waits 5 s (~10–14 s cadence).

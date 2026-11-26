@@ -35,6 +35,10 @@ but the radio did not answer the `ID` query while USB was connected.
 
 ## Run the read-only monitor
 
+Run the monitor only if the radio already has the GM reader firmware patch.
+The monitor sends `GM` automatically, which can reboot a stock TH-D75 into
+GPS-only mode. On stock firmware, run the settings interface by itself.
+
 ```bash
 .venv/bin/python d75mon/backend/d75mon.py --config d75mon/config.json
 # open http://127.0.0.1:8099/

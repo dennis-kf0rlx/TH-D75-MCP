@@ -51,6 +51,7 @@ const els = {
   screenToggle: document.getElementById("screen-toggle"),
   screenModal: document.getElementById("screen-modal"),
   screenClose: document.getElementById("screen-close"),
+  screenBezel: document.getElementById("screen-bezel"),
   screenModalImg: document.getElementById("screen-modal-img"),
   screenCaption: document.getElementById("screen-caption")
 };
@@ -562,9 +563,19 @@ async function refreshScreen() {
     const resp = await fetch(`/api/monitor/screen.png?t=${Date.now()}`, {cache: "no-store"});
     if (!resp.ok) throw new Error(`screen ${resp.status}`);
     const blob = await resp.blob();
+    const nextFrame = new Image();
+    const nextUrl = URL.createObjectURL(blob);
+    nextFrame.src = nextUrl;
+    try {
+      await nextFrame.decode();
+    } catch (error) {
+      URL.revokeObjectURL(nextUrl);
+      throw error;
+    }
     if (screenObjectUrl) URL.revokeObjectURL(screenObjectUrl);
-    screenObjectUrl = URL.createObjectURL(blob);
+    screenObjectUrl = nextUrl;
     els.screenModalImg.src = screenObjectUrl;
+    els.screenBezel.hidden = false;
     const elapsed = ((performance.now() - started) / 1000).toFixed(1);
     if (els.screenCaption) {
       const elapsedLabel = Number(elapsed) < 0.1 ? "cached frame" : `captured in ${elapsed}s`;
@@ -572,7 +583,9 @@ async function refreshScreen() {
     }
   } catch (error) {
     if (els.screenCaption) {
-      els.screenCaption.textContent = `${transport} · capture failed — monitor stopped or link busy`;
+      els.screenCaption.textContent = screenObjectUrl
+        ? `${transport} · capture unavailable · showing the last frame`
+        : `${transport} · no LCD frame received`;
     }
   } finally {
     screenBusy = false;

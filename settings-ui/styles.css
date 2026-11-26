@@ -441,7 +441,8 @@ input[type="number"] { text-align: right; padding-right: 38px; }
   border-radius: 4px;
   background: #000;
 }
-.screen-caption { margin-top: 9px; color: var(--faint); font-size: 11px; text-align: center; }
+.screen-requirements { margin: 0 0 9px; color: var(--muted); font-size: 13px; }
+.screen-caption { margin-top: 9px; color: var(--muted); font-size: 11px; text-align: center; }
 
 .screen-modal[hidden] { display: none; }
 .vfo-label small { color: var(--faint); font-size: 9px; letter-spacing: .04em; }
