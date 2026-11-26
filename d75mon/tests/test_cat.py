@@ -2,6 +2,8 @@
 import sys
 import unittest
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "backend"))
 
@@ -101,6 +103,26 @@ class ParseTests(unittest.TestCase):
         st.set_field("fr", "FR", None, error="radio rejected command")
         snap = st.snapshot()
         self.assertEqual(snap["fields"]["fr"]["error"], "radio rejected command")
+
+    def test_macos_serial_defaults(self):
+        ports = [
+            SimpleNamespace(device="/dev/cu.usbmodem123", vid=0x2166, pid=0x9023),
+            SimpleNamespace(device="/dev/cu.usbmodem456", vid=0x1234, pid=0x5678),
+            SimpleNamespace(device="/dev/tty.usbmodem123", vid=0x2166, pid=0x9023),
+        ]
+        with mock.patch.object(d75mon.sys, "platform", "darwin"), \
+             mock.patch.object(d75mon.list_ports, "comports", return_value=ports):
+            cfg = d75mon.load_config(None)
+        self.assertEqual(cfg["usb_candidates"], ["/dev/cu.usbmodem123"])
+        self.assertEqual(cfg["bluetooth"], "/dev/cu.TH-D75")
+
+    def test_once_reports_missing_usb_without_selecting_bluetooth(self):
+        cfg = {"transport": "usb", "usb_candidates": [], "bluetooth": "/dev/null"}
+        with mock.patch.object(d75mon.sys, "stderr") as stderr, \
+             mock.patch.object(d75mon, "CATClient") as client:
+            self.assertEqual(d75mon.run_once(cfg), 1)
+        stderr.write.assert_any_call("no radio port found")
+        client.assert_not_called()
 
 
 if __name__ == "__main__":

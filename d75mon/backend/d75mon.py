@@ -26,6 +26,7 @@ from urllib.parse import urlsplit
 
 try:
     import serial
+    from serial.tools import list_ports
 except Exception as exc:  # pragma: no cover - deployment sanity
     print("pyserial is required: %r" % (exc,), file=sys.stderr)
     raise
@@ -50,6 +51,25 @@ DEFAULT_CONFIG = {
     "web_dir": "web",
     "asset_dir": "",                          # optional firmware-image dir
 }
+
+
+def macos_usb_candidates() -> list[str]:
+    """Find the TH-D75's outgoing USB CDC ports."""
+    return sorted(
+        port.device for port in list_ports.comports()
+        if (port.vid, port.pid) == (0x2166, 0x9023)
+        and port.device.startswith("/dev/cu.")
+    )
+
+
+def serial_candidates(cfg: dict) -> list[tuple[str, str]]:
+    mode = cfg.get("transport", "auto")
+    candidates = []
+    if mode in ("auto", "usb"):
+        candidates.extend(("usb", path) for path in cfg.get("usb_candidates", []))
+    if mode in ("auto", "bluetooth"):
+        candidates.append(("bluetooth", cfg.get("bluetooth", DEFAULT_CONFIG["bluetooth"])))
+    return candidates
 
 # (state key, CAT command).  All are query forms observed to answer on V1.03.
 POLL_SET = [
@@ -284,18 +304,8 @@ class Monitor(threading.Thread):
         print("%s %s" % (datetime.now().strftime("%H:%M:%S"), msg),
               flush=True)
 
-    def _candidates(self) -> list[tuple[str, str]]:
-        mode = self.cfg.get("transport", "auto")
-        out: list[tuple[str, str]] = []
-        if mode in ("auto", "usb"):
-            for p in self.cfg.get("usb_candidates", []):
-                out.append(("usb", p))
-        if mode in ("auto", "bluetooth"):
-            out.append(("bluetooth", self.cfg.get("bluetooth", "/dev/rfcomm0")))
-        return out
-
     def _connect(self) -> bool:
-        for transport, port in self._candidates():
+        for transport, port in serial_candidates(self.cfg):
             if not Path(port).exists():
                 continue
             client = CATClient(port, baudrate=self.cfg.get("baudrate", 9600),
@@ -572,6 +582,13 @@ def load_config(path: str | None) -> dict:
     if path:
         user = json.loads(Path(path).read_text())
         cfg.update(user)
+    # The checked-in config documents Linux paths. Replace those exact defaults
+    # on macOS while preserving any paths explicitly customized by the user.
+    if sys.platform == "darwin":
+        if cfg.get("usb_candidates") == DEFAULT_CONFIG["usb_candidates"]:
+            cfg["usb_candidates"] = macos_usb_candidates()
+        if cfg.get("bluetooth") == DEFAULT_CONFIG["bluetooth"]:
+            cfg["bluetooth"] = "/dev/cu.TH-D75"
     cfg["web_dir"] = str((ROOT / cfg["web_dir"]).resolve())
     if cfg.get("asset_dir"):
         cfg["asset_dir"] = str(Path(cfg["asset_dir"]).expanduser().resolve())
@@ -581,23 +598,12 @@ def load_config(path: str | None) -> dict:
 
 
 def run_once(cfg: dict, probe: bool = False) -> int:
-    client = CATClient(cfg["usb_candidates"][0],
-                       baudrate=cfg.get("baudrate", 9600),
-                       timeout=cfg.get("command_timeout", 0.6))
-    port = None
-    for t, p in (("usb", p) for p in cfg["usb_candidates"]):
-        if Path(p).exists():
-            client = CATClient(p, baudrate=cfg.get("baudrate", 9600),
-                               timeout=cfg.get("command_timeout", 0.6))
-            port = p
-            break
-    if port is None and Path(cfg["bluetooth"]).exists():
-        client = CATClient(cfg["bluetooth"], baudrate=cfg.get("baudrate", 9600),
-                           timeout=cfg.get("command_timeout", 0.6))
-        port = cfg["bluetooth"]
+    port = next((path for _, path in serial_candidates(cfg) if Path(path).exists()), None)
     if port is None:
         print("no radio port found", file=sys.stderr)
         return 1
+    client = CATClient(port, baudrate=cfg.get("baudrate", 9600),
+                       timeout=cfg.get("command_timeout", 0.6))
     client.open()
     try:
         client.send("AI 0")
