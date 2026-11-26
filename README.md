@@ -335,7 +335,7 @@ radio writes, and power-cycling.
 ## Verify the build
 
 ```bash
-make check             # 9 tests
+make check             # 11 tests
 make test-installer    # build local release fixture + test installer end-to-end
 ```
 

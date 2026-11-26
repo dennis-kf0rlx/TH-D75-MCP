@@ -15,7 +15,7 @@ the public tree keeps only `skills/REQUEST-ACCESS.md` + `skills/README.md`.
    editable example in `infra/systemd/`).
 4. `README`, `SECURITY.md`, `docs/SAFETY.md`, and `docs/PROVENANCE.md` present
    and linked.
-5. `make check` (9 tests) and `scripts/test-installer.sh` pass.
+5. `make check` (11 tests) and `scripts/test-installer.sh` pass.
 6. `v0.1.0` tagged and released; later `v0.1.x` releases follow the checklist
    below.
 

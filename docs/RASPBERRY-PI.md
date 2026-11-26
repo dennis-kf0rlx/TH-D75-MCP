@@ -30,7 +30,7 @@ branch build (commit `6b5e129`, the changes described here):
 
 | Check | Result |
 |---|---|
-| Installer check (`install.sh --local-tarball … --check`) | checksum + extraction OK, `make check` **9/9** |
+| Installer check (`install.sh --local-tarball … --check`) | checksum + extraction OK, `make check` **11/11** |
 | User services + lingering | `d75settings`/`d75mon` active; `Linger=yes`; still active after reboot |
 | Radio over USB | `lsusb` `2166:9023 JVC Kenwood TH-D75`; `/dev/thd75 -> ttyACM0`; monitor `serialPresent: true` |
 | Settings read | **255 values**, model `TH-D75`, firmware `1.03`, no errors |

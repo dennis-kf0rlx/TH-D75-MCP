@@ -299,7 +299,7 @@ case "$MODE" in
   check)
     note "running non-privileged build checks (no radio, sudo, udev, or systemd)"
     make -C "$REPO_ROOT" check
-    note "check-only complete: 9 tests expected, no radio touched"
+    note "check-only complete: 11 tests expected, no radio touched"
     ;;
   install)
     note "creating venv and installing requirements (no service/radio changes)"

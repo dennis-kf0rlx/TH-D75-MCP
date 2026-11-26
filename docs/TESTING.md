@@ -82,7 +82,7 @@ Full validation on **Raspberry Pi 3B+ Rev 1.3**, Raspberry Pi OS Lite
 
 - installer checksum verified, extraction OK
 - venv created, `pyserial` installed from piwheels
-- `make check` **9/9**
+- `make check` **11/11**
 - user services active, `Linger=yes`, still active **after reboot**
 - radio on USB: `2166:9023`, `/dev/thd75 -> ttyACM0`, monitor `serialPresent: true`
 - settings **read: 255 values**; **write verified**: `radio.Beep` off/on
