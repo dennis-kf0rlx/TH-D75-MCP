@@ -102,6 +102,19 @@ Beta findings (2026-11-25, Pi 3B+/1 GB, Raspberry Pi OS Lite Trixie):
   ~670 MB RSS and the session swapped; the console server itself answers pages
   in ~18–52 ms. Use the tunnel from another machine (or a Pi 4/5 for local GUI).
 
+Additional checks (2026-11-26, Pi 3B+):
+
+- **uninstall**: interactive no-arg run removed both user services, the install
+  tree and the udev rule; values/backups deleted (none existed); systemd
+  lingering left enabled by design. The script deletes itself with the tree, so
+  a second run fails with "No such file" — expected.
+- **reinstall**: `install.sh` refuses an existing prefix and prints the uninstall
+  steps; `./scripts/uninstall.sh` then `bash thd75-install.sh` reinstalls cleanly.
+- **RDP + XFCE**: needs `startwm.sh` to `exec startxfce4` on this image; the
+  default `/etc/X11/Xsession` path exited after ~2 s and closed the client.
+  Stale Xorg sessions must be cleared. An alphanumeric account password avoids
+  RDP keyboard-layout mangling of characters such as `!`.
+
 Not yet exercised on a Pi: Bluetooth SPP, 32-bit armhf, Pi 4/5/Zero 2 W
 hardware. Record model, OS, `uname -m`, `python3 -V`, and `--check` output when
 you test them.

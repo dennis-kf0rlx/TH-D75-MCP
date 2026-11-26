@@ -63,6 +63,53 @@ Not exercised on a Pi yet: Bluetooth SPP, 32-bit armhf, and Pi 4/5/Zero 2 W
 hardware (same OS family, expected to work). Report model, OS, `uname -m`,
 `python3 -V`, and `--check` output when you test them.
 
+## Remote desktop (RDP) on the Pi
+
+A Pi with no keyboard/mouse/monitor can be driven from another machine with
+`xrdp` + XFCE, and then the web console is simply opened in a browser **inside**
+that RDP session (no SSH tunnel needed — see Accessing the interfaces).
+
+Install the desktop and RDP server:
+
+```bash
+sudo apt install -y xrdp xfce4 xfce4-goodies
+sudo systemctl enable --now xrdp xrdp-sesman
+```
+
+Pin the xrdp window manager to XFCE. The Debian default `startwm.sh` goes
+through `/etc/X11/Xsession`; on this image that made the window manager exit
+after ~2 s (client window goes black and closes). Use:
+
+```bash
+sudo cp -n /etc/xrdp/startwm.sh /etc/xrdp/startwm.sh.orig
+printf '#!/bin/sh\nif [ -r /etc/profile ]; then . /etc/profile; fi\nexec /usr/bin/startxfce4\n' \
+  | sudo tee /etc/xrdp/startwm.sh >/dev/null
+sudo chmod 0755 /etc/xrdp/startwm.sh
+sudo systemctl restart xrdp-sesman xrdp
+```
+
+Troubleshooting:
+
+- **Login succeeds, then the window closes** — stale session or the
+  `/etc/X11/Xsession` path. Check `/var/log/xrdp-sesman.log` for
+  `Window manager ... exited quickly`, then clear the stale session and
+  restart:
+  ```bash
+  sudo pkill -f "Xorg :10"
+  sudo pkill -u "$USER" -f xfce4-session
+  sudo rm -f /tmp/.X11-unix/X10 /tmp/.X10-lock
+  sudo systemctl restart xrdp-sesman xrdp
+  ```
+- **"User does not exist, or could not be authenticated"** — xrdp's generic PAM
+  rejection, not a missing account. Verify the password locally with
+  `printf '<password>\n' | pamtester login "$USER" authenticate`
+  (`sudo apt install pamtester`). RDP clients can mangle characters depending on
+  keyboard layout: prefer an **alphanumeric password**, or set the client's
+  keyboard layout to match.
+- After repeated attempts, clear the client's saved password (Remmina:
+  edit the connection and empty the password field; set
+  `disablepasswordstoring=1` to force a prompt).
+
 ## Prerequisites
 
 Raspberry Pi OS is Debian-based, so use the Debian path:

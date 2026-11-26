@@ -175,7 +175,7 @@ Useful flags:
 --force         allow a tree without the install marker
 ```
 
-Data is archived to `~/thd75-data-<timestamp>.tar.gz` by default when present.
+Data is archived to `~/thd75-data-<timestamp>.tar.gz` only when `--keep-data` is passed (the interactive default deletes it). The uninstall script lives inside the install tree, so it is removed with it — run `install.sh` again for another install.
 The script refuses `/`, `$HOME`, and non-TH-D75 directories unless forced.
 
 ## Failure behavior
