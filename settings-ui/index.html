@@ -89,15 +89,19 @@
   <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 
   <div class="screen-modal" id="screen-modal" hidden>
-    <div class="screen-dialog" role="dialog" aria-modal="true" aria-label="Live TH-D75 LCD">
+    <div class="screen-dialog" role="dialog" aria-modal="true" aria-label="Live TH-D75 LCD"
+         aria-describedby="screen-requirements">
       <div class="screen-dialog-head">
         <span>TH-D75 LCD</span>
         <button class="mini-btn" id="screen-close" type="button">Close</button>
       </div>
-      <div class="screen-bezel">
+      <p class="screen-requirements" id="screen-requirements">
+        Live capture requires the GM reader firmware patch and a running d75mon monitor.
+      </p>
+      <div class="screen-bezel" id="screen-bezel" hidden>
         <img id="screen-modal-img" alt="Live TH-D75 LCD framebuffer" width="240" height="180">
       </div>
-      <div class="screen-caption" id="screen-caption">Live 240×180 DDR framebuffer</div>
+      <div class="screen-caption" id="screen-caption">Waiting for an LCD frame…</div>
     </div>
   </div>
 
