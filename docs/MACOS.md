@@ -50,7 +50,10 @@ not write settings or memories.
 # open http://127.0.0.1:8098/
 ```
 
-On macOS the settings server defaults to `/dev/cu.TH-D75`. Override it for USB:
+Like the monitor, the settings server looks for a Kenwood USB callout port
+(`2166:9023`) at startup. It prefers USB and falls back to `/dev/cu.TH-D75`.
+Use `D75_TRANSPORT=bluetooth` to select Bluetooth when USB is connected.
+To select a specific USB port, set `D75_SERIAL`:
 
 ```bash
 D75_TRANSPORT=usb D75_SERIAL=/dev/cu.usbmodem1234 \
