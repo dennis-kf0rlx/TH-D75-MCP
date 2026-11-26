@@ -168,7 +168,14 @@ case "$PREFIX" in
 esac
 
 [ ! -e "$PREFIX" ] || die "install path already exists: $PREFIX
-Move it away or choose a different --prefix; this installer will not overwrite."
+This installer never overwrites an existing install.
+
+To update or reinstall, remove the old one first (it will stop its services):
+  cd $PREFIX && ./scripts/uninstall.sh --remove-udev --purge --yes
+  # use --keep-data instead of --purge to archive values/backups first
+
+Then run this installer again. To install beside the old copy, use:
+  bash $0 --prefix $HOME/thd75-web-console-new"
 
 case "$VERSION" in
   *[!A-Za-z0-9._-]*) die "invalid version string" ;;

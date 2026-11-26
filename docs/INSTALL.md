@@ -59,6 +59,21 @@ suppress the launch. No VM desktop is needed.
 
 No sudo is used by `install.sh` itself. No radio settings are written.
 
+## Updating or reinstalling
+
+The installer refuses to write over an existing install (`install path already
+exists`). Remove the old one first, then run the installer again:
+
+```bash
+cd ~/thd75-web-console
+./scripts/uninstall.sh --remove-udev --purge --yes   # or --keep-data
+# then rerun install.sh
+```
+
+`--purge` drops settings backups; `--keep-data` archives `values.json` and
+`backups/` to `~/thd75-data-<timestamp>.tar.gz` before removal. To keep the old
+tree untouched, install beside it with `--prefix ~/thd75-web-console-new`.
+
 ## Options
 
 ```text
@@ -142,10 +157,18 @@ cd ~/thd75-web-console
 It stops/removes only user services whose unit files point at that install.
 It does **not** remove system packages or your serial-group membership.
 
+Running it interactively with no flags (just `./scripts/uninstall.sh`) is
+enough: it stops and removes the user services and the install tree, and removes
+the TH-D75 udev rule. Values and backups are deleted unless you pass
+`--keep-data`. Systemd lingering is left enabled unless you pass
+`--remove-linger` — disabling it kills a headless user manager and everything
+inside it, so that step is never implicit. `--remove-udev` is only needed for
+non-interactive `--yes` runs.
+
 Useful flags:
 
 ```text
---remove-udev   also remove the TH-D75 udev rule (sudo)
+--remove-udev   also remove the TH-D75 udev rule (sudo); required with --yes
 --keep-data     archive values/backups under ~ before removal
 --purge         do not archive values/backups
 --yes           non-interactive; does not remove udev unless asked

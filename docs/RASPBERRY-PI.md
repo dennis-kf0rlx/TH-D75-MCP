@@ -38,6 +38,27 @@ branch build (commit `6b5e129`, the changes described here):
 | UI access | settings `:8098` and monitor `:8099` **HTTP 200** through an SSH tunnel |
 | Load | 88–99% idle, ~50 MB RSS for both tools, 690 MB RAM available |
 
+### Performance notes for a 1 GB 3B+ (2026-11-25 beta)
+
+- The **console server is not the bottleneck**: from the Pi, the settings page
+  returned in ~18 ms, the 106 KB catalog in ~52 ms, `/api/status` in ~0.19 s.
+- **Do not run the browser on the Pi through a remote desktop.** With xrdp and
+  Firefox on a 3B+/1 GB the session software-rasterises the whole desktop:
+  Firefox used ~670 MB RSS (parent + WebExtensions + content), the box swapped,
+  and the UI was visibly slow. Treat RDP-with-browser as too much for this
+  hardware.
+- **Recommended setup:** run the services on the Pi and use them from another
+  machine's browser over an SSH tunnel. Tested from an M18: the monitor UI over
+  the tunnel had no unexpected latency.
+- A **local HDMI keyboard/mouse/monitor** removes the RDP encoding and
+  software-desktop-relay cost, so it has more headroom than RDP — but Firefox
+  still runs on 1 GB and remains the limiting factor. (Not measured on this
+  unit; a Pi 4/5 with 2 GB+ is the comfortable local-GUI option.)
+- Settings writes were verified on the Pi: setting Background Color to White,
+  applying, and restarting the radio kept White after the restart.
+- The test Pi also showed under-voltage throttling (`get_throttled=0x50005`) —
+  a marginal PSU makes browser performance worse.
+
 Not exercised on a Pi yet: Bluetooth SPP, 32-bit armhf, and Pi 4/5/Zero 2 W
 hardware (same OS family, expected to work). Report model, OS, `uname -m`,
 `python3 -V`, and `--check` output when you test them.

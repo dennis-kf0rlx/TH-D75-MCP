@@ -12,6 +12,7 @@ REMOVE_UDEV=0
 KEEP_DATA=0
 PURGE=0
 FORCE=0
+REMOVE_LINGER=0
 
 usage() {
   cat <<'USAGE'
@@ -20,6 +21,8 @@ Usage: scripts/uninstall.sh [options]
 Options:
   --prefix DIR        Installation to remove (default: ~/thd75-web-console)
   --remove-udev       Also remove /etc/udev/rules.d/99-kenwood-thd75.rules
+  --remove-linger     Also disable systemd lingering (off by default; disabling
+                      it kills a headless user manager and its services)
   --keep-data         Archive settings-ui/values.json and backups before removal
   --purge             Do not archive values/backups
   --yes               Non-interactive; does not remove udev unless asked
@@ -59,6 +62,7 @@ while [ "$#" -gt 0 ]; do
   case "$1" in
     --prefix) PREFIX="${2:-}"; shift 2 ;;
     --remove-udev) REMOVE_UDEV=1; shift ;;
+    --remove-linger) REMOVE_LINGER=1; shift ;;
     --keep-data) KEEP_DATA=1; shift ;;
     --purge) PURGE=1; shift ;;
     --yes) YES=1; shift ;;
@@ -139,19 +143,37 @@ if [ "$DRY_RUN" -eq 0 ] && command -v systemctl >/dev/null 2>&1; then
 fi
 
 # udev rule is optional and privileged. Never remove it under --yes unless asked.
+UDEV_STATUS="No TH-D75 udev rule present."
+# Lingering is never touched implicitly: disabling it kills a headless user
+# manager and everything inside it (including the shell running this script).
+LINGER_STATUS=""
+if command -v loginctl >/dev/null 2>&1 && [ "$(loginctl show-user "$USER" -p Linger 2>/dev/null)" = "Linger=yes" ]; then
+  if [ "$REMOVE_LINGER" -eq 1 ]; then
+    do_cmd loginctl disable-linger "$USER" || warn "could not disable lingering"
+    LINGER_STATUS="Disabled systemd lingering."
+  else
+    note "leaving systemd lingering enabled (use --remove-linger to disable)"
+    LINGER_STATUS="Left systemd lingering enabled."
+  fi
+fi
+
 if [ -f "$UDEV_RULE" ]; then
-  if [ "$REMOVE_UDEV" -eq 1 ] || { [ "$YES" -eq 0 ] && confirm "Remove the TH-D75 udev rule? [y/N]" n; }; then
+  # Interactive default is to remove it (the rule is only a convenience symlink);
+  # scripted runs must still pass --remove-udev explicitly.
+  if [ "$REMOVE_UDEV" -eq 1 ] || { [ "$YES" -eq 0 ] && confirm "Remove the TH-D75 udev rule?" y; }; then
     do_cmd sudo rm -f -- "$UDEV_RULE"
     do_cmd sudo udevadm control --reload-rules || true
+    UDEV_STATUS="Removed udev rule."
   else
     note "leaving udev rule: $UDEV_RULE"
+    UDEV_STATUS="Left udev rule in place."
   fi
 fi
 
 # Preserve local values/backups unless purging.
 DATA="$PREFIX/settings-ui"
 if [ "$PURGE" -eq 0 ] && { [ -f "$DATA/values.json" ] || [ -d "$DATA/backups" ]; }; then
-  if [ "$KEEP_DATA" -eq 1 ] || confirm "Archive values/backups to $HOME before removal?" y; then
+  if [ "$KEEP_DATA" -eq 1 ] || confirm "Archive values/backups to $HOME before removal?" n; then
     STAMP="$(date +%Y%m%d-%H%M%S)"
     ARCHIVE="$HOME/thd75-data-$STAMP.tar.gz"
     note "archiving data to $ARCHIVE"
@@ -188,6 +210,7 @@ cat <<EOF
 ------------------------------------------------------------
 Uninstall complete: $REAL
 Left alone: system packages, serial group membership, radio data.
-$( [ "$REMOVE_UDEV" -eq 1 ] && echo "Removed udev rule." || echo "Udev rule not removed." )
+$UDEV_STATUS
+$LINGER_STATUS
 ------------------------------------------------------------
 EOF

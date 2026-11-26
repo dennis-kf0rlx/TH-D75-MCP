@@ -93,6 +93,15 @@ Full validation on **Raspberry Pi 3B+ Rev 1.3**, Raspberry Pi OS Lite
 Observed and expected on that rig: `get_throttled=0x50005` (under-voltage; test
 PSU) — the tools worked, but a proper supply is recommended.
 
+Beta findings (2026-11-25, Pi 3B+/1 GB, Raspberry Pi OS Lite Trixie):
+
+- settings write verified end-to-end: Background Color set to White, applied,
+  radio restarted, colour persisted;
+- monitor UI over an SSH tunnel to another machine: no unexpected latency;
+- xrdp remote desktop **plus a browser on the Pi** is too heavy: Firefox grew to
+  ~670 MB RSS and the session swapped; the console server itself answers pages
+  in ~18–52 ms. Use the tunnel from another machine (or a Pi 4/5 for local GUI).
+
 Not yet exercised on a Pi: Bluetooth SPP, 32-bit armhf, Pi 4/5/Zero 2 W
 hardware. Record model, OS, `uname -m`, `python3 -V`, and `--check` output when
 you test them.
