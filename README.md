@@ -178,6 +178,10 @@ console:
   `http://127.0.0.1:8098/` directly — no tunnel.
 - **Remote desktop (RDP/VNC) into the host**: open it inside that desktop
   session — no tunnel; you are already on the host.
+- **Home network, browser on another device** (the usual Pi case): make the
+  UI listen on the LAN (`D75SETTINGS_HOST=0.0.0.0`) and firewall the ports to
+  your LAN — no RDP, no tunnel. It has no password, so only on a trusted
+  network, never port-forwarded.
 - **Headless host, browser elsewhere**: tunnel from your computer:
 
   ```bash

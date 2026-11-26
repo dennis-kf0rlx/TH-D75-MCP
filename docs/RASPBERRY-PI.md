@@ -151,6 +151,26 @@ where you are:
 | A Pi you control through a remote desktop (RDP/VNC) | `http://127.0.0.1:8098/` in a browser *inside* that remote desktop. **No tunnel.** |
 | A headless machine you browse from a different computer | SSH tunnel (see below), or deliberately bind to the LAN. |
 
+### Simplest access for Pi owners
+
+Most Pi owners do not need RDP *or* a tunnel:
+
+1. **Pi as the server, browser on any device on your home network.** Make the
+   UI listen on the LAN and allow the ports on your firewall:
+
+   ```bash
+   D75SETTINGS_HOST=0.0.0.0 .venv/bin/python settings-ui/server.py
+   # monitor: set "host" to 0.0.0.0 in d75mon/config.json
+   ```
+
+   Then open `http://<pi-address>:8098/` from a phone, tablet, or laptop. Keep
+   it on a trusted home network — **the UI has no password**, so never forward
+   these ports from the internet.
+2. **Desktop Pi (Pi 4/5, 2 GB+).** Install the browser on the Pi and use
+   `http://127.0.0.1:8098/` locally; nothing to configure.
+3. **SSH tunnel** (below) — the advanced option for when you are away from the
+   home network or do not want the ports exposed at all.
+
 Headless machine, browsing from another computer:
 
 ```bash
