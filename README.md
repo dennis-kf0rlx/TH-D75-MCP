@@ -91,6 +91,8 @@ Accessibility is part of the mission, not a separate mode.
 - No compiler, npm, or frontend build step is required
 - Tested on **Raspberry Pi 3B+** (Raspberry Pi OS Trixie) with the radio over
   USB — see [docs/RASPBERRY-PI.md](docs/RASPBERRY-PI.md)
+- For foreground use on macOS, see [docs/MACOS.md](docs/MACOS.md) for tested
+  USB CDC setup and Bluetooth Classic SPP notes.
 
 ## Fast path (curl installer)
 

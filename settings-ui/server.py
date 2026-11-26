@@ -14,6 +14,8 @@ import atexit
 import json
 import os
 import signal
+import shutil
+import sys
 import threading
 import time
 from datetime import datetime
@@ -27,18 +29,25 @@ BASE = os.path.dirname(os.path.abspath(__file__))
 CATALOG_PATH = os.path.join(BASE, "catalog.json")
 VALUES_PATH = os.path.join(BASE, "values.json")
 BACKUP_DIR = os.path.join(BASE, "backups")
-SERIAL = os.environ.get("D75_SERIAL", "/dev/thd75")
+if sys.platform == "darwin":
+    _default_serial = "/dev/cu.TH-D75"
+    _default_fallback = "/dev/cu.TH-D75"
+else:
+    _default_serial = "/dev/thd75"
+    _default_fallback = "/dev/rfcomm0"
+SERIAL = os.environ.get("D75_SERIAL", _default_serial)
 # Auto path fallback: USB is preferred, but a bound Bluetooth SPP tty is usable
 # when the USB device is absent.
 if not os.path.exists(SERIAL):
-    _fallback = os.environ.get("D75_SERIAL_FALLBACK", "/dev/rfcomm0")
+    _fallback = os.environ.get("D75_SERIAL_FALLBACK", _default_fallback)
     if os.path.exists(_fallback):
         SERIAL = _fallback
 TRANSPORT_ENV = os.environ.get("D75_TRANSPORT", "auto").strip().lower()
 
 
 def _is_rfcomm(path: str) -> bool:
-    return os.path.basename(path).startswith("rfcomm")
+    name = os.path.basename(path).lower()
+    return name.startswith("rfcomm") or (sys.platform == "darwin" and "th-d75" in name)
 
 
 def _detect_transport(path: str) -> str:
@@ -87,6 +96,8 @@ def run(cmd: list[str], timeout: int = 20):
 
 
 def monitor_active() -> bool:
+    if shutil.which("systemctl") is None:
+        return False
     p = run(["systemctl", "--user", "is-active", MONITOR_UNIT], timeout=5)
     return p.returncode == 0 and p.stdout.strip() == "active"
 
@@ -107,6 +118,8 @@ def stop_monitor() -> None:
 
 
 def start_monitor() -> None:
+    if shutil.which("systemctl") is None:
+        return
     for _ in range(3):
         run(["systemctl", "--user", "start", MONITOR_UNIT])
         if wait_monitor(True, 8.0):
