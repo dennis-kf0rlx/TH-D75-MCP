@@ -14,6 +14,7 @@ check: venv
 	  settings-ui/server.py settings-ui/generate_catalog.py \
 	  d75mon/backend/d75mon.py d75mon/tests/test_cat.py
 	$(VENV)/bin/python -m unittest discover -s d75mon/tests
+	$(VENV)/bin/python -m unittest discover -s settings-ui/tests
 
 run-settings: venv
 	$(VENV)/bin/python settings-ui/server.py

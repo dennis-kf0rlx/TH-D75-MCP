@@ -24,14 +24,24 @@ from urllib.parse import urlparse
 import urllib.request
 
 import serial
+from serial.tools import list_ports
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 CATALOG_PATH = os.path.join(BASE, "catalog.json")
 VALUES_PATH = os.path.join(BASE, "values.json")
 BACKUP_DIR = os.path.join(BASE, "backups")
+TRANSPORT_ENV = os.environ.get("D75_TRANSPORT", "auto").strip().lower()
 if sys.platform == "darwin":
-    _default_serial = "/dev/cu.TH-D75"
     _default_fallback = "/dev/cu.TH-D75"
+    _default_serial = _default_fallback
+    if "D75_SERIAL" not in os.environ and TRANSPORT_ENV in ("auto", "usb"):
+        usb_ports = sorted(
+            port.device for port in list_ports.comports()
+            if (port.vid, port.pid) == (0x2166, 0x9023)
+            and port.device.startswith("/dev/cu.")
+        )
+        if usb_ports:
+            _default_serial = usb_ports[0]
 else:
     _default_serial = "/dev/thd75"
     _default_fallback = "/dev/rfcomm0"
@@ -42,7 +52,6 @@ if not os.path.exists(SERIAL):
     _fallback = os.environ.get("D75_SERIAL_FALLBACK", _default_fallback)
     if os.path.exists(_fallback):
         SERIAL = _fallback
-TRANSPORT_ENV = os.environ.get("D75_TRANSPORT", "auto").strip().lower()
 
 
 def _is_rfcomm(path: str) -> bool:
@@ -112,6 +121,8 @@ def wait_monitor(active: bool, timeout: float = 10.0) -> bool:
 
 
 def stop_monitor() -> None:
+    if shutil.which("systemctl") is None:
+        return
     if monitor_active():
         run(["systemctl", "--user", "stop", MONITOR_UNIT])
     wait_monitor(False, 10.0)
